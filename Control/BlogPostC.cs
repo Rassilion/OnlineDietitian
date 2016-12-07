@@ -84,5 +84,29 @@ namespace Control
             com.Connection.Close();
 
         }
+
+        public static void UpdateBlogPost(int blogID, int dietitianID, string title, string content)
+        {
+
+            SqlCommand com = new SqlCommand("UpdateBlogPost", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@blogID", blogID));
+            com.Parameters.Add(new SqlParameter("@dietitianID", dietitianID));
+            com.Parameters.Add(new SqlParameter("@title", title));
+            com.Parameters.Add(new SqlParameter("@content", content));
+
+
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+
+            com.Dispose();
+            com.Connection.Close();
+
+        }
     }
 }
