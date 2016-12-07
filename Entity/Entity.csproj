@@ -43,6 +43,7 @@
     <Compile Include="AppointmentE.cs" />
     <Compile Include="BlogPostE.cs" />
     <Compile Include="DietitanE.cs" />
+    <Compile Include="DietRequestE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserE.cs" />
   </ItemGroup>
