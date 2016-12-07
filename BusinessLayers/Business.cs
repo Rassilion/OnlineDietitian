@@ -24,6 +24,11 @@ namespace BusinessLayers
             BlogPostC.DeleteBlogPost(blogID);
         }
 
+        public static void updateBlogPost(int blogID, int dietitianID, string title, string content)
+        {
+            BlogPostC.UpdateBlogPost(blogID, dietitianID, title, content);
+        }
+
         //for blogpost reapeter
         public static string getDietitianName(object dietitianID)
         {

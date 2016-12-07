@@ -32,5 +32,16 @@ namespace OnlineDietitian
             //Reload Page
             Response.Redirect(Request.RawUrl);
         }
+
+
+        protected void update_button_Click(object sender, EventArgs e)
+        {
+            Business.updateBlogPost(Convert.ToInt32(blogID_update_textbox.Text),
+                Convert.ToInt32(dietitianID_update_textbox.Text),
+                title_update_textbox.Text,
+                content_update_textbox.Text);
+            //Reload Page
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }
