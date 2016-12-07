@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Control
 {
-    class UserC
+    public class UserC
     {
+
+
+
     }
 }

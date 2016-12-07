@@ -19,6 +19,7 @@ namespace BusinessLayers
         {
             BlogPostC.NewBlogPost(dietitianID, title, content);
         }
+
         public static void deleteBlogPost(int blogID)
         {
             BlogPostC.DeleteBlogPost(blogID);
@@ -34,6 +35,7 @@ namespace BusinessLayers
         {
             return DietitianC.GetDietitianName((int)dietitianID);
         }
+
         public static string getDietitianName(int dietitianID)
         {
             return DietitianC.GetDietitianName(dietitianID);
