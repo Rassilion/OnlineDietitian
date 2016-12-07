@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentE.cs" />
+	<Compile Include="AppointmentE.cs" />
+    <Compile Include="AddressE.cs" />
     <Compile Include="BlogPostE.cs" />
+    <Compile Include="DietE.cs" />
     <Compile Include="DietitanE.cs" />
+    <Compile Include="PaymentE.cs" />
     <Compile Include="DietRequestE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserE.cs" />
