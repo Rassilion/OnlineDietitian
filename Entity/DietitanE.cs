@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class DietitanE
+    public class DietitanE
     {
         public int DietitianID { get; set; }
         public int AddressID { get; set; }
@@ -16,7 +16,7 @@ namespace Entity
         public string DietitianPhone { get; set; }
         public string DietitianName { get; set; }
         public string DietitianSurname { get; set; }
-
-
+        public string DietitianEmail { get; set; }
+        public string DietitianPassword { get; set; }
     }
 }
