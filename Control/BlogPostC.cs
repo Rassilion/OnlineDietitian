@@ -10,7 +10,8 @@ using System.Data;
 namespace Control
 {
     public class BlogPostC
-    {
+    { 
+        // Informations of Blog get from BlogPost Table 
         public static List<BlogPostE> GetBlogPosts()
         {
             List<BlogPostE> list = null;
@@ -44,8 +45,8 @@ namespace Control
             com.Connection.Close();
             return list;
         }
-
-        public static void NewBlogPost(int dietitianID, string title, string content)
+        // Blog Creation by information of blogpost
+        public static void NewBlogPost(int dietitianID, string title, string content) 
         {
 
             SqlCommand com = new SqlCommand("NewBlogPost", Connection.Con); // Prodecure
@@ -65,7 +66,7 @@ namespace Control
             com.Connection.Close();
 
         }
-
+        // Remove blog by blogID 
         public static void DeleteBlogPost(int blogID)
         {
 
@@ -84,8 +85,8 @@ namespace Control
             com.Connection.Close();
 
         }
-
-        public static void UpdateBlogPost(int blogID, int dietitianID, string title, string content)
+        // Update blog by paramaters of BlogPost
+        public static void UpdateBlogPost(int blogID, int dietitianID, string title, string content) 
         {
 
             SqlCommand com = new SqlCommand("UpdateBlogPost", Connection.Con); // Prodecure
@@ -108,7 +109,7 @@ namespace Control
             com.Connection.Close();
 
         }
-
+        // Paramaters of blog get by blogID
         public static BlogPostE GetBlogPostByBlogID(int blogID)
         {
             BlogPostE blogPost = null;

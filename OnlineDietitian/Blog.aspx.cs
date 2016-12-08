@@ -11,6 +11,7 @@ namespace OnlineDietitian
 {
     public partial class About : Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,6 +20,7 @@ namespace OnlineDietitian
 
         }
 
+        // For new blogPost creation
         protected void newpost_button_Click(object sender, EventArgs e)
         {
             Business.newBlogPosts(Convert.ToInt32(dietitianID_textbox.Text), title_textbox.Text, content_textbox.Text);
@@ -26,6 +28,7 @@ namespace OnlineDietitian
             Response.Redirect(Request.RawUrl);
         }
 
+        // To remove blogPost
         protected void deletePost_button_Click(object sender, EventArgs e)
         {
             Business.deleteBlogPost(Convert.ToInt32(blogID_textbox.Text));
@@ -33,8 +36,8 @@ namespace OnlineDietitian
             Response.Redirect(Request.RawUrl);
         }
 
-
-        protected void update_button_Click(object sender, EventArgs e)
+        // To update blogPost
+        protected void update_button_Click(object sender, EventArgs e) 
         {
             Business.updateBlogPost(Convert.ToInt32(blogID_update_textbox.Text),
                 Convert.ToInt32(dietitianID_update_textbox.Text),
