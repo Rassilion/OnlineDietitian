@@ -1,7 +1,7 @@
-﻿<%@ Page Title="Blog" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Blog.aspx.cs" Inherits="OnlineDietitian.About" validateRequest="false"%>
+﻿<%@ Page Title="Blog" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Blog.aspx.cs" Inherits="OnlineDietitian.About" ValidateRequest="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <% if (Convert.ToInt32( Session["userID"]) != -1)
+    <% if (Convert.ToInt32(Session["userID"]) != -1)
         {%>
     <div class="jumbotron">
         <h3>DEBUG</h3>
@@ -32,23 +32,25 @@
         <HeaderTemplate>
         </HeaderTemplate>
         <ItemTemplate>
-            <h2>
-                <a href="blogpost/<%# Eval("BlogID") %>">
-                    <asp:Label ID="blogPostTitle" runat="server" Text='<%# Eval("Title") %>' /></a>
-            </h2>
-            <p class="lead">
-                by <a href="index.php">
-                    <asp:Label ID="blogPostAuthor" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitanID") ) %>' /></a>
-                <span class="glyphicon glyphicon-time"></span>Posted on
+            <div class="well">
+                <h2>
+                    <a href="blogpost/<%# Eval("BlogID") %>">
+                        <asp:Label ID="blogPostTitle" runat="server" Text='<%# Eval("Title") %>' /></a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php">
+                        <asp:Label ID="blogPostAuthor" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitanID") ) %>' /></a>
+                    <span class="glyphicon glyphicon-time"></span>Posted on
                 <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("PostDate") %>' />
-            </p>
-            <hr>
-            <p>
-                <asp:Label ID="blogPostContent" runat="server" Text='<%# Eval("BlogContent") %>' />
-            </p>
-            <a class="btn btn-primary" href="blogpost/<%# Eval("BlogID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </p>
+                <hr>
+                <p>
+                    <asp:Label ID="blogPostContent" runat="server" Text='<%# OnlineDietitian.Util.summary(Eval("BlogContent").ToString())  %>' />
+                </p>
+                <a class="btn btn-primary" href="blogpost/<%# Eval("BlogID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-            <hr>
+            </div>
+            <br />
         </ItemTemplate>
         <FooterTemplate>
             <!-- Pager -->
