@@ -29,7 +29,13 @@ namespace BusinessLayers
         {
             BlogPostC.UpdateBlogPost(blogID, dietitianID, title, content);
         }
+        public static BlogPostE getBlogPostByBlogID(int blogID)
+        {
+            return BlogPostC.GetBlogPostByBlogID(blogID);
+        }
 
+
+        // Dietitian Start
         //for blogpost reapeter
         public static string getDietitianName(object dietitianID)
         {
@@ -40,10 +46,12 @@ namespace BusinessLayers
         {
             return DietitianC.GetDietitianName(dietitianID);
         }
-        public static BlogPostE getBlogPostByBlogID(int blogID)
+
+        public static DietitianE getDietitianByDietitianID(int dietitianID)
         {
-            return BlogPostC.GetBlogPostByBlogID(blogID);
+            return DietitianC.GetDietitianByDietitianID(dietitianID);
         }
+
 
     }
 }
