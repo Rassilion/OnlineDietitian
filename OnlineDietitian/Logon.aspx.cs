@@ -18,13 +18,13 @@ namespace OnlineDietitian
 
         protected void Submit1_Click(object sender, EventArgs e)
         {
-            int t;
+            int t; // Control database for login
             if ((t = BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text)) !=-1)
             {
                 Session["userID"] = t;
                 Response.Redirect("~/");
             }
-            else
+            else // Invalid email or password
             {
                 Msg.Text = "Invalid credentials. Please try again.";
             }

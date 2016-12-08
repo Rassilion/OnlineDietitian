@@ -10,6 +10,7 @@ namespace Control
 {
     public class UserC
     {
+        // Control email and password by database
         public static int validateUser(string email,string password)
         {
             int userID = -1; 
@@ -37,6 +38,7 @@ namespace Control
             return userID;
         }
 
+        // User name get with userID from database
         public static string GetUserName(int userID)
         {
             SqlCommand com = new SqlCommand("getUserName", Connection.Con); // Prodecure
