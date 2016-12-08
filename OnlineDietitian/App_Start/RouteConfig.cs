@@ -10,9 +10,11 @@ namespace OnlineDietitian
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapPageRoute("BlogPostRoute", "BlogPost/{id}", "~/BlogPost.aspx");
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+            
         }
     }
 }
