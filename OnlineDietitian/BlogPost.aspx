@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BlogPost.aspx.cs" Inherits="OnlineDietitian.BlogPost" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <% if (global_asax.userID == -1)
+    <% if (Convert.ToInt32( Session["userID"]) == -1)
         { Response.Redirect("~/Logon.aspx"); }%>
 
     <div class="row">

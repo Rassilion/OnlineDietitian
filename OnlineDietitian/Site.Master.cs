@@ -81,7 +81,7 @@ namespace OnlineDietitian
 
         protected void LogOut(object sender, EventArgs e)
         {
-            Global.userID = -1;
+            Session["userID"] = -1;
         }
     }
 

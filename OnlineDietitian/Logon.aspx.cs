@@ -21,7 +21,7 @@ namespace OnlineDietitian
             int t;
             if ((t = BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text)) !=-1)
             {
-                Global.userID = t;
+                Session["userID"] = t;
                 Response.Redirect("~/");
             }
             else
