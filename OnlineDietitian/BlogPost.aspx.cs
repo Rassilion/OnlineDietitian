@@ -16,8 +16,9 @@ namespace OnlineDietitian
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Get "id" from URL
             string blogpostid = Page.RouteData.Values["id"] as string;
+            // ID of BlogPost get Database
             currentPost = BusinessLayers.Business.getBlogPostByBlogID(Convert.ToInt32(blogpostid));
            
         }

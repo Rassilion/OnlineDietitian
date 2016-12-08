@@ -10,6 +10,7 @@ namespace BusinessLayers
 {
     public class Business
     {
+        // BlogPost start
         public static List<BlogPostE> getBlogPosts()
         {
             return BlogPostC.GetBlogPosts();

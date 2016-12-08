@@ -11,7 +11,8 @@ namespace Control
 {
     public class DietitianC
     {
-        public static string GetDietitianName(int dietitianID)
+        // Name of dietitian get from Dietitian Table 
+        public static string GetDietitianName(int dietitianID) 
         {
             SqlCommand com = new SqlCommand("getDietitianName", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
@@ -32,8 +33,8 @@ namespace Control
             com.Connection.Close();
             return returnVal;
         }
-
-        public static DietitianE GetDietitianByDietitianID(int dietitianID)
+        // All of dietitian information get from Dietitian Table
+        public static DietitianE GetDietitianByDietitianID(int dietitianID) 
         {
             DietitianE dietitian = null;
             SqlCommand com = new SqlCommand("getDietitianByDietitianID", Connection.Con); // Prodecure
@@ -50,7 +51,7 @@ namespace Control
             {
                 if (rd.Read())
                 {
-                    dietitian = new DietitianE
+                    dietitian = new DietitianE // Fill new Dietitian Entitiy
                     {
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         AddressID = Convert.ToInt32(rd["AddressID"]),
