@@ -112,7 +112,7 @@ namespace Control
         public static BlogPostE GetBlogPostByBlogID(int blogID)
         {
             BlogPostE blogPost = null;
-            SqlCommand com = new SqlCommand("NewBlogPost", Connection.Con); // Prodecure
+            SqlCommand com = new SqlCommand("GetBlogPostByBlogID", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.Add(new SqlParameter("@blogID", blogID));
        
