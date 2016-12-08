@@ -11,7 +11,9 @@ namespace OnlineDietitian
 {
     public class Global : HttpApplication
     {
-        public static int userID;
+        // If users is not login, they are not see include of website
+        public static int userID; 
+
         void Application_Start(object sender, EventArgs e)
         {
             userID = -1;

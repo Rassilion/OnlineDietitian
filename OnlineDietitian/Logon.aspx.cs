@@ -18,9 +18,10 @@ namespace OnlineDietitian
 
         protected void Submit1_Click(object sender, EventArgs e)
         {
-            if (BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text) !=-1)
+            int t;
+            if ((t = BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text)) !=-1)
             {
-                Global.userID = 1;
+                Global.userID = t;
                 Response.Redirect("~/");
             }
             else
