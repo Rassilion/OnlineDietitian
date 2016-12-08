@@ -108,5 +108,38 @@ namespace Control
             com.Connection.Close();
 
         }
+
+        public static BlogPostE GetBlogPostByBlogID(int blogID)
+        {
+            BlogPostE blogPost = null;
+            SqlCommand com = new SqlCommand("NewBlogPost", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@blogID", blogID));
+       
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {               
+                if (rd.Read())
+                {
+                    blogPost = new BlogPostE
+                    {
+                        BlogID = Convert.ToInt32(rd["blogID"]),
+                        DietitanID = Convert.ToInt32(rd["dietitianID"]),
+                        Title = rd["title"].ToString(),
+                        BlogContent = rd["blogContent"].ToString(),
+                        PostDate = DateTime.Parse(rd["PostDate"].ToString())
+                    };
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return blogPost;
+        }
     }
 }

@@ -40,5 +40,10 @@ namespace BusinessLayers
         {
             return DietitianC.GetDietitianName(dietitianID);
         }
+        public static BlogPostE getBlogPostByBlogID(int blogID)
+        {
+            return BlogPostC.GetBlogPostByBlogID(blogID);
+        }
+
     }
 }
