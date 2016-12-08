@@ -63,7 +63,14 @@
                     <% }else{ %>
                     <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="#" title="Manage your account">Hello, <%: BusinessLayers.Business.getUserName( global_asax.userID)  %> !</a></li>
-                                
+                        
+                        <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LogOut">      
+                         Log Out 
+                        </asp:LinkButton></li> 
+                                 
+
+
+
                             </ul>
                     <% } %>
 

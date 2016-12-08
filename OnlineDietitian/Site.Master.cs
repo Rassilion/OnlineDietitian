@@ -77,6 +77,12 @@ namespace OnlineDietitian
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+
+        protected void LogOut(object sender, EventArgs e)
+        {
+            Global.userID = -1;
+        }
     }
 
 }

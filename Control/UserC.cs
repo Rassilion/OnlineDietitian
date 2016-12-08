@@ -12,7 +12,7 @@ namespace Control
     {
         public static int validateUser(string email,string password)
         {
-            int userID=-1;
+            int userID = -1; 
 
             SqlCommand com = new SqlCommand("ValidateUser", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;

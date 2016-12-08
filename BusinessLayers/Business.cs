@@ -53,6 +53,7 @@ namespace BusinessLayers
             return DietitianC.GetDietitianByDietitianID(dietitianID);
         }
 
+        // Login and User Start
         public static int validateUser(string email, string password)
         {
             return UserC.validateUser(email, password);
