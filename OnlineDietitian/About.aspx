@@ -27,7 +27,7 @@
         </HeaderTemplate>
         <ItemTemplate>
             <h2>
-                <a href="#<%# Eval("BlogID") %>">
+                <a href="blogpost/<%# Eval("BlogID") %>">
                     <asp:Label ID="blogPostTitle" runat="server" Text='<%# Eval("Title") %>' /></a>
             </h2>
             <p class="lead">
@@ -40,7 +40,7 @@
             <p>
                 <asp:Label ID="blogPostContent" runat="server" Text='<%# Eval("BlogContent") %>' />
             </p>
-            <a class="btn btn-primary" href="#">DEVAMI <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="btn btn-primary" href="blogpost/<%# Eval("BlogID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             <hr>
         </ItemTemplate>

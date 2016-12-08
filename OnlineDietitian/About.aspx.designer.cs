@@ -67,14 +67,6 @@ namespace OnlineDietitian {
         protected global::System.Web.UI.WebControls.Button deletePost_button;
         
         /// <summary>
-        /// blogPostRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater blogPostRepeater;
-        /// <summary>
         /// blogID_update_textbox control.
         /// </summary>
         /// <remarks>
@@ -82,7 +74,7 @@ namespace OnlineDietitian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox blogID_update_textbox;
-
+        
         /// <summary>
         /// dietitianID_update_textbox control.
         /// </summary>
@@ -91,7 +83,7 @@ namespace OnlineDietitian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dietitianID_update_textbox;
-
+        
         /// <summary>
         /// title_update_textbox control.
         /// </summary>
@@ -100,7 +92,7 @@ namespace OnlineDietitian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox title_update_textbox;
-
+        
         /// <summary>
         /// content_update_textbox control.
         /// </summary>
@@ -109,7 +101,7 @@ namespace OnlineDietitian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox content_update_textbox;
-
+        
         /// <summary>
         /// update_button control.
         /// </summary>
@@ -118,5 +110,14 @@ namespace OnlineDietitian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button update_button;
+        
+        /// <summary>
+        /// blogPostRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater blogPostRepeater;
     }
 }
