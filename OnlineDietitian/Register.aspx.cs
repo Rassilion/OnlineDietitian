@@ -20,18 +20,34 @@ namespace OnlineDietitian
 
         protected void Submit1_Click(object sender, EventArgs e)
         {
-            UserE user = new UserE();
-            user.AddressID = -1;
-            user.UserName = nameBox.Text;
-            user.UserSurname = surnameBox.Text;
-            user.UserEmail = emailBox.Text;
-            user.UserPassword = passwordBox.Text;
-            user.UserBirth = DateTime.Parse(birthBox.Text);
-            user.UserBodyPhoto = null;
+            int controlEmail = BusinessLayers.Business.checkUserEmail(emailBox.Text);
+            if (controlEmail != -1)
+            {
+
+                successLabel.Text = "This mail already exists";
+                successLabel.Visible = true;
+
+            }
+            else
+            {
+                UserE user = new UserE();
+                user.AddressID = -1;
+                user.UserName = nameBox.Text;
+                user.UserSurname = surnameBox.Text;
+                user.UserEmail = emailBox.Text;
+                user.UserPassword = passwordBox.Text;
+                user.UserBirth = DateTime.Parse(birthBox.Text);
+                user.UserBodyPhoto = null;
 
 
-            BusinessLayers.Business.insertUser(user);
-            successLabel.Visible = true; // Register success message
+                BusinessLayers.Business.insertUser(user);
+                successLabel.Text = "Success Register";
+                successLabel.Visible = true; // Register success message
+
+
+
+            }
+            
 
         }
     }

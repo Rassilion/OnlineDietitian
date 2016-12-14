@@ -101,6 +101,30 @@ namespace Control
 
         }
 
+        public static int CheckUserEmail(string email)
+        {
+            SqlCommand com = new SqlCommand("CheckUserEmail", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@email", email));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            int returnVal = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                returnVal = Convert.ToInt32(rd[0]);
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+
+            return returnVal;
+        }
+
 
     }
 }

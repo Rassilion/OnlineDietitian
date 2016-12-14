@@ -79,7 +79,7 @@
                     <div class="col-sm-offset-4 col-sm-8">
                         <asp:Button ID="Submit1" Text="Register" CssClass="btn btn-default" runat="server" OnClick="Submit1_Click" />
                     </div>
-                    <asp:Label ID="successLabel" runat="server" Text="Register Success " Visible="False"></asp:Label>
+                    <asp:Label ID="successLabel" runat="server" Text="0" Visible="False"></asp:Label>
                 </div>
 
             </form>
