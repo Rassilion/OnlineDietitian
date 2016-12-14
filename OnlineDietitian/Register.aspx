@@ -77,7 +77,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <asp:Button ID="Submit1" Text="Register" CssClass="btn btn-default" runat="server" />
+                        <asp:Button ID="Submit1" Text="Register" CssClass="btn btn-default" runat="server" OnClick="Submit1_Click" />
                     </div>
                 </div>
 
