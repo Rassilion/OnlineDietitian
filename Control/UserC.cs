@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entity;
 namespace Control
 {
     public class UserC
@@ -64,18 +64,30 @@ namespace Control
 
         // Register Statement
 
-        public static void InsertUser(int addresID, string name, string surname, string email, string password, string phone, string bodyPhoto)
+        public static void InsertUser(UserE user)
         {
-
+            
             SqlCommand com = new SqlCommand("InsertUser", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.Add(new SqlParameter("@addressID", addresID));
-            com.Parameters.Add(new SqlParameter("@name", name));
-            com.Parameters.Add(new SqlParameter("@surname", surname));
-            com.Parameters.Add(new SqlParameter("@email", email));
-            com.Parameters.Add(new SqlParameter("@password", password));
-            com.Parameters.Add(new SqlParameter("@phone", phone));
-            com.Parameters.Add(new SqlParameter("@bodyPhoto", bodyPhoto));
+            if(user.AddressID == -1)
+                com.Parameters.Add(new SqlParameter("@addressID", DBNull.Value));
+            else
+                com.Parameters.Add(new SqlParameter("@addressID", user.AddressID));
+            com.Parameters.Add(new SqlParameter("@name", user.UserName));
+            com.Parameters.Add(new SqlParameter("@surname", user.UserSurname));
+            com.Parameters.Add(new SqlParameter("@email", user.UserEmail));
+            com.Parameters.Add(new SqlParameter("@password", user.UserPassword));
+            if(user.UserPhone != null)
+                com.Parameters.Add(new SqlParameter("@phone", user.UserPhone));
+            else
+                com.Parameters.Add(new SqlParameter("@phone", DBNull.Value));
+
+            com.Parameters.Add(new SqlParameter("@birthdate", user.UserBirth));
+            if (user.UserPhone != null)
+                com.Parameters.Add(new SqlParameter("@bodyPhoto", user.UserBodyPhoto));
+            else
+                com.Parameters.Add(new SqlParameter("@bodyPhoto", DBNull.Value));
+
 
             if (com.Connection.State == ConnectionState.Closed)
             {

@@ -66,9 +66,10 @@ namespace BusinessLayers
 
 
         //Register Start
-        public static void insertUser(int addresID, string name, string surname, string email, string password, string phone, string bodyPhoto)
+        public static void insertUser(UserE user)
         {
-            UserC.InsertUser(addresID,  name,  surname,  email,  password,  phone,  bodyPhoto);
+
+            UserC.InsertUser(user);
         }
     }
 }

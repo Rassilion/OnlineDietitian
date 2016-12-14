@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="OnlineDietitian.Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="OnlineDietitian.Register" enableEventValidation="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
@@ -79,6 +79,7 @@
                     <div class="col-sm-offset-4 col-sm-8">
                         <asp:Button ID="Submit1" Text="Register" CssClass="btn btn-default" runat="server" OnClick="Submit1_Click" />
                     </div>
+                    <asp:Label ID="successLabel" runat="server" Text="Register Success " Visible="False"></asp:Label>
                 </div>
 
             </form>
