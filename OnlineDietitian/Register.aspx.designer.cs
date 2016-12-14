@@ -7,99 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineDietitian.Account {
+namespace OnlineDietitian {
     
     
-    public partial class TwoFactorAuthenticationSignIn {
+    public partial class Register {
         
         /// <summary>
-        /// sendcode control.
+        /// emailBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder sendcode;
+        protected global::System.Web.UI.WebControls.TextBox emailBox;
         
         /// <summary>
-        /// Providers control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Providers;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// ProviderSubmit control.
+        /// passwordBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ProviderSubmit;
+        protected global::System.Web.UI.WebControls.TextBox passwordBox;
         
         /// <summary>
-        /// verifycode control.
+        /// passwordConfirmBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder verifycode;
+        protected global::System.Web.UI.WebControls.TextBox passwordConfirmBox;
         
         /// <summary>
-        /// SelectedProvider control.
+        /// nameBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField SelectedProvider;
+        protected global::System.Web.UI.WebControls.TextBox nameBox;
         
         /// <summary>
-        /// ErrorMessage control.
+        /// surnameBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ErrorMessage;
+        protected global::System.Web.UI.WebControls.TextBox surnameBox;
         
         /// <summary>
-        /// FailureText control.
+        /// birthBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal FailureText;
+        protected global::System.Web.UI.WebControls.TextBox birthBox;
         
         /// <summary>
-        /// Code control.
+        /// Submit1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Code;
-        
-        /// <summary>
-        /// RememberBrowser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox RememberBrowser;
-        
-        /// <summary>
-        /// CodeSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CodeSubmit;
+        protected global::System.Web.UI.WebControls.Button Submit1;
     }
 }
