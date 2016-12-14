@@ -35,14 +35,25 @@ namespace OnlineDietitian
                 user.UserName = nameBox.Text;
                 user.UserSurname = surnameBox.Text;
                 user.UserEmail = emailBox.Text;
-                user.UserPassword = passwordBox.Text;
                 user.UserBirth = DateTime.Parse(birthBox.Text);
                 user.UserBodyPhoto = null;
+                if(passwordBox.Text == passwordConfirmBox.Text) // Same password control
+                {
+                    user.UserPassword = passwordBox.Text;
+                    BusinessLayers.Business.insertUser(user);
+                    successLabel.Text = "Success Register";
+                    successLabel.Visible = true; // Register success message
+                }
+                else
+                {
+                    successLabel.Text = "Passwords are not the same.";
+                    successLabel.Visible = true;
+
+                }
+                    
 
 
-                BusinessLayers.Business.insertUser(user);
-                successLabel.Text = "Success Register";
-                successLabel.Visible = true; // Register success message
+
 
 
 
