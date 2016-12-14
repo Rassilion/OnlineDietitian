@@ -63,5 +63,12 @@ namespace BusinessLayers
         {
             return UserC.GetUserName(userID);
         }
+
+
+        //Register Start
+        public static void insertUser(int addresID, string name, string surname, string email, string password, string phone, string bodyPhoto)
+        {
+            UserC.InsertUser(addresID,  name,  surname,  email,  password,  phone,  bodyPhoto);
+        }
     }
 }
