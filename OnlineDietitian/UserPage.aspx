@@ -126,7 +126,8 @@
 </head>
 <body>
 
-<button href=" " class="button"<h2>Please click for select dietitian</h2></button>
+<asp:Button ID="dietitianButton" Text="Please click for select dietitian" CssClass="button" runat="server" OnClick="dietitianButton_Click" />               
+
 
 </body>
 </html>
