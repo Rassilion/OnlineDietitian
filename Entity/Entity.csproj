@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentE.cs" />
-    <Compile Include="AddressE.cs" />
     <Compile Include="BlogPostE.cs" />
     <Compile Include="DietE.cs" />
     <Compile Include="DietitanE.cs" />

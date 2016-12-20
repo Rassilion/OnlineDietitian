@@ -9,7 +9,7 @@ namespace Entity
     public class UserE
     {
         public int UserID { get; set; }
-        public int AddressID { get; set; }
+        public string Address { get; set; }
         public string UserEmail { get; set; }
         public string UserPassword { get; set; }
         public string UserName { get; set; }

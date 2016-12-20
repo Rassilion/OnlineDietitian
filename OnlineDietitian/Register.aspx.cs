@@ -33,7 +33,6 @@ namespace OnlineDietitian
             else
             {
                 UserE user = new UserE();
-                user.AddressID = -1;
                 user.UserName = nameBox.Text;
                 user.UserSurname = surnameBox.Text;
                 user.UserEmail = emailBox.Text;

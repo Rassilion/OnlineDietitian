@@ -32,7 +32,7 @@ namespace Control
                     user = new UserE
                     {
                         UserID = Convert.ToInt32(rd["UserID"]),
-                        AddressID = rd["AddressID"] == DBNull.Value ? -1 : Convert.ToInt32(rd["AddressID"]),
+                        Address = rd["AddressID"] == DBNull.Value ? "" : rd["AddressID"].ToString(),
                         UserBodyPhoto = rd["BodyPhoto"]==DBNull.Value?"": rd["BodyPhoto"].ToString(),
                         UserBirth = DateTime.Parse(rd["UserBirth"].ToString()),
                         UserPhone = rd["UserPhone"] == DBNull.Value ? "" : rd["UserPhone"].ToString(),
@@ -79,10 +79,10 @@ namespace Control
 
             SqlCommand com = new SqlCommand("InsertUser", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
-            if (user.AddressID == -1)
+            if (user.Address == null)
                 com.Parameters.Add(new SqlParameter("@addressID", DBNull.Value));
             else
-                com.Parameters.Add(new SqlParameter("@addressID", user.AddressID));
+                com.Parameters.Add(new SqlParameter("@addressID", user.Address));
             com.Parameters.Add(new SqlParameter("@name", user.UserName));
             com.Parameters.Add(new SqlParameter("@surname", user.UserSurname));
             com.Parameters.Add(new SqlParameter("@email", user.UserEmail));
