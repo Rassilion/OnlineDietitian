@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MoreInformation.aspx.cs" Inherits="OnlineDietitian.MoreInformation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <% if (Session["user"] == null)
-        { Response.Redirect("~/Logon.aspx"); }%>
+      <%  if (Session["user"] == null)
+         Response.Redirect("~/Logon.aspx");  %>
       <hr />
 
 <!-- nav bar -->
@@ -86,11 +86,11 @@
              <div class="bs-callout bs-callout-danger">
                 <h4>More Information</h4>
                   <div class="form-group row">
-                    <label class="control-label col-sm-3">Gender</label>
+                    <label class="control-label col-sm-2" for="pwd">Gender</label>
                    <asp:DropDownList ID="ddlGender" CssClass="btn btn-primary" runat="server" Width="200px">
                         <asp:ListItem Text="Select Gender" Value="0"></asp:ListItem>
-                        <asp:ListItem Text="Male" Value="1"></asp:ListItem>
-                        <asp:ListItem Text="Female" Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+                        <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
                     </asp:DropDownList>
                 </div> 
                 <div class="form-group row">
@@ -112,14 +112,14 @@
                 <div class="form-group row">
                   <label for="example-email-input" class="col-xs-2 col-form-label">Name</label>
                   <div class="col-xs-10">
-                    <asp:TextBox type="search" CssClass="form-control" ID="weightBox" placeholder="kg" runat="server"></asp:TextBox>
+                    <asp:TextBox type="search" CssClass="form-control" ID="nameBox" placeholder="kg" runat="server"></asp:TextBox>
 
                   </div>
                 </div>
                   <div class="form-group row">
                   <label for="example-text-input" class="col-xs-2 col-form-label">Surname</label>
                   <div class="col-xs-10">
-                    <asp:TextBox type="search" CssClass="form-control" ID="heightBox" placeholder="cm" runat="server"></asp:TextBox>
+                    <asp:TextBox type="search" CssClass="form-control" ID="surnameBox" placeholder="cm" runat="server"></asp:TextBox>
                     
                   </div>
                 </div>
@@ -130,20 +130,34 @@
                     
                   </div>
                 </div>
+                  <div class="form-group row">
+                    <label class="control-label col-sm-2" for="pwd">Birth Date</label>
+                    <div class="col-sm-5">
+                        <asp:TextBox type="date" CssClass="form-control" ID="birthBox" runat="server"></asp:TextBox>
+                    </div>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6"
+                            ControlToValidate="birthBox"
+                            Display="Dynamic"
+                            ErrorMessage="Cannot be empty."
+                            runat="server" />
+                </div>
+
                 <div class="form-group row">
                   <label for="example-search-input" class="col-xs-2 col-form-label">Change Password</label>
                   <div class="col-xs-10">
-                       <asp:TextBox type="search" CssClass="form-control" ID="drugBox"  runat="server"></asp:TextBox>
+                       <asp:TextBox type="password" CssClass="form-control" ID="changePasswordBox"  runat="server"></asp:TextBox>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="example-email-input" class="col-xs-2 col-form-label">Confirm Password</label>
                   <div class="col-xs-10">
-                    <asp:TextBox type="search" CssClass="form-control" ID="diseaseBox" runat="server"></asp:TextBox>
+                    <asp:TextBox type="password" CssClass="form-control" ID="confirmBox" runat="server"></asp:TextBox>
 
                   </div>
                 </div>
                 <asp:Button ID="saveButton" Text="Save" CssClass="btn btn-primary" runat="server" OnClick="saveButton_Click" />               
+
+                 <asp:Label ID="successLabel" runat="server" Text="Label" Visible="False"></asp:Label>
 
              </div>
 

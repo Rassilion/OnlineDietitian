@@ -135,19 +135,22 @@ namespace Control
             return returnVal;
         }
 
-        public static void UpdateUser(string email, string password, string name, string surname, string phone, DateTime birth, string address, string gender)
+        public static void UpdateUser(UserE user)
         {
 
-            SqlCommand com = new SqlCommand("UpdateBlogPost", Connection.Con); // Prodecure
+            SqlCommand com = new SqlCommand("UpdateUser", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.Add(new SqlParameter("@email", email));
-            com.Parameters.Add(new SqlParameter("@password", password));
-            com.Parameters.Add(new SqlParameter("@name", name));
-            com.Parameters.Add(new SqlParameter("@surname", surname));
-            com.Parameters.Add(new SqlParameter("@phone", phone));
-            com.Parameters.Add(new SqlParameter("@birth", birth));
-            com.Parameters.Add(new SqlParameter("@address", address));
-            com.Parameters.Add(new SqlParameter("@gender", gender));
+            com.Parameters.Add(new SqlParameter("@id", user.UserID));
+            com.Parameters.Add(new SqlParameter("@userEmail", user.UserEmail));
+            com.Parameters.Add(new SqlParameter("@userPassword", user.UserPassword));
+            com.Parameters.Add(new SqlParameter("@userName", user.UserName));
+            com.Parameters.Add(new SqlParameter("@userSurname", user.UserSurname));
+            com.Parameters.Add(new SqlParameter("@userPhone", user.UserPhone));
+            com.Parameters.Add(new SqlParameter("@birthdate", user.UserBirth));
+            com.Parameters.Add(new SqlParameter("@userAddress", user.Address));
+            com.Parameters.Add(new SqlParameter("@gender", user.Gender));
+            com.Parameters.Add(new SqlParameter("@bodyPhoto", user.UserBodyPhoto));
+
 
 
 

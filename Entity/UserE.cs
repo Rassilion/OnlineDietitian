@@ -17,6 +17,7 @@ namespace Entity
         public string UserPhone { get; set; }
         public string UserBodyPhoto { get; set; }
         public DateTime UserBirth { get; set; }
+        public string Gender { get; set; }
 
         public String getNameSurname()
         {

@@ -77,5 +77,12 @@ namespace BusinessLayers
             return UserC.CheckUserEmail(email);
 
         }
+
+        // UserPage Start
+        public static void updateUser(UserE user)
+        {
+            UserC.UpdateUser(user);
+        }
+
     }
 }

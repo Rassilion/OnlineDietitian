@@ -40,22 +40,22 @@ namespace OnlineDietitian {
         protected global::System.Web.UI.WebControls.TextBox bodyPhotoBox;
         
         /// <summary>
-        /// weightBox control.
+        /// nameBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox weightBox;
+        protected global::System.Web.UI.WebControls.TextBox nameBox;
         
         /// <summary>
-        /// heightBox control.
+        /// surnameBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox heightBox;
+        protected global::System.Web.UI.WebControls.TextBox surnameBox;
         
         /// <summary>
         /// phoneBox control.
@@ -67,22 +67,40 @@ namespace OnlineDietitian {
         protected global::System.Web.UI.WebControls.TextBox phoneBox;
         
         /// <summary>
-        /// drugBox control.
+        /// birthBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox drugBox;
+        protected global::System.Web.UI.WebControls.TextBox birthBox;
         
         /// <summary>
-        /// diseaseBox control.
+        /// RequiredFieldValidator6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox diseaseBox;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        
+        /// <summary>
+        /// changePasswordBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox changePasswordBox;
+        
+        /// <summary>
+        /// confirmBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox confirmBox;
         
         /// <summary>
         /// saveButton control.
@@ -92,5 +110,14 @@ namespace OnlineDietitian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button saveButton;
+        
+        /// <summary>
+        /// successLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label successLabel;
     }
 }

@@ -81,20 +81,58 @@
                   </div>
                </div>
                <div class="bs-callout bs-callout-danger">
-                  <h4>Select Diet</h4>
-                   <div class="card card-inverse card-success text-xs-center">
-                      <div class="card-block">
-                        <blockquote class="card-blockquote">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
-                      </div>
-                    </div>
-               
-               </div>
+                  <h4>New Diet</h4>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    margin: 0px 0px 0px 20%;
+    width: 500px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
 
-            </div>
-         </div>
+.button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+</style>
+</head>
+<body>
+
+<button href=" " class="button"<h2>Please click for select dietitian</h2></button>
+
+</body>
+</html>
+</div>
+</div>
+</div>
         <!-- resume -->
 
     </div>
