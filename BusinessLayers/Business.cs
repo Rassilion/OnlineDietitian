@@ -71,5 +71,11 @@ namespace BusinessLayers
 
             UserC.InsertUser(user);
         }
+
+        public static int checkUserEmail(string email)
+        {
+            return UserC.CheckUserEmail(email);
+
+        }
     }
 }

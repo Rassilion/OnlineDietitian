@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entity;
 using BusinessLayers;
+using System.Threading;
+
 namespace OnlineDietitian
 {
     public partial class Register : System.Web.UI.Page
@@ -20,19 +22,39 @@ namespace OnlineDietitian
 
         protected void Submit1_Click(object sender, EventArgs e)
         {
-            UserE user = new UserE();
-            user.AddressID = -1;
-            user.UserName = nameBox.Text;
-            user.UserSurname = surnameBox.Text;
-            user.UserEmail = emailBox.Text;
-            user.UserPassword = passwordBox.Text;
-            user.UserBirth = DateTime.Parse(birthBox.Text);
-            user.UserBodyPhoto = null;
+            int controlEmail = BusinessLayers.Business.checkUserEmail(emailBox.Text);
+            if (controlEmail != -1)
+            {
 
+                successLabel.Text = "This mail already exists";
+                successLabel.Visible = true;
 
-            BusinessLayers.Business.insertUser(user);
-            successLabel.Visible = true; // Register success message
+            }
+            else
+            {
+                UserE user = new UserE();
+                user.AddressID = -1;
+                user.UserName = nameBox.Text;
+                user.UserSurname = surnameBox.Text;
+                user.UserEmail = emailBox.Text;
+                user.UserBirth = DateTime.Parse(birthBox.Text);
 
+                if(passwordBox.Text == passwordConfirmBox.Text) // Same password control
+                {
+                    user.UserPassword = passwordBox.Text;
+                    BusinessLayers.Business.insertUser(user);
+                    successLabel.Text = "Success Register";
+                    successLabel.Visible = true; // Register success message
+
+                    Response.AddHeader("REFRESH", "2;URL=Default.aspx"); // Waiting 2 second 
+                }
+                else
+                {
+                    successLabel.Text = "Passwords are not the same.";
+                    successLabel.Visible = true;
+
+                }
+            }
         }
     }
 }
