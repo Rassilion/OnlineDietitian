@@ -11,7 +11,6 @@ namespace Entity
 
         public int ReportID { get; set; }
         public int DietID { get; set; }
-
         public int UserID { get; set; }
         public DateTime Date { get; set; }
         public string UsedDrugs { get; set; }
