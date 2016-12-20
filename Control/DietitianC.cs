@@ -54,7 +54,7 @@ namespace Control
                     dietitian = new DietitianE // Fill new Dietitian Entitiy
                     {
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
-                        AddressID = Convert.ToInt32(rd["AddressID"]),
+                        Address = rd["Address"].ToString(),
                         DietID = Convert.ToInt32(rd["DietID"]),
                         DietitianLicense = rd["DietitianLicense"].ToString(),
                         CV = rd["CV"].ToString(),
