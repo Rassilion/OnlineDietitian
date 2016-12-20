@@ -1,173 +1,105 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="OnlineDietitian.UserPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <% if (Session["user"] == null)
+        { Response.Redirect("~/Logon.aspx"); }%>
+    <hr />
 
-
-    <br><br>
-
-
-<div class="M1"   >
-<div class="container-fluid " ><br><br>
-<div  class="col-xs-2 col-md-5">
-<div  class="col-xs-1 col-md-3 style=" padding-left:0px; ">
-<div style="text-align: left;">
+<!-- nav bar -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-       <div class="btn-group btn-group-vertical">
-            <div class="btn-group"> 
-                <button type="button" class="btn btn-nav" onclick="javascript:window.location.href='http://bootsnipp.com/user/snippets/X0Gjv'">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <p>Profile</p>
-                </button>
-              </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-nav  " >
-                    <span class="glyphicon glyphicon-calendar"></span>
-    			    <p>Calendar</p>
-                </button>
-            </div>
-             <div class="btn-group">
-                <button type="button" class="btn btn-nav">
-                    <span class="glyphicon glyphicon-globe"></span>
-        		    <p>Network</p>
-                </button>
-            </div>
-                 
-            <div class="btn-group">
-                <button type="button" class="btn btn-nav">
-                    <span class="glyphicon glyphicon-picture"></span>
-    			    <p>Upload </p>
-                </button>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-nav">
-                    <span class="glyphicon glyphicon-time"></span>
-    			    <p>Statistics</p>
-                </button>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-nav">
-                    <span class="glyphicon glyphicon-bell"></span>
-    			    <p>Events</p>
-                </button>
-            </div>
-            
-	</div>
-</div>
-</div>
-</div>
-    	<form role="form" class="form-inline col-md-9 go-right" style="color: Green;background-color:#FAFAFF;border-radius:0px 22px 22px 22px; ">
-			<h2>Profile</h2>
-            <p>Please update your profile for more security.</p>
-		<div class="form-group">            
-			<input id="Firstname" name="Firstname" type="text" class="form-control" required>
-			<label for="Firstname">First Name <span class="glyphicon glyphicon-user"> </span></label>
-		</div>
-        <div class="form-group">
-    		<input id="Lastname" name="Lastname" type="text" class="form-control" required>
-			<label for="Lastname">Last Name <span class="glyphicon glyphicon-user"> </label>
-		</div>
-        <br>
-        <br>
-		<div class="form-group">
-			<input id="phone" name="phone" type="tel" class="form-control" required>
-			<label for="fphone">Primary Phone <span class="glyphicon glyphicon-phone"></label>
-		</div>
-       <div class="form-group">
-    		<input id="password" name="phone" type="tel" class="form-control" placeholder="secondary phone">
-			<label for="sphone">Secondary Phone <span class="glyphicon glyphicon-phone"></label>
-		</div>
-        <br><br>
-        <div class="form-group">
-        	<input id="date" name="date" type="date" class="form-control" style="color:red">
-		</div>
-        <div class="form-group">        
-            <select class="form-control">
-              <option id="Male" Value="M" style="color:red" selected>Male</option>
-              <option id="FeMale" Value="FM"  style="color:green">Female</option>
-              <option id="NotInterested" Value="NI"  style="color:blue">Not interested</option>
-            </select>
-       </div>
-        <br><br>
-         <div class="form-group">
-			<textarea id="message" name="phone" class="form-control" style="width:400px;height:100px" placeholder="Short Description" ></textarea>
-			<label for="message">Short Description <span class="glyphicon glyphicon-align-justify"></label>
-		</div>
-        <br><br>
-         <div class="form-group">
-    		<input id="Email1" name="phone" class="form-control" style="width:400px;" placeholder="Registered email" ></textarea>
-			<label for="Email1">Registered email <span class="glyphicon glyphicon-align-envelope"></label>
-		</div>
-        <br><br>
-         <div class="form-group">
-        	<input id="Email2" name="phone" class="form-control" style="width:400px;" placeholder="Alternate email" ></textarea>
-			<label for="Email2">Alternate email <span class="glyphicon glyphicon-align-envelope"></label>
-		</div>
- 
-        <br><br>
-         <div class="form-group">
-            <input id="Vweb" name="phone" class="form-control" style="width:400px;" placeholder="Website" ></textarea>
-			<label for="Vweb">WebSite <span class="glyphicon glyphicon-align-envelope"></label>
-		</div>
-        <br>
-        <br>
-        <p1>Address</p1>
-        <br>
-        <div class="form-group">
-            <input id="Address" name="Address" type="tel" class="form-control"   required>
-			<label for="Address">Flat NO/House No</label>
-		</div>
-        <div class="form-group">
-            <input id="LandMark" name="LandMark" type="text" class="form-control" placeHolder="Land Mark">
-            <label for="LandMark">Land Mark</label>
-		</div>        
-        <br><br>
-        <p3>(Enter Pincode/Area to pick your nearest location)<span class="glyphicon glyphicon-map-marker"></p3>
-        <br><br>
-        <div class="form-group  ">
-            <input class="form-control"  style="width: 400px" id="autocomplete" name="LocationPicker" type="text" onFocus="geolocate()" style=" moz-border-radius: 22px;border-radius: 7px;"  >
-		</div>
-        <br><br>
-         <div class="form-group">
-            <input id="route" name="route" type="tel" class="form-control"   required disabled="true">
-        	<label for="route">Route/Locality</label>
-		</div>
-        <div class="form-group">
-            <input id="locality" name="locality" type="tel" class="form-control"   required disabled="true">
-			<label for="locality">City/Town</label>
-		</div>
-        <br>
-        <div class="form-group">
-            <input id="administrative_area_level_2" name="administrative_area_level_2" type="tel" class="form-control"   required disabled="true">
-    		<label for="administrative_area_level_2">District</label>
-		</div>
-        <div class="form-group">
-            <input id="administrative_area_level_1" name="administrative_area_level_1" type="tel" class="form-control"   required disabled="true">
-			<label for="administrative_area_level_1">State</label>
-		</div>
-        <br>
-        <div class="form-group">
-            <input id="country" name="country" type="text" class="form-control"   required disabled="true">
-    		<label for="country">Country</label>
-		</div>
-        <div class="form-group">
-            <input id="postal_code" name="postal_code" type="tel" class="form-control"   required disabled="true">
-			<label for="postal_code">Pin Code</label>
-		</div>
+<div class="row">
+    <div class="col-sm-3">
+        <a href="mail-compose.html" class="btn btn-danger btn-block btn-compose-email">Compose Email</a>
+        <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
+            <li class="active">
+                <a href="#mail-inbox.html">
+                    <i class="fa fa-inbox"></i> Inbox  <span class="label pull-right">7</span>
+                </a>
+            </li>
+            <li>
+                <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i> Send Mail</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-certificate"></i> Important</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-file-text-o"></i> Drafts <span class="label label-info pull-right inbox-notification">35</span>
+                </a>
+            </li>
+            <li><a href="#"> <i class="fa fa-trash-o"></i> Trash</a></li>
+        </ul><!-- /.nav -->
+
+        <h5 class="nav-email-subtitle">More</h5>
+        <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
+            <li>
+                <a href="/MoreInformation">
+                    <i class="fa fa-folder-open"></i> Information Update  <span class="label label-danger pull-right">3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-folder-open"></i> Job list
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-folder-open"></i> Backup
+                </a>
+            </li>
+        </ul><!-- /.nav -->
+    </div>
+    <div class="col-sm-9">
         
-        <br><br>
-        <button>
-            Save
-        </button>
-        <br>
-        <br>
-        </form>
-      </div>
-      
+        <!-- resumt -->
+        <div class="panel panel-default">
+               <div class="panel-heading resume-heading">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="col-xs-12 col-sm-4">
+                           <figure>
+                              <img class="img-circle img-responsive" alt="" src="http://placehold.it/300x300">
+                           </figure>
+                           <div class="row">
+                              <div class="col-xs-12 social-btns">
+                                 
+                              </div>
+                              
+                              
+                           </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                           <ul class="list-group">
+                              <li class="list-group-item"> <%: (Session["user"] as Entity.UserE).UserName + " " + (Session["user"] as Entity.UserE).UserSurname %></li>
+                              <li class="list-group-item"><%: " " + (Session["user"] as Entity.UserE).UserBirth%></li>
+                              <li class="list-group-item">Google Inc. </li>
+                              <li class="list-group-item"><i class="fa fa-phone"></i> <%: " " + (Session["user"] as Entity.UserE).UserPhone%> </li>
+                              <li class="list-group-item"><i class="fa fa-envelope"></i> <%: " " + (Session["user"] as Entity.UserE).UserEmail %> </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="bs-callout bs-callout-danger">
+                  <h4>Select Diet</h4>
+                   <div class="card card-inverse card-success text-xs-center">
+                      <div class="card-block">
+                        <blockquote class="card-blockquote">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                        </blockquote>
+                      </div>
+                    </div>
+               
+               </div>
 
+            </div>
+         </div>
+        <!-- resume -->
+
+    </div>
 </div>
 </div>
-
-
-
 
 
 
