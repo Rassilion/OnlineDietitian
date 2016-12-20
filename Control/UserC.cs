@@ -12,7 +12,7 @@ namespace Control
     {
         // Logon Statement
         // Control email and password by database
-        public static UserE validateUser(string email,string password)
+        public static UserE validateUser(string email, string password)
         {
             UserE user = null;
             SqlCommand com = new SqlCommand("ValidateUser", Connection.Con); // Prodecure
@@ -32,10 +32,10 @@ namespace Control
                     user = new UserE
                     {
                         UserID = Convert.ToInt32(rd["UserID"]),
-                        AddressID = Convert.ToInt32(rd["AddressID"]),
-                        UserBodyPhoto = rd["BodyPhoto"].ToString(),
+                        AddressID = rd["AddressID"] == DBNull.Value ? -1 : Convert.ToInt32(rd["AddressID"]),
+                        UserBodyPhoto = rd["BodyPhoto"]==DBNull.Value?"": rd["BodyPhoto"].ToString(),
                         UserBirth = DateTime.Parse(rd["UserBirth"].ToString()),
-                        UserPhone = rd["UserPhone"].ToString(),
+                        UserPhone = rd["UserPhone"] == DBNull.Value ? "" : rd["UserPhone"].ToString(),
                         UserEmail = rd["UserEmail"].ToString(),
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
@@ -76,10 +76,10 @@ namespace Control
 
         public static void InsertUser(UserE user)
         {
-            
+
             SqlCommand com = new SqlCommand("InsertUser", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
-            if(user.AddressID == -1)
+            if (user.AddressID == -1)
                 com.Parameters.Add(new SqlParameter("@addressID", DBNull.Value));
             else
                 com.Parameters.Add(new SqlParameter("@addressID", user.AddressID));
@@ -87,7 +87,7 @@ namespace Control
             com.Parameters.Add(new SqlParameter("@surname", user.UserSurname));
             com.Parameters.Add(new SqlParameter("@email", user.UserEmail));
             com.Parameters.Add(new SqlParameter("@password", user.UserPassword));
-            if(user.UserPhone != null)
+            if (user.UserPhone != null)
                 com.Parameters.Add(new SqlParameter("@phone", user.UserPhone));
             else
                 com.Parameters.Add(new SqlParameter("@phone", DBNull.Value));

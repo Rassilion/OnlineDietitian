@@ -20,7 +20,7 @@ namespace Entity
 
         public String getNameSurname()
         {
-            return UserSurname + " " + UserSurname;
+            return UserName + " " + UserSurname;
         }
 
     }
