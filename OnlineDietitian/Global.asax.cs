@@ -21,7 +21,7 @@ namespace OnlineDietitian
         void Session_Start(object sender, EventArgs e)
         {
             // If users is not login, they are not see include of website
-            Session["userID"] = -1;
+            Session["user"] = null;
         }
     }
 }

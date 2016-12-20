@@ -54,7 +54,7 @@ namespace BusinessLayers
         }
 
         // Login and User Start
-        public static int validateUser(string email, string password)
+        public static UserE validateUser(string email, string password)
         {
             return UserC.validateUser(email, password);
         }

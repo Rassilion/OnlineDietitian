@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Blog" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Blog.aspx.cs" Inherits="OnlineDietitian.About" ValidateRequest="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <% if (Convert.ToInt32(Session["userID"]) != -1)
+    <% if (Session["user"] != null)
         {%>
     <div class="jumbotron">
         <h3>DEBUG</h3>

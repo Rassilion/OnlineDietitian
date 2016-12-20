@@ -6,6 +6,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessLayers;
+using Entity;
 
 namespace OnlineDietitian
 {
@@ -18,10 +19,10 @@ namespace OnlineDietitian
 
         protected void Submit1_Click(object sender, EventArgs e)
         {
-            int t; // Control database for login
-            if ((t = BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text)) !=-1)
+            UserE user; // Control database for login
+            if ((user = BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text)) !=null)
             {
-                Session["userID"] = t;
+                Session["user"] = user;
                 Response.Redirect("~/");
             }
             else // Invalid email or password

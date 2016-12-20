@@ -12,10 +12,9 @@ namespace Control
     {
         // Logon Statement
         // Control email and password by database
-        public static int validateUser(string email,string password)
+        public static UserE validateUser(string email,string password)
         {
-            int userID = -1; 
-
+            UserE user = null;
             SqlCommand com = new SqlCommand("ValidateUser", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.Add(new SqlParameter("@Email", email));
@@ -30,13 +29,24 @@ namespace Control
             {
                 if (rd.Read())
                 {
-                    userID = Convert.ToInt32(rd[0]);
+                    user = new UserE
+                    {
+                        UserID = Convert.ToInt32(rd["UserID"]),
+                        AddressID = Convert.ToInt32(rd["AddressID"]),
+                        UserBodyPhoto = rd["BodyPhoto"].ToString(),
+                        UserBirth = DateTime.Parse(rd["UserBirth"].ToString()),
+                        UserPhone = rd["UserPhone"].ToString(),
+                        UserEmail = rd["UserEmail"].ToString(),
+                        UserName = rd["UserName"].ToString(),
+                        UserPassword = rd["UserPassword"].ToString(),
+                        UserSurname = rd["UserSurname"].ToString()
+                    };
                 }
             }
 
             com.Dispose();
             com.Connection.Close();
-            return userID;
+            return user;
         }
 
         // User name get with userID from database

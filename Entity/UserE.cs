@@ -18,7 +18,10 @@ namespace Entity
         public string UserBodyPhoto { get; set; }
         public DateTime UserBirth { get; set; }
 
-
+        public String getNameSurname()
+        {
+            return UserSurname + " " + UserSurname;
+        }
 
     }
 }

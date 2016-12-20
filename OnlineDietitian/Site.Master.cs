@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using BusinessLayers;
+using Entity;
 
 namespace OnlineDietitian
 {
@@ -81,7 +82,7 @@ namespace OnlineDietitian
         // Logout click function
         protected void LogOut(object sender, EventArgs e)
         {
-            Session["userID"] = -1;
+            Session["user"] = null;
         }
     }
 
