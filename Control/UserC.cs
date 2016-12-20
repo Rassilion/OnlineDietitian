@@ -135,6 +135,35 @@ namespace Control
             return returnVal;
         }
 
+        public static void UpdateUser(string email, string password, string name, string surname, string phone, DateTime birth, string address, string gender)
+        {
+
+            SqlCommand com = new SqlCommand("UpdateBlogPost", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@email", email));
+            com.Parameters.Add(new SqlParameter("@password", password));
+            com.Parameters.Add(new SqlParameter("@name", name));
+            com.Parameters.Add(new SqlParameter("@surname", surname));
+            com.Parameters.Add(new SqlParameter("@phone", phone));
+            com.Parameters.Add(new SqlParameter("@birth", birth));
+            com.Parameters.Add(new SqlParameter("@address", address));
+            com.Parameters.Add(new SqlParameter("@gender", gender));
+
+
+
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+
+            com.Dispose();
+            com.Connection.Close();
+
+        }
+
 
     }
 }
