@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entity;
 using BusinessLayers;
+using System.Threading;
+
 namespace OnlineDietitian
 {
     public partial class Register : System.Web.UI.Page
@@ -36,13 +38,15 @@ namespace OnlineDietitian
                 user.UserSurname = surnameBox.Text;
                 user.UserEmail = emailBox.Text;
                 user.UserBirth = DateTime.Parse(birthBox.Text);
-                user.UserBodyPhoto = null;
+
                 if(passwordBox.Text == passwordConfirmBox.Text) // Same password control
                 {
                     user.UserPassword = passwordBox.Text;
                     BusinessLayers.Business.insertUser(user);
                     successLabel.Text = "Success Register";
                     successLabel.Visible = true; // Register success message
+
+                    Response.AddHeader("REFRESH", "2;URL=Default.aspx"); // Waiting 2 second 
                 }
                 else
                 {
@@ -50,16 +54,7 @@ namespace OnlineDietitian
                     successLabel.Visible = true;
 
                 }
-                    
-
-
-
-
-
-
             }
-            
-
         }
     }
 }
