@@ -7,15 +7,17 @@ using System.Web.UI.WebControls;
 
 namespace OnlineDietitian
 {
-    public partial class UserPage : System.Web.UI.Page
+    public partial class MoreInformation : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void saveButton_Click(object sender, EventArgs e)
+        {
 
 
         }
-
-
     }
 }
