@@ -29,5 +29,36 @@ namespace Control
             com.Connection.Close();
 
         }
+        public static void InsertDiet(DietE diet)
+        {
+
+            SqlCommand com = new SqlCommand("InsertDiet", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+           
+            com.Parameters.Add(new SqlParameter("@dietitianID", diet.DietitianID));
+            com.Parameters.Add(new SqlParameter("@userID", diet.UserID));
+            if (diet.DietRequestID != 0)
+                com.Parameters.Add(new SqlParameter("@dietRequestID", diet.DietRequestID));
+            else
+                com.Parameters.Add(new SqlParameter("@dietRequestID", DBNull.Value));
+
+            if (diet.DietContent != null)
+                com.Parameters.Add(new SqlParameter("@dietRequestID", diet.DietContent));
+            else
+                com.Parameters.Add(new SqlParameter("@dietRequestID", DBNull.Value));
+
+
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+
+            com.Dispose();
+            com.Connection.Close();
+
+        }
     }
 }
