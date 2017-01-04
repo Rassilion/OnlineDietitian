@@ -8,7 +8,7 @@
         <p>
             <asp:TextBox ID="dietitianID_textbox" runat="server">DietitianID</asp:TextBox>
             <asp:TextBox ID="title_textbox" runat="server">Title</asp:TextBox>
-            <asp:TextBox ID="content_textbox" CssClass="newContent" runat="server">Contetent</asp:TextBox>
+            <asp:TextBox ID="content_textbox" CssClass="newContent" runat="server">Content</asp:TextBox>
             <asp:Button ID="newpost_button" runat="server" OnClick="newpost_button_Click" Text="New Post" />
         </p>
         <p>&nbsp;</p>

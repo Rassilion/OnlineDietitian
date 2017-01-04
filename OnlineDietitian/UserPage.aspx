@@ -40,8 +40,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fa fa-folder-open"></i>Job list
+                        <a href="/DietRequest">
+                            <i class="fa fa-folder-open"></i>Diet Request
                         </a>
                     </li>
                     <li>

@@ -123,9 +123,9 @@ namespace Control
 
         }
 
-        public static void InsertDietRequest(DietRequestE dietRequest)
+        public static int InsertDietRequest(DietRequestE dietRequest)
         {
-            
+            int requestID = 0;
             SqlCommand com = new SqlCommand("InsertDietRequest", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
 
@@ -140,10 +140,16 @@ namespace Control
                 com.Connection.Open();
             }
             SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                requestID = Convert.ToInt32(rd[0]);
 
+
+            }
             com.Dispose();
             com.Connection.Close();
-           
+            return requestID;
         }
 
     }

@@ -1,8 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dietitians.aspx.cs" Inherits="OnlineDietitian.DietitianPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dietitians.aspx.cs" Inherits="OnlineDietitian.Dietitians" enableEventValidation="false" ValidateRequest="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
       <% if (Session["user"] == null)
         Response.Redirect("~/Logon.aspx");%>
     
+  
+    
+      <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+      
   
     
     <asp:Repeater ID="dietitianRepeater" runat="server">
@@ -12,7 +16,7 @@
             <div class="well">
                 <h2>
                     <a href="dietitian/<%# Eval("DietitianID") %>"> 
-                        <asp:Label ID="dietitianName" runat="server"  Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' /></a> press for select dietitian
+                        <asp:Label ID="dietitianName" runat="server"  Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' /></a>
                 </h2>
                 <p class="lead">
                     Email Address <a href="index.php">
@@ -21,12 +25,13 @@
                 <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("DietitianLicense") %>' />
                 </p>
                 <hr>
+              
                 <p>
                     <asp:Label ID="CV" runat="server" Text='<%# Eval("CV").ToString()  %>' /> 
                     
                 </p>
                 <a class="btn btn-primary" href="dietitian/<%# Eval("DietitianID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-                <a class="btn btn-primary" href="#" OnClick="selectDietitian_Click">Select Dietitian <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <asp:Button ID="selectButton" Text="Select Dietitian" CssClass="btn btn-primary" runat="server" CommandArgument='<%# Eval("DietitianID") %>' CommandName="DietitianID" OnClick="selectDietitian_Click"/>               
             </div>
             <br />
         </ItemTemplate>

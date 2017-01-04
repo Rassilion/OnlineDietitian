@@ -94,9 +94,20 @@ namespace BusinessLayers
 
         public static int insertMedicalReport(MedicalReportE medicalReport)
         {
-
             return MedicalReportC.InsertMedicalReport(medicalReport);
         }
+
+        public static int insertDietRequest(DietRequestE dietRequest)
+        {
+            return DietRequestC.InsertDietRequest(dietRequest);
+        }
+
+        public static void insertDiet(DietE diet)
+        {
+            DietC.InsertDiet(diet);
+        }
+
+
 
     }
 }
