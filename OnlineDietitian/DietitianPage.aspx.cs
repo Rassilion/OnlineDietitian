@@ -11,6 +11,8 @@ namespace OnlineDietitian
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            dietitianRepeater.DataSource = BusinessLayers.Business.getDietitians();
+            dietitianRepeater.DataBind();
 
         }
     }

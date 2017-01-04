@@ -10,7 +10,6 @@ namespace Entity
     {
         public int DietitianID { get; set; }
         public string Address { get; set; }
-        public int DietID { get; set; }
         public string DietitianLicense { get; set; }
         public string CV { get; set; }
         public string DietitianPhone { get; set; }

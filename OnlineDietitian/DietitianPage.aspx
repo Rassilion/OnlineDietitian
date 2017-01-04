@@ -12,19 +12,19 @@
             <div class="well">
                 <h2>
                     <a href="dietitian/<%# Eval("DietitianID") %>">
-                        <asp:Label ID="dietitianName" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitanID") ) %>' /></a>
+                        <asp:Label ID="dietitianName" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' /></a>
                 </h2>
                 <p class="lead">
                     information <a href="index.php">
-                        <asp:Label ID="blogPostAuthor" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitanID") ) %>' /></a>
+                        <asp:Label ID="dietitianID" runat="server" Text='<%# Eval("DietitianID") %>' /></a>
                     <span class="glyphicon glyphicon-time"></span>Posted on
                 <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("DietitianLicense") %>' />
                 </p>
                 <hr>
                 <p>
-                    <asp:Label ID="blogPostContent" runat="server" Text='<%# OnlineDietitian.Util.summary(Eval("CV").ToString())  %>' />
+                    <asp:Label ID="CV" runat="server" Text='<%# (Eval("CV").ToString())  %>' />
                 </p>
-                <a class="btn btn-primary" href="blogpost/<%# Eval("DietitianID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="dietitian/<%# Eval("DietitianID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             </div>
             <br />

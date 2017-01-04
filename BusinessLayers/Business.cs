@@ -38,6 +38,11 @@ namespace BusinessLayers
 
         // Dietitian Start
         //for blogpost reapeter
+        public static List<DietitianE> getDietitians()
+        {
+            return DietitianC.GetDietitians();
+        }
+
         public static string getDietitianName(object dietitianID)
         {
             return DietitianC.GetDietitianName((int)dietitianID);

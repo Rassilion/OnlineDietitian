@@ -11,6 +11,45 @@ namespace Control
 {
     public class DietitianC
     {
+
+        public static List<DietitianE> GetDietitians()
+        {
+            List<DietitianE> list = null;
+
+            SqlCommand com = new SqlCommand("SelectDietitians", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                list = new List<DietitianE>();
+                while (rd.Read())
+                {
+                    list.Add(new DietitianE
+                    {
+                        DietitianID = Convert.ToInt32(rd["dietitianID"]),
+                        Address = rd["address"].ToString(),
+                        DietitianLicense = rd["dietitianLicense"].ToString(),
+                        CV = rd["CV"].ToString(),
+                        DietitianPhone = rd["dietitianPhone"].ToString(),
+                        DietitianName = rd["dietitianName"].ToString(),
+                        DietitianSurname = rd["dietitianSurname"].ToString(),
+                        DietitianEmail = rd["dietitianEmail"].ToString(),
+                        DietitianPassword = rd["dietitianPassword"].ToString()
+
+                    });
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return list;
+        }
         // Name of dietitian get from Dietitian Table 
         public static string GetDietitianName(int dietitianID) 
         {
@@ -55,7 +94,6 @@ namespace Control
                     {
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         Address = rd["Address"].ToString(),
-                        DietID = Convert.ToInt32(rd["DietID"]),
                         DietitianLicense = rd["DietitianLicense"].ToString(),
                         CV = rd["CV"].ToString(),
                         DietitianPhone = rd["DietitianPhone"].ToString(),
