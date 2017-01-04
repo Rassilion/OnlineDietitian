@@ -43,9 +43,9 @@ namespace Control
                 com.Parameters.Add(new SqlParameter("@dietRequestID", DBNull.Value));
 
             if (diet.DietContent != null)
-                com.Parameters.Add(new SqlParameter("@dietRequestID", diet.DietContent));
+                com.Parameters.Add(new SqlParameter("@dietContent", diet.DietContent));
             else
-                com.Parameters.Add(new SqlParameter("@dietRequestID", DBNull.Value));
+                com.Parameters.Add(new SqlParameter("@dietContent", DBNull.Value));
 
 
 

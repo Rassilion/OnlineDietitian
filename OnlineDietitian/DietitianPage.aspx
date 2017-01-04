@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DietitianPage.aspx.cs" Inherits="OnlineDietitian.DietitianPage1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <% if (Session["user"] == null)
+    <% if (Session["user"] == null)
         { Response.Redirect("~/Logon.aspx"); }%>
     <hr />
 
@@ -127,9 +128,6 @@
                             </style>
                         </head>
                         <body>
-
-
-
                         </body>
                         </html>
                     </div>

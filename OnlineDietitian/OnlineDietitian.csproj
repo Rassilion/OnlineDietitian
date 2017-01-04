@@ -201,7 +201,7 @@
     <Content Include="AdminPage\Admin.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Logon.aspx" />
-    <Content Include="MoreInformation.aspx" />
+    <Content Include="User\MoreInformation.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -238,7 +238,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="UserPage.aspx" />
+    <Content Include="User\UserPage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -249,6 +249,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="User\UserPage.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -342,11 +343,11 @@
       <DependentUpon>Logon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="MoreInformation.aspx.cs">
+    <Compile Include="User\MoreInformation.aspx.cs">
       <DependentUpon>MoreInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MoreInformation.aspx.designer.cs">
+    <Compile Include="User\MoreInformation.aspx.designer.cs">
       <DependentUpon>MoreInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -372,12 +373,19 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="UserPage.aspx.cs">
+    <Compile Include="User\UserPage.aspx.cs">
       <DependentUpon>UserPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserPage.aspx.designer.cs">
+    <Compile Include="User\UserPage.aspx.designer.cs">
       <DependentUpon>UserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserPage.master.cs">
+      <DependentUpon>UserPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\UserPage.master.designer.cs">
+      <DependentUpon>UserPage.master</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">

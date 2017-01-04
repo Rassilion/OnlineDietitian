@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="OnlineDietitian.UserPage" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserPage.master.cs" Inherits="OnlineDietitian.User.UserPage1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <% if (Session["user"] == null)
-        { Response.Redirect("~/Logon.aspx"); }%>
-    <hr />
 
+
+
+    <hr />
     <!-- nav bar -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="container">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="bs-callout bs-callout-danger">
-                        <h4>New Diet</h4>
+
                         <!DOCTYPE html>
                         <html>
                         <head>
@@ -128,8 +128,8 @@
                         </head>
                         <body>
 
-                            <asp:Button ID="dietitianButton" Text="Please click for select dietitian" CssClass="button" runat="server" OnClick="dietitianButton_Click" />
-
+                            <asp:ContentPlaceHolder ID="UserContent" runat="server">
+                            </asp:ContentPlaceHolder>
 
                         </body>
                         </html>
@@ -140,9 +140,7 @@
 
         </div>
     </div>
-    </div>
-
-
-
-
 </asp:Content>
+
+
+

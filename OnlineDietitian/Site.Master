@@ -62,7 +62,7 @@
                     </ul>
                     <% }else{ %>
                     <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/UserPage" title="Manage your account">Hello, <%: (Session["user"] as Entity.UserE).getNameSurname()  %> !</a></li>
+                                <li><a runat="server" href="~/User/UserPage" title="Manage your account">Hello, <%: (Session["user"] as Entity.UserE).getNameSurname()  %> !</a></li>
                                 <li><a runat="server" href="~/DietitianPage" title="Manage your account">Dietitian, <%: (Session["user"] as Entity.UserE).getNameSurname()  %> !</a></li>
 
                         

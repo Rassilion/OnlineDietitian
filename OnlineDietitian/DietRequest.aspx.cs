@@ -45,6 +45,8 @@ namespace OnlineDietitian
             diet.DietitianID = Convert.ToInt32(Session["selectedDietitianID"]);
             diet.DietRequestID = requestID;
             diet.UserID = (Session["user"] as Entity.UserE).UserID;
+
+            BusinessLayers.Business.insertDiet(diet);
            
         }
 
