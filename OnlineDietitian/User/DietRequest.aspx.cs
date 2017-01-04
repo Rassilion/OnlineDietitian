@@ -6,13 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessLayers;
 using Entity;
-namespace OnlineDietitian
+namespace OnlineDietitian.User
 {
     public partial class DietRequest : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             if (Session["user"] == null)
+                Response.Redirect("~/Logon.aspx");  
         }
 
         protected void saveRequest_Click(object sender, EventArgs e)

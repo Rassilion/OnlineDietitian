@@ -193,7 +193,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="DietitianPage.aspx" />
     <Content Include="Dietitians.aspx" />
-    <Content Include="DietRequest.aspx" />
+    <Content Include="User\DietRequest.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -325,11 +325,11 @@
     <Compile Include="Dietitians.aspx.designer.cs">
       <DependentUpon>Dietitians.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DietRequest.aspx.cs">
+    <Compile Include="User\DietRequest.aspx.cs">
       <DependentUpon>DietRequest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DietRequest.aspx.designer.cs">
+    <Compile Include="User\DietRequest.aspx.designer.cs">
       <DependentUpon>DietRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
