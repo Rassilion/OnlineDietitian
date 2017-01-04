@@ -11,18 +11,19 @@
         <ItemTemplate>
             <div class="well">
                 <h2>
-                    <a href="dietitian/<%# Eval("DietitianID") %>">
-                        <asp:Label ID="dietitianName" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' /></a>
+                    <a href="dietitian/<%# Eval("DietitianID") %>"> 
+                        <asp:Label ID="dietitianName" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' /></a> press for select dietitian
                 </h2>
                 <p class="lead">
-                    information <a href="index.php">
-                        <asp:Label ID="dietitianID" runat="server" Text='<%# Eval("DietitianID") %>' /></a>
-                    <span class="glyphicon glyphicon-time"></span>Posted on
+                    Email Address <a href="index.php">
+                        <asp:Label ID="dietitianEmail" runat="server" Text='<%# Eval("DietitianEmail").ToString() %>' /></a>
+                    <span class="glyphicon glyphicon-time"></span>License 
                 <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("DietitianLicense") %>' />
                 </p>
                 <hr>
                 <p>
-                    <asp:Label ID="CV" runat="server" Text='<%# (Eval("CV").ToString())  %>' />
+                    <asp:Label ID="CV" runat="server" Text='<%# Eval("CV").ToString()  %>' /> 
+                    
                 </p>
                 <a class="btn btn-primary" href="dietitian/<%# Eval("DietitianID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 

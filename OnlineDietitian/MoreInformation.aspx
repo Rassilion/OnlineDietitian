@@ -112,14 +112,14 @@
                 <div class="form-group row">
                   <label for="example-email-input" class="col-xs-2 col-form-label">Name</label>
                   <div class="col-xs-10">
-                    <asp:TextBox type="search" CssClass="form-control" ID="nameBox" placeholder="kg" runat="server"></asp:TextBox>
+                    <asp:TextBox type="search" CssClass="form-control" ID="nameBox" placeholder="name" runat="server"></asp:TextBox>
 
                   </div>
                 </div>
                   <div class="form-group row">
                   <label for="example-text-input" class="col-xs-2 col-form-label">Surname</label>
                   <div class="col-xs-10">
-                    <asp:TextBox type="search" CssClass="form-control" ID="surnameBox" placeholder="cm" runat="server"></asp:TextBox>
+                    <asp:TextBox type="search" CssClass="form-control" ID="surnameBox" placeholder="surname" runat="server"></asp:TextBox>
                     
                   </div>
                 </div>
