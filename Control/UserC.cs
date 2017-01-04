@@ -167,6 +167,25 @@ namespace Control
 
         }
 
+        public static void DeleteUser(int id)
+        {
+
+            SqlCommand com = new SqlCommand("DeleteUser", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+
+            com.Dispose();
+            com.Connection.Close();
+
+        }
+
 
     }
 }

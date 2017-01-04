@@ -110,5 +110,24 @@ namespace Control
             com.Connection.Close();
             return dietitian;
         }
+
+        public static void DeleteDietitian(int id)
+        {
+
+            SqlCommand com = new SqlCommand("DeleteDietitian", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+
+            com.Dispose();
+            com.Connection.Close();
+
+        }
     }
 }
