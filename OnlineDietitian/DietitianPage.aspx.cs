@@ -7,12 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace OnlineDietitian
 {
-    public partial class DietitianPage : System.Web.UI.Page
+    public partial class DietitianPage1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            dietitianRepeater.DataSource = BusinessLayers.Business.getDietitians();
-            dietitianRepeater.DataBind();
 
         }
     }
