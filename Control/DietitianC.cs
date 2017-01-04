@@ -129,5 +129,31 @@ namespace Control
             com.Connection.Close();
 
         }
+
+        public static void UpdateDietitian(DietitianE obj)
+        {
+
+            SqlCommand com = new SqlCommand("UpdateDietitian", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@address", obj.Address));
+            com.Parameters.Add(new SqlParameter("@cv", obj.CV));
+            com.Parameters.Add(new SqlParameter("@dietitianEmail", obj.DietitianEmail));
+            com.Parameters.Add(new SqlParameter("@dietitianLicense", obj.DietitianLicense));
+            com.Parameters.Add(new SqlParameter("@dietitianName", obj.DietitianName));
+            com.Parameters.Add(new SqlParameter("@dietitianPassword", obj.DietitianPassword));
+            com.Parameters.Add(new SqlParameter("@dietitianPhone", obj.DietitianPhone));
+            com.Parameters.Add(new SqlParameter("@dietitianSurname", obj.DietitianSurname));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+
+            com.Dispose();
+            com.Connection.Close();
+
+        }
     }
 }

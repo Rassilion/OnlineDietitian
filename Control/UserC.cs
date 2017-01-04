@@ -39,7 +39,8 @@ namespace Control
                         UserEmail = rd["UserEmail"].ToString(),
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
-                        UserSurname = rd["UserSurname"].ToString()
+                        UserSurname = rd["UserSurname"].ToString(),
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
                     };
                 }
             }
@@ -186,6 +187,82 @@ namespace Control
 
         }
 
+        public static UserE getUserByID(int id)
+        {
+            UserE temp = null;
+            SqlCommand com = new SqlCommand("getUserByID", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    temp = new UserE
+                    {
+                        UserID = Convert.ToInt32(rd["UserID"]),
+                        Address = rd["UserAddress"] == DBNull.Value ? "" : rd["UserAddress"].ToString(),
+                        UserBodyPhoto = rd["BodyPhoto"] == DBNull.Value ? "" : rd["BodyPhoto"].ToString(),
+                        UserBirth = DateTime.Parse(rd["UserBirth"].ToString()),
+                        UserPhone = rd["UserPhone"] == DBNull.Value ? "" : rd["UserPhone"].ToString(),
+                        UserEmail = rd["UserEmail"].ToString(),
+                        UserName = rd["UserName"].ToString(),
+                        UserPassword = rd["UserPassword"].ToString(),
+                        UserSurname = rd["UserSurname"].ToString(),
+                        Gender= rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                    };
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return temp;
+        }
+
+        public static List<UserE> selectUsers()
+        {
+            List<UserE> list = null;
+
+            SqlCommand com = new SqlCommand("selectUsers", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                list = new List<UserE>();
+                while (rd.Read())
+                {
+                    list.Add(new UserE
+                    {
+                        UserID = Convert.ToInt32(rd["UserID"]),
+                        Address = rd["UserAddress"] == DBNull.Value ? "" : rd["UserAddress"].ToString(),
+                        UserBodyPhoto = rd["BodyPhoto"] == DBNull.Value ? "" : rd["BodyPhoto"].ToString(),
+                        UserBirth = DateTime.Parse(rd["UserBirth"].ToString()),
+                        UserPhone = rd["UserPhone"] == DBNull.Value ? "" : rd["UserPhone"].ToString(),
+                        UserEmail = rd["UserEmail"].ToString(),
+                        UserName = rd["UserName"].ToString(),
+                        UserPassword = rd["UserPassword"].ToString(),
+                        UserSurname = rd["UserSurname"].ToString(),
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                    });
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return list;
+        }
 
     }
 }
