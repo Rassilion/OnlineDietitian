@@ -123,5 +123,28 @@ namespace Control
 
         }
 
+        public static int InsertDietRequest(DietRequestE dietRequest)
+        {
+            int ReportID = 0;
+            SqlCommand com = new SqlCommand("InsertDietRequest", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+
+            com.Parameters.Add(new SqlParameter("@requestContent", dietRequest.RequestContent));
+            com.Parameters.Add(new SqlParameter("@health", dietRequest.Health));
+            com.Parameters.Add(new SqlParameter("@fitness", dietRequest.Fitness));
+            com.Parameters.Add(new SqlParameter("@weightGain", dietRequest.WeightGain));
+            com.Parameters.Add(new SqlParameter("@weightLoss", dietRequest.WeightLoss));
+            
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+            com.Dispose();
+            com.Connection.Close();
+            return ReportID;
+        }
+
     }
 }

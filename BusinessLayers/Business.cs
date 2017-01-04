@@ -38,6 +38,7 @@ namespace BusinessLayers
 
         // Dietitian Start
         //for blogpost reapeter
+
         public static List<DietitianE> getDietitians()
         {
             return DietitianC.GetDietitians();
@@ -87,6 +88,14 @@ namespace BusinessLayers
         public static void updateUser(UserE user)
         {
             UserC.UpdateUser(user);
+        }
+
+
+
+        public static int insertMedicalReport(MedicalReportE medicalReport)
+        {
+
+            return MedicalReportC.InsertMedicalReport(medicalReport);
         }
 
     }
