@@ -89,5 +89,20 @@ namespace BusinessLayers
             UserC.UpdateUser(user);
         }
 
+        public static List<UserE> getUsers()
+        {
+            return UserC.selectUsers();
+        }
+
+        public static void deleteUser(int id)
+        {
+            UserC.DeleteUser(id);
+        }
+
+        public static UserE getUserByID(string id)
+        {
+            return UserC.getUserByID(Convert.ToInt32(id));
+        }
+
     }
 }
