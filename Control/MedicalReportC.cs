@@ -134,9 +134,9 @@ namespace Control
 
         }
 
-        public static void InsertMedicalReport(MedicalReportE medicalReport)
+        public static int InsertMedicalReport(MedicalReportE medicalReport)
         {
-
+            int ReportID = 0;
             SqlCommand com = new SqlCommand("InsertMedicalReport", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
 
@@ -155,11 +155,17 @@ namespace Control
                 com.Connection.Open();
             }
             SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                ReportID = Convert.ToInt32(rd["ReportID"]);
 
+
+            }
 
             com.Dispose();
             com.Connection.Close();
-
+            return ReportID;
         }
     }
 }

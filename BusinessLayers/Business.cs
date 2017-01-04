@@ -38,6 +38,7 @@ namespace BusinessLayers
 
         // Dietitian Start
         //for blogpost reapeter
+
         public static List<DietitianE> getDietitians()
         {
             return DietitianC.GetDietitians();
@@ -102,6 +103,14 @@ namespace BusinessLayers
         public static UserE getUserByID(string id)
         {
             return UserC.getUserByID(Convert.ToInt32(id));
+        }
+
+
+
+        public static int insertMedicalReport(MedicalReportE medicalReport)
+        {
+
+            return MedicalReportC.InsertMedicalReport(medicalReport);
         }
 
     }
