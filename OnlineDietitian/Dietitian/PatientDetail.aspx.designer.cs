@@ -13,21 +13,48 @@ namespace OnlineDietitian.Dietitian {
     public partial class PatientDetail {
         
         /// <summary>
-        /// userContent control.
+        /// requestContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userContent;
+        protected global::System.Web.UI.WebControls.TextBox requestContent;
         
         /// <summary>
-        /// userRequest control.
+        /// health control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userRequest;
+        protected global::System.Web.UI.WebControls.TextBox health;
+        
+        /// <summary>
+        /// fitness control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fitness;
+        
+        /// <summary>
+        /// weightGain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox weightGain;
+        
+        /// <summary>
+        /// weightLoss control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox weightLoss;
     }
 }

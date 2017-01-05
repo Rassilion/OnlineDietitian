@@ -22,6 +22,12 @@ namespace OnlineDietitian.Dietitian
             if (id != null)
             {
                 currentDietView = BusinessLayers.Business.getDietViewByDietID(id);
+                requestContent.Text = currentDietView.RequestContent.ToString();
+                health.Text = currentDietView.Health.ToString();
+                fitness.Text = currentDietView.Fitness.ToString();
+                weightGain.Text = currentDietView.WeightGain.ToString();
+                weightLoss.Text = currentDietView.WeightLoss.ToString();
+
             }
 
         }
