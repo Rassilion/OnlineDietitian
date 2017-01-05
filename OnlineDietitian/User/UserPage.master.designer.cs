@@ -13,6 +13,15 @@ namespace OnlineDietitian.User {
     public partial class UserPage1 {
         
         /// <summary>
+        /// avatar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image avatar;
+        
+        /// <summary>
         /// UserContent control.
         /// </summary>
         /// <remarks>

@@ -14,36 +14,53 @@ namespace OnlineDietitian.User
         {
             if (Session["user"] == null)
                 Response.Redirect("~/Logon.aspx");
+            UserE currentUser = Session["user"] as UserE;
+            if (!Page.IsPostBack)
+            {
+                addressBox.Text = currentUser.Address;
+                nameBox.Text = currentUser.UserName;
+                surnameBox.Text = currentUser.UserSurname;
+                phoneBox.Text = currentUser.UserPhone;
+                birthBox.Text = currentUser.UserBirth.ToString("yyyy-MM-dd");
+                //TODO gender
+            }
         }
 
         protected void saveButton_Click(object sender, EventArgs e)
         {
-
-            UserE user = Session["user"] as UserE;
-                
+            if (changePasswordBox.Text == confirmBox.Text) // Same password control
+            {
+                UserE user = Session["user"] as UserE;
+                string path = "/img/NoUser.jpg";
+                string fileName = avatarUpload.PostedFile.FileName;
+                if (fileName != "")
+                {
+                    path = "/img/" + user.UserID.ToString() + "-" + fileName;
+                    string tmp = Server.MapPath(path);
+                    avatarUpload.PostedFile.SaveAs(tmp);
+                }
                 user.UserName = nameBox.Text;
                 user.UserSurname = surnameBox.Text;
                 user.Address = addressBox.Text;
                 user.UserPhone = phoneBox.Text;
-                user.UserBodyPhoto = bodyPhotoBox.Text;
+                user.UserBodyPhoto = path;
                 user.Gender = ddlGender.Text;
-                
-                if (changePasswordBox.Text == confirmBox.Text) // Same password control
-                {
-                    user.UserPassword = changePasswordBox.Text;
-                    BusinessLayers.Business.updateUser(user);
+
+
+                user.UserPassword = Util.MD5hash(changePasswordBox.Text);
+                BusinessLayers.Business.updateUser(user);
 
                 // user.UserBirth = DateTime.Parse(.Text);
                 successLabel.Text = "Success save";
                 successLabel.Visible = true;
-                 }
-                else
-                {
-                    successLabel.Text = "Passwords are not the same.";
-                    successLabel.Visible = true;
+            }
+            else
+            {
+                successLabel.Text = "Passwords are not the same.";
+                successLabel.Visible = true;
 
-                }
-            
+            }
+
 
 
 

@@ -22,9 +22,8 @@
         <label for="example-text-input" class="col-xs-2 col-form-label">Body Photo</label>
         <div class="col-xs-10">
             <label class="custom-file">
-                <!--  <input type="file" id="file" class="custom-file-input"> -->
-                <asp:TextBox type="search" CssClass="form-control" ID="bodyPhotoBox" placeholder="BodyPhoto" runat="server"></asp:TextBox>
-                <span class="custom-file-control"></span>
+                <input id="avatarUpload" type="file" name="file" onchange="previewFile()" runat="server" />
+                <asp:Image ID="Avatar" runat="server" Height="225px" ImageUrl="/img/NoUser.jpg" Width="225px" />
             </label>
         </div>
 
@@ -79,4 +78,21 @@
 
     <asp:Label ID="successLabel" runat="server" Text="Label" Visible="False"></asp:Label>
 
+    <script type="text/javascript">
+        function previewFile() {
+            var preview = document.querySelector('#Avatar');
+            var file = document.querySelector('#avatarUpload').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
 </asp:Content>
