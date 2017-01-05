@@ -207,7 +207,7 @@ namespace BusinessLayers
             DietC.UpdateDiet(obj);
         }
 
-        public static void insertDiet(DietE diet)
+        public static void deleteDiet(string id)
         {
             DietC.DeleteDiet(Convert.ToInt32(id));
         }
