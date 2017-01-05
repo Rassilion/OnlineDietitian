@@ -36,6 +36,7 @@ namespace Control
                         CV = rd["CV"] == DBNull.Value ? "" : rd["CV"].ToString(),
                         DietitianPhone = rd["DietitianPhone"] == DBNull.Value ? "" : rd["DietitianPhone"].ToString(),
                         DietitianEmail = rd["DietitianEmail"].ToString(),
+                        DietitianLicense = rd["DietitianLicense"].ToString(),
                         DietitianName = rd["DietitianName"].ToString(),
                         DietitianPassword = rd["DietitianPassword"].ToString(),
                         DietitianSurname = rd["DietitianSurname"].ToString(),

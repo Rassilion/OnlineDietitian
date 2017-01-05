@@ -66,11 +66,10 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-8">
                                     <ul class="list-group">
-                                        <li class="list-group-item"><%: (Session["user"] as Entity.UserE).UserName + " " + (Session["user"] as Entity.UserE).UserSurname %></li>
-                                        <li class="list-group-item"><%: " " + (Session["user"] as Entity.UserE).UserBirth%></li>
-                                        <li class="list-group-item">Google Inc. </li>
-                                        <li class="list-group-item"><i class="fa fa-phone"></i><%: " " + (Session["user"] as Entity.UserE).UserPhone%> </li>
-                                        <li class="list-group-item"><i class="fa fa-envelope"></i><%: " " + (Session["user"] as Entity.UserE).UserEmail %> </li>
+                                        <li class="list-group-item"><%: (Session["dietitian"] as Entity.DietitianE).DietitianName + " " + (Session["dietitian"] as Entity.DietitianE).DietitianSurname %></li>
+                                        <li class="list-group-item"><i class="fa fa-book"></i><%: " " + (Session["dietitian"] as Entity.DietitianE).DietitianLicense%> </li>
+                                        <li class="list-group-item"><i class="fa fa-phone"></i><%: " " + (Session["dietitian"] as Entity.DietitianE).DietitianPhone%> </li>
+                                        <li class="list-group-item"><i class="fa fa-envelope"></i><%: " " + (Session["dietitian"] as Entity.DietitianE).DietitianEmail %> </li>
                                     </ul>
                                 </div>
                             </div>
