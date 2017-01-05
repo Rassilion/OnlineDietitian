@@ -74,7 +74,7 @@
                                 <li><a runat="server" href="~/Dietitian/DietitianPage" title="Manage your account">Hello Dietitian, <%: (Session["dietitian"] as Entity.DietitianE).getNameSurname()  %> !</a></li>
 
                         
-                        <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LogOut_Dietitian">      
+                        <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LogOut">      
                          Log Out 
                         </asp:LinkButton></li> 
                             </ul>

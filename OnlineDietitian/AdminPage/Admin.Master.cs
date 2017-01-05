@@ -79,6 +79,8 @@ namespace OnlineDietitian.AdminPage
         protected void LogOut(object sender, EventArgs e)
         {
             Session["user"] = null;
+            Session["dietitian"] = null;
+            Response.Redirect("~/Default.aspx");
         }
     }
 }
