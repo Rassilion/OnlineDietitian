@@ -115,24 +115,120 @@ namespace BusinessLayers
             return UserC.getUserByID(Convert.ToInt32(id));
         }
 
-
-
-        public static int insertMedicalReport(MedicalReportE medicalReport)
+        //Appointment
+        public static List<AppointmentE> getAppointments()
         {
-            return MedicalReportC.InsertMedicalReport(medicalReport);
+            return AppointmentC.selectAppointments();
+        }
+        public static AppointmentE getAppointmentByID(string id)
+        {
+            return AppointmentC.getAppointmentByID(Convert.ToInt32(id));
+        }
+        public static void insertAppointment(AppointmentE obj)
+        {
+            //AppointmentC.InsertAppointment(obj);
+        }
+        public static void updateAppointment(AppointmentE obj)
+        {
+            AppointmentC.UpdateAppointment(obj);
         }
 
-        public static int insertDietRequest(DietRequestE dietRequest)
+        public static void deleteAppointment(string id)
         {
-            return DietRequestC.InsertDietRequest(dietRequest);
+            AppointmentC.DeleteAppointment(Convert.ToInt32(id));
         }
 
-        public static void insertDiet(DietE diet)
+        //Payment
+        public static List<PaymentE> getPayments()
         {
-            DietC.InsertDiet(diet);
+            return PaymentC.selectPayments();
+        }
+        public static PaymentE getPaymentByID(string id)
+        {
+            return PaymentC.getPaymentByID(Convert.ToInt32(id));
+        }
+        public static void insertPayment(PaymentE obj)
+        {
+            //PaymentC.InsertPayment(obj);
+        }
+        public static void updatePayment(PaymentE obj)
+        {
+            PaymentC.UpdatePayment(obj);
         }
 
+        public static void deletePayment(string id)
+        {
+            PaymentC.DeletePayment(Convert.ToInt32(id));
+        }
 
+        //MedicalReport
+        public static List<MedicalReportE> getMedicalReports()
+        {
+            return MedicalReportC.selectMedicalReports();
+        }
+        public static MedicalReportE getMedicalReportByID(string id)
+        {
+            return MedicalReportC.getMedicalReportByID(Convert.ToInt32(id));
+        }
+        public static void insertMedicalReport(MedicalReportE obj)
+        {
+            MedicalReportC.InsertMedicalReport(obj);
+        }
+        public static void updateMedicalReport(MedicalReportE obj)
+        {
+            MedicalReportC.UpdateMedicalReport(obj);
+        }
+
+        public static void deleteMedicalReport(string id)
+        {
+            MedicalReportC.DeleteMedicalReport(Convert.ToInt32(id));
+        }
+
+        //Diet
+        public static List<DietE> getDiets()
+        {
+            return DietC.selectDiets();
+        }
+        public static DietE getDietByID(string id)
+        {
+            return DietC.getDietByID(Convert.ToInt32(id));
+        }
+        public static void insertDiet(DietE obj)
+        {
+            DietC.InsertDiet(obj);
+        }
+        public static void updateDiet(DietE obj)
+        {
+            DietC.UpdateDiet(obj);
+        }
+
+        public static void deleteDiet(string id)
+        {
+            DietC.DeleteDiet(Convert.ToInt32(id));
+        }
+
+        //DietRequest
+        public static List<DietRequestE> getDietRequests()
+        {
+            return DietRequestC.selectDietRequests();
+        }
+        public static DietRequestE getDietRequestByID(string id)
+        {
+            return DietRequestC.getDietRequestByID(Convert.ToInt32(id));
+        }
+        public static void insertDietRequest(DietRequestE obj)
+        {
+            DietRequestC.InsertDietRequest(obj);
+        }
+        public static void updateDietRequest(DietRequestE obj)
+        {
+            DietRequestC.UpdateDietRequest(obj);
+        }
+
+        public static void deleteDietRequest(string id)
+        {
+            DietRequestC.DeleteDietRequest(Convert.ToInt32(id));
+        }
 
     }
 }
