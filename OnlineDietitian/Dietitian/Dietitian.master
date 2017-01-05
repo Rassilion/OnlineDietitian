@@ -13,7 +13,7 @@
                 <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
                     <li class="active">
                         <a href="#mail-inbox.html">
-                            <i class="fa fa-inbox"></i>Inbox  <span class="label pull-right">7</span>
+                            <i class="fa fa-inbox"></i>Inbox 
                         </a>
                     </li>
                     <li>
@@ -24,7 +24,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-file-text-o"></i>Patients <span class="label label-info pull-right inbox-notification">2</span>
+                            <i class="fa fa-file-text-o"></i>Patients 
                         </a>
                     </li>
                     <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
@@ -35,7 +35,7 @@
                 <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
                     <li>
                         <a href="/User/MoreInformation">
-                            <i class="fa fa-folder-open"></i>Information Update  <span class="label label-danger pull-right">3</span>
+                            <i class="fa fa-folder-open"></i>Information Update
                         </a>
                     </li>
                     <li>
