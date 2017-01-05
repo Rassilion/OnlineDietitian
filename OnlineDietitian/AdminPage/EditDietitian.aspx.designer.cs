@@ -10,7 +10,7 @@
 namespace OnlineDietitian.AdminPage {
     
     
-    public partial class EditUser {
+    public partial class EditDietitian {
         
         /// <summary>
         /// error control.
@@ -85,13 +85,22 @@ namespace OnlineDietitian.AdminPage {
         protected global::System.Web.UI.WebControls.TextBox phoneBox;
         
         /// <summary>
-        /// birthBox control.
+        /// cvBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox birthBox;
+        protected global::System.Web.UI.WebControls.TextBox cvBox;
+        
+        /// <summary>
+        /// licenseBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox licenseBox;
         
         /// <summary>
         /// changePasswordBox control.
