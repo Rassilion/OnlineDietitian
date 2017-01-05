@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineDietitian {
+namespace OnlineDietitian.Dietitian {
     
     
-    public partial class DietitianPage1 {
+    public partial class DietitianPage {
     }
 }

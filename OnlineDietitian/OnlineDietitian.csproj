@@ -192,7 +192,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DietitianPage.aspx" />
+    <Content Include="Dietitian\DietitianPage.aspx" />
     <Content Include="Dietitians.aspx" />
     <Content Include="User\DietRequest.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -200,6 +200,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="AdminPage\Admin.Master" />
+    <Content Include="Dietitian\Dietitian.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Logon.aspx" />
     <Content Include="User\MoreInformation.aspx" />
@@ -319,11 +320,18 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DietitianPage.aspx.cs">
+    <Compile Include="Dietitian\Dietitian.master.cs">
+      <DependentUpon>Dietitian.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dietitian\Dietitian.master.designer.cs">
+      <DependentUpon>Dietitian.master</DependentUpon>
+    </Compile>
+    <Compile Include="Dietitian\DietitianPage.aspx.cs">
       <DependentUpon>DietitianPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DietitianPage.aspx.designer.cs">
+    <Compile Include="Dietitian\DietitianPage.aspx.designer.cs">
       <DependentUpon>DietitianPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dietitians.aspx.cs">
