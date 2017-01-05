@@ -188,6 +188,11 @@ namespace BusinessLayers
         {
             MedicalReportC.DeleteMedicalReport(Convert.ToInt32(id));
         }
+        public static MedicalReportE getMedicalReportByUserID(string id)
+        {
+            return MedicalReportC.getMedicalReportByUserID(Convert.ToInt32(id));
+        }
+        
 
         //Diet
         public static List<DietE> getDiets()
@@ -198,9 +203,9 @@ namespace BusinessLayers
         {
             return DietC.getDietByID(Convert.ToInt32(id));
         }
-        public static void insertDiet(DietE obj)
+        public static int insertDiet(DietE obj)
         {
-            DietC.InsertDiet(obj);
+           return DietC.InsertDiet(obj);
         }
         public static void updateDiet(DietE obj)
         {

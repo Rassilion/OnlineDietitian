@@ -47,8 +47,8 @@ namespace OnlineDietitian.User
             diet.DietRequestID = requestID;
             diet.UserID = (Session["user"] as Entity.UserE).UserID;
 
-            BusinessLayers.Business.insertDiet(diet);
-
+            int dietID = BusinessLayers.Business.insertDiet(diet);
+            Session["dietID"] = dietID;
             Response.Redirect("~/User/MedicalReport");
            
         }

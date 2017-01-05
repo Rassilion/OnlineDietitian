@@ -29,9 +29,9 @@ namespace Control
             com.Connection.Close();
 
         }
-        public static void InsertDiet(DietE diet)
+        public static int InsertDiet(DietE diet)
         {
-
+            int dietID = 0;
             SqlCommand com = new SqlCommand("InsertDiet", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
            
@@ -54,11 +54,17 @@ namespace Control
                 com.Connection.Open();
             }
             SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
 
+                dietID = Convert.ToInt32(rd[0]);
+                     
+            }
 
             com.Dispose();
             com.Connection.Close();
-
+            return dietID;
         }
 
         public static DietE getDietByID(int id)

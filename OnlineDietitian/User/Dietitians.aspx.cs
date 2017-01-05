@@ -27,6 +27,5 @@ namespace OnlineDietitian.User
             Session["selectedDietitianID"] = Convert.ToInt32(btn.CommandArgument);
             Response.Redirect("~/User/DietRequest");
         }
-
     }
 }

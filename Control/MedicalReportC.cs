@@ -68,6 +68,44 @@ namespace Control
             return temp;
         }
 
+        public static MedicalReportE getMedicalReportByUserID(int id)
+        {
+            MedicalReportE temp = null;
+            SqlCommand com = new SqlCommand("getMedicalReportByUserID", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    temp = new MedicalReportE
+                    {
+                        UserID = Convert.ToInt32(rd["UserID"]),
+                        DietID = Convert.ToInt32(rd["DietID"]),
+                        ReportID = Convert.ToInt32(rd["ReportID"]),
+                        Date = DateTime.Parse(rd["Date"].ToString()),
+                        BloodTest = rd["BloodTest"] == DBNull.Value ? "" : rd["BloodTest"].ToString(),
+                        Disease = rd["Disease"] == DBNull.Value ? "" : rd["Disease"].ToString(),
+                        Height = rd["Height"] == DBNull.Value ? "" : rd["Height"].ToString(),
+                        UrineTest = rd["UrineTest"] == DBNull.Value ? "" : rd["UrineTest"].ToString(),
+                        UsedDrugs = rd["UsedDrugs"] == DBNull.Value ? "" : rd["UsedDrugs"].ToString(),
+                        Weight = rd["Weight"] == DBNull.Value ? "" : rd["Weight"].ToString()
+                    };
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return temp;
+        }
+
         public static List<MedicalReportE> selectMedicalReports()
         {
             List<MedicalReportE> list = null;
@@ -158,7 +196,7 @@ namespace Control
             if (rd.HasRows)
             {
                 rd.Read();
-                ReportID = Convert.ToInt32(rd["ReportID"]);
+                ReportID = Convert.ToInt32(rd[0]);
 
 
             }
