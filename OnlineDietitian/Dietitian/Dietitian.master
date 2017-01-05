@@ -23,7 +23,7 @@
                         <a href="#"><i class="fa fa-certificate"></i>Diets</a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/DietitianPage">
                             <i class="fa fa-file-text-o"></i>Patients 
                         </a>
                     </li>
@@ -31,19 +31,7 @@
                 </ul>
                 <!-- /.nav -->
 
-                <h5 class="nav-email-subtitle">More</h5>
-                <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
-                    <li>
-                        <a href="/User/MoreInformation">
-                            <i class="fa fa-folder-open"></i>Information Update
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/User/DietRequest">
-                            <i class="fa fa-folder-open"></i>Diet Request
-                        </a>
-                    </li>
-                </ul>
+                
                 <!-- /.nav -->
             </div>
             <div class="col-sm-9">
