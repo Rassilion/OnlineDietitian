@@ -13,6 +13,12 @@ namespace OnlineDietitian.AdminPage
         {
             UserRepeater.DataSource = BusinessLayers.Business.getUsers();
             DietitianRepeater.DataSource = BusinessLayers.Business.getDietitians();
+            DietRepeater.DataSource = BusinessLayers.Business.getDiets();
+            BlogPostRepeater.DataSource = BusinessLayers.Business.getBlogPosts();
+            PaymentRepeater.DataSource = BusinessLayers.Business.getPayments();
+            MedicalReportRepeater.DataSource = BusinessLayers.Business.getMedicalReports();
+            AppointmentRepeater.DataSource = BusinessLayers.Business.getAppointments();
+            DietRequestRepeater.DataSource = BusinessLayers.Business.getDietRequests();
         }
 
         protected void deleteButton(object sender, EventArgs e)
@@ -37,6 +43,18 @@ namespace OnlineDietitian.AdminPage
             DietitianRepeater.Visible = false;
             UserRepeater.Dispose();
             UserRepeater.Visible = false;
+            DietRepeater.Visible = false;
+            BlogPostRepeater.Visible = false;
+            PaymentRepeater.Visible = false;
+            MedicalReportRepeater.Visible = false;
+            AppointmentRepeater.Visible = false;
+            DietRequestRepeater.Visible = false;
+            DietRepeater.Dispose();
+            BlogPostRepeater.Dispose();
+            PaymentRepeater.Dispose();
+            MedicalReportRepeater.Dispose();
+            AppointmentRepeater.Dispose();
+            DietRequestRepeater.Dispose();
 
             DropDownList drp = (DropDownList)sender;
             switch (drp.SelectedIndex)
@@ -49,6 +67,30 @@ namespace OnlineDietitian.AdminPage
                     DietitianRepeater.DataBind();
                     DietitianRepeater.Visible = true;
                     break;
+                case 3:
+                    AppointmentRepeater.DataBind();
+                    AppointmentRepeater.Visible = true;
+                    break;
+                case 4:
+                    PaymentRepeater.DataBind();
+                    PaymentRepeater.Visible = true;
+                    break;
+                case 5:
+                    MedicalReportRepeater.DataBind();
+                    MedicalReportRepeater.Visible = true;
+                    break;
+                case 6:
+                    DietRequestRepeater.DataBind();
+                    DietRequestRepeater.Visible = true;
+                    break;
+                case 7:
+                    DietRepeater.DataBind();
+                    DietRepeater.Visible = true;
+                    break;
+                case 8:
+                    BlogPostRepeater.DataBind();
+                    BlogPostRepeater.Visible = true;
+                    break;
 
             }
 
@@ -60,6 +102,9 @@ namespace OnlineDietitian.AdminPage
             {
                 case 1:
                     Response.Redirect("~/AdminPage/EditUser/new");
+                    break;
+                case 2:
+                    Response.Redirect("~/AdminPage/EditDietitian/new");
                     break;
                 case 0:
                     break;

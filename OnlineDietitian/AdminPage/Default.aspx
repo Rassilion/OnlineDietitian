@@ -120,6 +120,7 @@
                     </FooterTemplate>
                 </asp:Repeater>
 
+
                 <asp:Repeater ID="AppointmentRepeater" runat="server">
                     <HeaderTemplate>
                         <table class="table table-striped table-sm">
@@ -141,7 +142,7 @@
                                 <a href="EditAppointment/<%# Eval("AppointmentID") %>">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </a>
-                                <asp:LinkButton ID="deleteDietitan" OnClick="deleteButton" CommandName="appointment" CommandArgument='<%#Eval("AppointmentID")%>' runat="server">
+                                <asp:LinkButton ID="deleteAppointment" OnClick="deleteButton" CommandName="appointment" CommandArgument='<%#Eval("AppointmentID")%>' runat="server">
                             <span class="glyphicon glyphicon-trash"></span>
                                 </asp:LinkButton>
                             </td>
@@ -157,6 +158,217 @@
                 </table>
                     </FooterTemplate>
                 </asp:Repeater>
+
+                <asp:Repeater ID="DietRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>DietitianID</th>
+                                    <th>UserID</th>
+                                    <th>DietRequestID</th>
+                                    <th>Content</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <a href="EditDiet/<%# Eval("DietID") %>">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <asp:LinkButton ID="deleteDiet" OnClick="deleteButton" CommandName="diet" CommandArgument='<%#Eval("DietID")%>' runat="server">
+                            <span class="glyphicon glyphicon-trash"></span>
+                                </asp:LinkButton>
+                            </td>
+                            <th scope="row"><%# Eval("DietID") %></th>
+                            <td><%# Eval("DietitianID") %></td>
+                            <td><%# Eval("UserID") %></td>
+                            <td><%# Eval("DietRequestID") %></td>
+                            <td><%# Eval("DietContent") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
+
+
+                <asp:Repeater ID="DietRequestRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>Content</th>
+                                    <th>Health</th>
+                                    <th>Fitness</th>
+                                    <th>WeighGain</th>
+                                    <th>WeighLoss</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <a href="EditRequest/<%# Eval("RequestID") %>">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <asp:LinkButton ID="deleteDietrequest" OnClick="deleteButton" CommandName="dietrequest" CommandArgument='<%#Eval("RequestID")%>' runat="server">
+                            <span class="glyphicon glyphicon-trash"></span>
+                                </asp:LinkButton>
+                            </td>
+                            <th scope="row"><%# Eval("RequestID") %></th>
+                            <td><%# Eval("RequestContent") %></td>
+                            <td><%# Eval("Health") %></td>
+                            <td><%# Eval("Fitness") %></td>
+                            <td><%# Eval("WeighGain") %></td>
+                            <td><%# Eval("WeighLoss") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
+
+
+                <asp:Repeater ID="MedicalReportRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>UserID</th>
+                                    <th>DietID</th>
+                                    <th>Date</th>
+                                    <th>UsedDrugs</th>
+                                    <th>Disease</th>
+                                    <th>Height</th>
+                                    <th>Weight</th>
+                                    <th>UrineTest</th>
+                                    <th>BloodTest</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <a href="EditMedicalReport/<%# Eval("ReportID") %>">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <asp:LinkButton ID="deleteDietrequest" OnClick="deleteButton" CommandName="medicalreport" CommandArgument='<%#Eval("ReportID")%>' runat="server">
+                            <span class="glyphicon glyphicon-trash"></span>
+                                </asp:LinkButton>
+                            </td>
+                            <th scope="row"><%# Eval("ReportID") %></th>
+                            <td><%# Eval("UserID") %></td>
+                            <td><%# Eval("DietID") %></td>
+                            <td><%# Eval("Date") %></td>
+                            <td><%# Eval("UsedDrugs") %></td>
+                            <td><%# Eval("Disease") %></td>
+                            <td><%# Eval("Height") %></td>
+                            <td><%# Eval("Weight") %></td>
+                            <td><%# Eval("UrineTest") %></td>
+                            <td><%# Eval("BloodTest") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
+
+                <asp:Repeater ID="PaymentRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>UserID</th>
+                                    <th>DietitianID</th>
+                                    <th>Date</th>
+                                    <th>Fee</th>
+                                    <th>BankCard</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <a href="EditPayment/<%# Eval("PayID") %>">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <asp:LinkButton ID="deleteDietrequest" OnClick="deleteButton" CommandName="pay" CommandArgument='<%#Eval("PayID")%>' runat="server">
+                            <span class="glyphicon glyphicon-trash"></span>
+                                </asp:LinkButton>
+                            </td>
+                            <th scope="row"><%# Eval("PayID") %></th>
+                            <td><%# Eval("UserID") %></td>
+                            <td><%# Eval("DietianID") %></td>
+                            <td><%# Eval("Date") %></td>
+                            <td><%# Eval("Fee") %></td>
+                            <td><%# Eval("BankCard") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+                
+
+                <asp:Repeater ID="BlogPostRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>DietitianID</th>
+                                    <th>Title</th>
+                                    <th>Content</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <a href="EditBlogPost/<%# Eval("BlogID") %>">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <asp:LinkButton ID="deleteDietrequest" OnClick="deleteButton" CommandName="blogpost" CommandArgument='<%#Eval("BlogPost")%>' runat="server">
+                            <span class="glyphicon glyphicon-trash"></span>
+                                </asp:LinkButton>
+                            </td>
+                            <th scope="row"><%# Eval("BlogPost") %></th>
+                            <td><%# Eval("DietianID") %></td>
+                            <td><%# Eval("Title") %></td>
+                            <td><%# Eval("BlogContent") %></td>
+                            <td><%# Eval("PostDate") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
 
             </div>
         </div>
