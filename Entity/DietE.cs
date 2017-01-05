@@ -13,7 +13,5 @@ namespace Entity
         public int UserID { get; set; }
         public int DietRequestID { get; set; }
         public string DietContent { get; set; }
-        public DateTime DietStartDate { get; set; }
-        public DateTime DietEndDate { get; set; }
     }
 }
