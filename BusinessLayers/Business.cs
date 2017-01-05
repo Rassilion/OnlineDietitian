@@ -64,6 +64,11 @@ namespace BusinessLayers
             DietitianC.UpdateDietitian(obj);
         }
 
+        public static void deleteDietitian(string id)
+        {
+            DietitianC.DeleteDietitian(Convert.ToInt32(id));
+        }
+
         // Login and User Start
         public static UserE validateUser(string email, string password)
         {
@@ -100,9 +105,9 @@ namespace BusinessLayers
             return UserC.selectUsers();
         }
 
-        public static void deleteUser(int id)
+        public static void deleteUser(string id)
         {
-            UserC.DeleteUser(id);
+            UserC.DeleteUser(Convert.ToInt32(id));
         }
 
         public static UserE getUserByID(string id)
