@@ -13,19 +13,10 @@ namespace OnlineDietitian.Dietitian
         {
             if (Session["dietitian"] == null)
                 Response.Redirect("~/Logon.aspx");
-            userRepeater.DataSource = BusinessLayers.Business.getUsers();
+            userRepeater.DataSource = BusinessLayers.Business.getDietViewByDietitianID((Session["dietitian"] as Entity.DietitianE).DietitianID.ToString());
             userRepeater.DataBind();
-            //TODO: dietID ile dietisyenin müşterileri yazılacak
         }
-        protected void readMore_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            Session["patient"] = BusinessLayers.Business.getUserByID(btn.CommandArgument);
-            Session["patientMedicalReport"] = BusinessLayers.Business.getMedicalReportByUserID(btn.CommandArgument);
-            Session["patientDietRequest"] = BusinessLayers.Business.getDietRequestByID(BusinessLayers.Business.getRequestIDByUserID(btn.CommandArgument).ToString());
-            
-            Response.Redirect("~/Dietitian/PatientDetail");
-        }
+
 
         
     }

@@ -249,6 +249,17 @@ namespace BusinessLayers
         {
             return DietC.getRequestIDByUserID(Convert.ToInt32(id));
         }
+        // DietView
+        public static List<DietViewE> getDietViewByDietitianID(string id)
+        {
+            return DietViewC.getDietViewByDietitianID(Convert.ToInt32(id));
+        }
+        public static DietViewE getDietViewByDietID(string id)
+        {
+            return DietViewC.getDietViewByDietID(Convert.ToInt32(id));
+        }
+
+
 
     }
 }

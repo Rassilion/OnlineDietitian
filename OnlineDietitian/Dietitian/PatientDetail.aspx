@@ -51,7 +51,7 @@
     <div class="form-group row">
         <label for="example-text-input" class="col-xs-2 col-form-label">User's Content</label>
         <div class="col-xs-10">
-            <asp:TextBox type="search" CssClass="form-control" ID="userContent" placeholder="photo" runat="server" ><%: (Session["patientMedicalReport"] as Entity.MedicalReportE).UrineTest  %> </asp:TextBox>
+            <asp:TextBox type="search" CssClass="form-control" ID="userContent" placeholder="photo" runat="server" > </asp:TextBox>
 
         </div>
     </div>

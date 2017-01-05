@@ -150,6 +150,7 @@ namespace Control
 
             SqlCommand com = new SqlCommand("UpdateMedicalReport", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", obj.ReportID));
             com.Parameters.Add(new SqlParameter("@dietID", obj.DietID));
             com.Parameters.Add(new SqlParameter("@bloodTest", obj.BloodTest));
             com.Parameters.Add(new SqlParameter("@date", obj.Date));

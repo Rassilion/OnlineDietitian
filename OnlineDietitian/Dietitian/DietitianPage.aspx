@@ -18,15 +18,12 @@
                 </p>
                 <hr>
 
-                <asp:Button ID="readMore" Text="Read More" CssClass="btn btn-primary" runat="server" CommandArgument='<%# Eval("UserID") %>' CommandName="UserID" OnClick="readMore_Click" />
+               <a class="btn btn-primary" href="PatientDetail/<%# Eval("DietID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             <br />
         </ItemTemplate>
        
     </asp:Repeater>
 
-    <script type="text/javascript" src="/Scripts/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector: 'input.updateContent' });</script>
-    <script>tinymce.init({ selector: 'input.newContent' });</script>
 
 </asp:Content>

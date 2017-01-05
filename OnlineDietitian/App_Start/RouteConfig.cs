@@ -20,7 +20,7 @@ namespace OnlineDietitian
             routes.MapPageRoute("EditMedicalRoute", "AdminPage/EditMedicalReport/{id}", "~/AdminPage/EditMedicalReport.aspx");
             routes.MapPageRoute("EditPaymentRoute", "AdminPage/EditPayment/{id}", "~/AdminPage/EditPayment.aspx");
             routes.MapPageRoute("EditBlogPostRoute", "AdminPage/EditBlogPost/{id}", "~/AdminPage/EditBlogPost.aspx");
-
+            routes.MapPageRoute("patiandetail", "Dietitian/PatientDetail/{id}", "~/Dietitian/PatientDetail.aspx");
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);

@@ -44,7 +44,7 @@
     <Compile Include="BlogPostE.cs" />
     <Compile Include="DietE.cs" />
     <Compile Include="DietitianE.cs" />
-    <Compile Include="DietView.cs" />
+    <Compile Include="DietViewE.cs" />
     <Compile Include="MedicalReportE.cs" />
     <Compile Include="PaymentE.cs" />
     <Compile Include="DietRequestE.cs" />

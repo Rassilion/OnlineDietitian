@@ -56,10 +56,7 @@ namespace OnlineDietitian.User
                 currentMedicalReport.UrineTest = urineTest.Text;
                 currentMedicalReport.BloodTest = bloodTest.Text;
 
-                if (flag)
-                    BusinessLayers.Business.insertMedicalReport(currentMedicalReport);
-                else
-                    BusinessLayers.Business.updateMedicalReport(currentMedicalReport);
+                BusinessLayers.Business.insertMedicalReport(currentMedicalReport);
 
 
                 error.Text = "Success Save Medical Report";
