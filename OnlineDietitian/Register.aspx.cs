@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Entity;
 using BusinessLayers;
 using System.Threading;
+using System.Globalization;
 
 namespace OnlineDietitian
 {
@@ -36,11 +37,11 @@ namespace OnlineDietitian
                 user.UserName = nameBox.Text;
                 user.UserSurname = surnameBox.Text;
                 user.UserEmail = emailBox.Text;
-                user.UserBirth = DateTime.Parse(birthBox.Text);
+                user.UserBirth = DateTime.ParseExact(birthBox.Text,"yyyy-MM-dd", CultureInfo.CurrentCulture);
 
                 if(passwordBox.Text == passwordConfirmBox.Text) // Same password control
                 {
-                    user.UserPassword = passwordBox.Text;
+                    user.UserPassword = Util.MD5hash(passwordBox.Text);
                     BusinessLayers.Business.insertUser(user);
                     successLabel.Text = "Success Register";
                     successLabel.Visible = true; // Register success message
