@@ -245,5 +245,10 @@ namespace BusinessLayers
             DietRequestC.DeleteDietRequest(Convert.ToInt32(id));
         }
 
+        public static int getRequestIDByUserID(string id)
+        {
+            return DietC.getRequestIDByUserID(Convert.ToInt32(id));
+        }
+
     }
 }

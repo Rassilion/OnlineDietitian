@@ -65,6 +65,40 @@ namespace Control
             return temp;
         }
 
+       /* public static DietRequestE getDietRequestByUserID(int id)
+        {
+            DietRequestE temp = null;
+            SqlCommand com = new SqlCommand("getDietRequestByUserID", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    temp = new DietRequestE
+                    {
+                        RequestID = Convert.ToInt32(rd["RequestID"]),
+                        RequestContent = rd["RequestContent"].ToString(),
+                        Health = Convert.ToBoolean(rd["Health"]),
+                        Fitness = Convert.ToBoolean(rd["Fitness"]),
+                        WeightLoss = Convert.ToBoolean(rd["WeightLoss"]),
+                        WeightGain = Convert.ToBoolean(rd["WeightGain"])
+                    };
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return temp;
+        }*/
+
         public static List<DietRequestE> selectDietRequests()
         {
             List<DietRequestE> list = null;

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dietitian/Dietitian.master" AutoEventWireup="true" CodeBehind="DietitianPage.aspx.cs" Inherits="OnlineDietitian.Dietitian.DietitianPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dietitian/Dietitian.master" AutoEventWireup="true" CodeBehind="DietitianPage.aspx.cs" Inherits="OnlineDietitian.Dietitian.DietitianPage" EnableEventValidation="false"  ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="DietitianContent" runat="server">
  <asp:Repeater ID="userRepeater" runat="server">

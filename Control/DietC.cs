@@ -101,6 +101,32 @@ namespace Control
             return temp;
         }
 
+         public static int getRequestIDByUserID(int id)
+        {
+            int temp = 0;
+            SqlCommand com = new SqlCommand("getRequestIDByUserID", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+
+                temp = Convert.ToInt32(rd[0]);
+
+                
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return temp;
+        }
+
 
         public static List<DietE> selectDiets()
         {

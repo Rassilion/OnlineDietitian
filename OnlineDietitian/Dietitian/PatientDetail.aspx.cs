@@ -11,6 +11,8 @@ namespace OnlineDietitian.Dietitian
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["dietitian"] == null)
+                Response.Redirect("~/Logon.aspx");
 
         }
     }

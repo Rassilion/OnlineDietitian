@@ -21,7 +21,10 @@ namespace OnlineDietitian.Dietitian
         {
             Button btn = (Button)sender;
             Session["patient"] = BusinessLayers.Business.getUserByID(btn.CommandArgument);
-
+            Session["patientMedicalReport"] = BusinessLayers.Business.getMedicalReportByUserID(btn.CommandArgument);
+            Session["patientDietRequest"] = BusinessLayers.Business.getDietRequestByID(BusinessLayers.Business.getRequestIDByUserID(btn.CommandArgument).ToString());
+            
+            Response.Redirect("~/Dietitian/PatientDetail");
         }
 
         
