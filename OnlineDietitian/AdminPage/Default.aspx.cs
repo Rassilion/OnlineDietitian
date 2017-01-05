@@ -21,7 +21,10 @@ namespace OnlineDietitian.AdminPage
             switch (btn.CommandName)
             {
                 case "user":
-                    BusinessLayers.Business.deleteUser(Convert.ToInt32( btn.CommandArgument.ToString()));
+                    BusinessLayers.Business.deleteUser(btn.CommandArgument.ToString());
+                    break;
+                case "dietitian":
+                    BusinessLayers.Business.deleteDietitian(btn.CommandArgument.ToString());
                     break;
             }
             Response.Redirect(Request.RawUrl);
