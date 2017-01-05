@@ -11,8 +11,11 @@ namespace OnlineDietitian.Dietitian
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user"] == null)
-            { Response.Redirect("~/Logon.aspx"); }
+            if (Session["dietitian"] == null)
+                Response.Redirect("~/Logon.aspx");
+            // dietitianRepeater.DataSource = BusinessLayers.Business.();
+            //dietitianRepeater.DataBind();
+            //TODO: dietID ile dietisyenin müşterileri yazılacak
         }
     }
 }

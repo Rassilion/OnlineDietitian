@@ -7,6 +7,22 @@
             <h3>Login Page</h3>
             <table>
                 <tr>
+                    <td>
+                        Login type: 
+                    </td>
+                    <td>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2" for="pwd"></label>
+                            <asp:DropDownList ID="ddlLoginType" CssClass="btn btn-primary" runat="server" Width="200px">
+                            <asp:ListItem Text="User" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="Dietitian" Value="2"></asp:ListItem>
+                        </asp:DropDownList>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    
                     <td>E-mail address:</td>
                     <td>
                         <asp:TextBox ID="UserEmail" runat="server" /></td>

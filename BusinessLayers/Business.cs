@@ -74,6 +74,11 @@ namespace BusinessLayers
         {
             return UserC.validateUser(email, password);
         }
+        public static DietitianE validateDietitian(string email, string password)
+        {
+            return DietitianC.ValidateDietitian(email, password);
+        }
+
 
         public static string getUserName(int userID)
         {
@@ -116,17 +121,20 @@ namespace BusinessLayers
         }
 
 
-
+        // Medical Reports
         public static int insertMedicalReport(MedicalReportE medicalReport)
         {
             return MedicalReportC.InsertMedicalReport(medicalReport);
         }
 
+        // Diet Requests
         public static int insertDietRequest(DietRequestE dietRequest)
         {
             return DietRequestC.InsertDietRequest(dietRequest);
         }
 
+
+        // Diets
         public static void insertDiet(DietE diet)
         {
             DietC.InsertDiet(diet);

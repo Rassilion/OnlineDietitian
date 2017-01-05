@@ -13,6 +13,15 @@ namespace OnlineDietitian {
     public partial class Login {
         
         /// <summary>
+        /// ddlLoginType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLoginType;
+        
+        /// <summary>
         /// UserEmail control.
         /// </summary>
         /// <remarks>

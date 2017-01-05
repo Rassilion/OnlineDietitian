@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-8 well">
             <form class="form-horizontal">
+                
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="email">Email:</label>
                     <div class="col-sm-5">

@@ -86,7 +86,7 @@
                     <ItemTemplate>
                         <tr>
                             <td>
-                                <a href="EditDietitan/<%# Eval("DietitianID") %>">
+                                <a href="EditDietitian/<%# Eval("DietitianID") %>">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </a>
                                 <asp:LinkButton ID="deleteDietitan" OnClick="deleteButton" CommandName="dietitian" CommandArgument='<%#Eval("DietitianID")%>' runat="server">

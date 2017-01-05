@@ -12,6 +12,43 @@ namespace Control
     public class DietitianC
     {
 
+        public static DietitianE ValidateDietitian(string email, string password)
+        {
+            DietitianE dietitian = null;
+            SqlCommand com = new SqlCommand("ValidateDietitian", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@Email", email));
+            com.Parameters.Add(new SqlParameter("@Password", password));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                if (rd.Read())
+                {
+                    dietitian = new DietitianE
+                    {
+                        DietitianID = Convert.ToInt32(rd["DietitianID"]),
+                        Address = rd["Address"] == DBNull.Value ? "" : rd["Address"].ToString(),
+                        CV = rd["CV"] == DBNull.Value ? "" : rd["CV"].ToString(),
+                        DietitianPhone = rd["DietitianPhone"] == DBNull.Value ? "" : rd["DietitianPhone"].ToString(),
+                        DietitianEmail = rd["DietitianEmail"].ToString(),
+                        DietitianName = rd["DietitianName"].ToString(),
+                        DietitianPassword = rd["DietitianPassword"].ToString(),
+                        DietitianSurname = rd["DietitianSurname"].ToString(),
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                    };
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return dietitian;
+        }
+
         public static List<DietitianE> GetDietitians()
         {
             List<DietitianE> list = null;
@@ -135,6 +172,7 @@ namespace Control
 
             SqlCommand com = new SqlCommand("UpdateDietitian", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", obj.DietitianID));
             com.Parameters.Add(new SqlParameter("@address", obj.Address));
             com.Parameters.Add(new SqlParameter("@cv", obj.CV));
             com.Parameters.Add(new SqlParameter("@dietitianEmail", obj.DietitianEmail));

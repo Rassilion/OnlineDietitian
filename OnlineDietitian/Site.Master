@@ -54,27 +54,34 @@
                         <li><a runat="server" href="~/Blog">Blog</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
-                    <% if (Session["user"] == null)
+                    <% if (Session["user"] == null && Session["dietitian"] == null)
                         { %>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/Register">Register</a></li>
                         <li><a runat="server" href="~/Logon">Log in</a></li>
                     </ul>
-                    <% }else{ %>
+                    <% }else if(Session["dietitian"] == null){ %>
                     <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/User/UserPage" title="Manage your account">Hello, <%: (Session["user"] as Entity.UserE).getNameSurname()  %> !</a></li>
-                                <li><a runat="server" href="~/Dietitian/DietitianPage" title="Manage your account">Dietitian, <%: (Session["user"] as Entity.UserE).getNameSurname()  %> !</a></li>
 
                         
                         <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LogOut">      
                          Log Out 
                         </asp:LinkButton></li> 
-                                 
-
-
-
                             </ul>
-                    <% } %>
+                    <% } else {%>
+                    <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Dietitian/DietitianPage" title="Manage your account">Hello Dietitian, <%: (Session["dietitian"] as Entity.DietitianE).getNameSurname()  %> !</a></li>
+
+                        
+                        <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LogOut_Dietitian">      
+                         Log Out 
+                        </asp:LinkButton></li> 
+                            </ul>
+
+
+
+                    <% }%>
 
                     <%--  
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
