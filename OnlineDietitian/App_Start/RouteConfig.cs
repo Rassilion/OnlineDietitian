@@ -11,6 +11,7 @@ namespace OnlineDietitian
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.MapPageRoute("BlogPostRoute", "BlogPost/{id}", "~/BlogPost.aspx");
+            routes.MapPageRoute("admin","AdminPage", "~/AdminPage/Default.aspx");
             routes.MapPageRoute("EditUserRoute", "AdminPage/EditUser/{id}", "~/AdminPage/EditUser.aspx");
             routes.MapPageRoute("EditDiettianRoute", "AdminPage/EditDietitian/{id}", "~/AdminPage/EditDietitian.aspx");
             var settings = new FriendlyUrlSettings();

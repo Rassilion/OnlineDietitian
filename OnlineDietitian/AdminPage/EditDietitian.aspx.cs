@@ -10,33 +10,44 @@ namespace OnlineDietitian.AdminPage
     public partial class EditDietitian : System.Web.UI.Page
     {
         protected Entity.DietitianE currentDietitian;
+        protected bool newEntity = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get "id" from URL
             string id = Page.RouteData.Values["id"] as string;
             if (id != null)
             {
-                currentDietitian = BusinessLayers.Business.getDietitianByDietitianID(id);
-                if (currentDietitian != null)
+
+                if (id == "new")
                 {
-                    if (!Page.IsPostBack)
-                    {
-                        addressBox.Text = currentDietitian.Address;
-                        cvBox.Text = currentDietitian.CV;
-                        licenseBox.Text = currentDietitian.DietitianLicense;
-                        nameBox.Text = currentDietitian.DietitianName;
-                        surnameBox.Text = currentDietitian.DietitianSurname;
-                        changePasswordBox.Text = currentDietitian.DietitianPassword;
-                        phoneBox.Text = currentDietitian.DietitianPhone;
-                        emailBox.Text = currentDietitian.DietitianEmail;
-                        //TODO gender
-                    }
+                    currentDietitian = new Entity.DietitianE();
+                    newEntity = true;
                 }
                 else
                 {
-                    error.Text = "Dietitian not in the database";
-                    error.Visible = true;
+                    currentDietitian = BusinessLayers.Business.getDietitianByDietitianID(id);
+                    if (currentDietitian != null)
+                    {
+                        if (!Page.IsPostBack)
+                        {
+                            addressBox.Text = currentDietitian.Address;
+                            cvBox.Text = currentDietitian.CV;
+                            licenseBox.Text = currentDietitian.DietitianLicense;
+                            nameBox.Text = currentDietitian.DietitianName;
+                            surnameBox.Text = currentDietitian.DietitianSurname;
+                            changePasswordBox.Text = currentDietitian.DietitianPassword;
+                            phoneBox.Text = currentDietitian.DietitianPhone;
+                            emailBox.Text = currentDietitian.DietitianEmail;
+                            //TODO gender
+                        }
+                    }
+                    else
+                    {
+                        error.Text = "Dietitian not in the database";
+                        error.Visible = true;
+                    }
                 }
+
             }
             else
             {
@@ -61,8 +72,11 @@ namespace OnlineDietitian.AdminPage
                 else
                     currentDietitian.DietitianPassword = Util.MD5hash(changePasswordBox.Text);
                 currentDietitian.DietitianEmail = emailBox.Text;
-                //TODO gender
 
+                /*
+                if (newEntity)
+                    BusinessLayers.Business.insertDietitian(currentDietitian);
+                else*/
                 BusinessLayers.Business.updateDietitian(currentDietitian);
                 Response.Redirect(Request.RawUrl);
             }

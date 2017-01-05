@@ -53,5 +53,18 @@ namespace OnlineDietitian.AdminPage
             }
 
         }
+
+        protected void newButton_Click(object sender, EventArgs e)
+        {
+            switch (selectTable.SelectedIndex)
+            {
+                case 1:
+                    Response.Redirect("~/AdminPage/EditUser/new");
+                    break;
+                case 0:
+                    break;
+            }
+
+        }
     }
 }

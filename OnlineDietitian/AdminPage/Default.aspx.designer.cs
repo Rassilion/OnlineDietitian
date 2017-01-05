@@ -22,6 +22,15 @@ namespace OnlineDietitian.AdminPage {
         protected global::System.Web.UI.WebControls.DropDownList selectTable;
         
         /// <summary>
+        /// newButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button newButton;
+        
+        /// <summary>
         /// UserRepeater control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace OnlineDietitian.AdminPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater DietitianRepeater;
+        
+        /// <summary>
+        /// AppointmentRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater AppointmentRepeater;
     }
 }

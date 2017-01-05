@@ -10,8 +10,18 @@
                         <asp:ListItem> </asp:ListItem>
                         <asp:ListItem>User</asp:ListItem>
                         <asp:ListItem>Dietitian</asp:ListItem>
+                        <asp:ListItem>Appointment</asp:ListItem>
+                        <asp:ListItem>Payment</asp:ListItem>
+                        <asp:ListItem>MedicalReport</asp:ListItem>
+                        <asp:ListItem>DietRequest</asp:ListItem>
+                        <asp:ListItem>Diet</asp:ListItem>
+                        <asp:ListItem>BlogPost</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="newButton" CssClass="btn btn-default" runat="server" Text="New" OnClick="newButton_Click" />
+                </div>
+
             </div>
         </div>
         <div class="row">
@@ -102,6 +112,44 @@
                             <td><%# Eval("DietitianPhone") %></td>
                             <td><%# Eval("CV") %></td>
                             <td><%# Eval("DietitianLicense") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
+                <asp:Repeater ID="AppointmentRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>UserID</th>
+                                    <th>DietitianID</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <a href="EditAppointment/<%# Eval("AppointmentID") %>">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <asp:LinkButton ID="deleteDietitan" OnClick="deleteButton" CommandName="appointment" CommandArgument='<%#Eval("AppointmentID")%>' runat="server">
+                            <span class="glyphicon glyphicon-trash"></span>
+                                </asp:LinkButton>
+                            </td>
+                            <th scope="row"><%# Eval("AppointmentID") %></th>
+                            <td><%# Eval("UserID") %></td>
+                            <td><%# Eval("DietitianID") %></td>
+                            <td><%# Eval("AppointmentStatus") %></td>
+                            <td><%# Eval("AppointmentDate") %></td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
