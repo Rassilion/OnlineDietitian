@@ -12,7 +12,7 @@ namespace OnlineDietitian.AdminPage
         protected void Page_Load(object sender, EventArgs e)
         {
             UserRepeater.DataSource = BusinessLayers.Business.getUsers();
-            UserRepeater.DataBind();
+            DietitianRepeater.DataSource = BusinessLayers.Business.getDietitians();
         }
 
         protected void deleteButton(object sender, EventArgs e)
@@ -23,9 +23,31 @@ namespace OnlineDietitian.AdminPage
                 case "user":
                     BusinessLayers.Business.deleteUser(Convert.ToInt32( btn.CommandArgument.ToString()));
                     break;
-
             }
             Response.Redirect(Request.RawUrl);
+
+        }
+
+        protected void selectTable_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DietitianRepeater.Dispose();
+            DietitianRepeater.Visible = false;
+            UserRepeater.Dispose();
+            UserRepeater.Visible = false;
+
+            DropDownList drp = (DropDownList)sender;
+            switch (drp.SelectedIndex)
+            {
+                case 1:
+                    UserRepeater.DataBind();
+                    UserRepeater.Visible = true;
+                    break;
+                case 2:
+                    DietitianRepeater.DataBind();
+                    DietitianRepeater.Visible = true;
+                    break;
+
+            }
 
         }
     }
