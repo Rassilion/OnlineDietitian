@@ -211,6 +211,11 @@ namespace BusinessLayers
         {
             DietC.DeleteDiet(Convert.ToInt32(id));
         }
+        public static void getDietIDByDietitianAndUserID(int dietitianID, int userID)
+        {
+            DietC.getDietIDByDietitianAndUserID(dietitianID, userID);
+        }
+        
 
         //DietRequest
         public static List<DietRequestE> getDietRequests()

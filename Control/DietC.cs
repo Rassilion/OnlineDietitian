@@ -152,5 +152,30 @@ namespace Control
 
         }
 
+        
+        public static int getDietIDByDietitianAndUserID(int dietitianID, int userID)
+        {
+            int dietID = 0;
+            SqlCommand com = new SqlCommand("getDietIDByDietitianAndUserID", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@dietitianID", dietitianID));
+            com.Parameters.Add(new SqlParameter("@userID", userID));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                dietID = Convert.ToInt32(rd[0]);
+
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return dietID;
+        }
     }
 }
