@@ -13,7 +13,14 @@ namespace OnlineDietitian
             routes.MapPageRoute("BlogPostRoute", "BlogPost/{id}", "~/BlogPost.aspx");
             routes.MapPageRoute("admin","AdminPage", "~/AdminPage/Default.aspx");
             routes.MapPageRoute("EditUserRoute", "AdminPage/EditUser/{id}", "~/AdminPage/EditUser.aspx");
-            routes.MapPageRoute("EditDiettianRoute", "AdminPage/EditDietitian/{id}", "~/AdminPage/EditDietitian.aspx");
+            routes.MapPageRoute("EditDietitianRoute", "AdminPage/EditDietitian/{id}", "~/AdminPage/EditDietitian.aspx");
+            routes.MapPageRoute("EditDietRequestRoute", "AdminPage/EditDietRequest/{id}", "~/AdminPage/EditDietRequest.aspx");
+            routes.MapPageRoute("EditAppointmentRoute", "AdminPage/EditAppointment/{id}", "~/AdminPage/EditAppointment.aspx");
+            routes.MapPageRoute("EditDietRoute", "AdminPage/EditDiet/{id}", "~/AdminPage/EditDiet.aspx");
+            routes.MapPageRoute("EditMedicalRoute", "AdminPage/EditMedicalReport/{id}", "~/AdminPage/EditMedicalReport.aspx");
+            routes.MapPageRoute("EditPaymentRoute", "AdminPage/EditPayment/{id}", "~/AdminPage/EditPayment.aspx");
+            routes.MapPageRoute("EditBlogPostRoute", "AdminPage/EditBlogPost/{id}", "~/AdminPage/EditBlogPost.aspx");
+
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
