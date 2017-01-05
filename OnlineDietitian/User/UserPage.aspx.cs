@@ -19,7 +19,7 @@ namespace OnlineDietitian.User
 
         protected void dietitianButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Dietitians");
+            Response.Redirect("~/Dietitian/Dietitians");
 
         }
 

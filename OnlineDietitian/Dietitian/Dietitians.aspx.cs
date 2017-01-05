@@ -8,12 +8,14 @@ using BusinessLayers;
 using Entity;
 
 
-namespace OnlineDietitian
+namespace OnlineDietitian.Dietitian
 {
     public partial class Dietitians : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user"] == null)
+                Response.Redirect("~/Logon.aspx");
             dietitianRepeater.DataSource = BusinessLayers.Business.getDietitians();
             dietitianRepeater.DataBind();
 
@@ -23,7 +25,7 @@ namespace OnlineDietitian
         {
             Button btn = (Button)sender;
             Session["selectedDietitianID"] = Convert.ToInt32(btn.CommandArgument);
-            Response.Redirect("~/DietRequest");
+            Response.Redirect("~/User/DietRequest");
         }
 
     }
