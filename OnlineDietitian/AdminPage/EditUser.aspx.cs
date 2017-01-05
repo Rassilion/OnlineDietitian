@@ -16,18 +16,18 @@ namespace OnlineDietitian.AdminPage
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get "id" from URL
-            string userid = Page.RouteData.Values["id"] as string;
-            if (userid != null)
+            string id = Page.RouteData.Values["id"] as string;
+            if (id != null)
             {
                 newEntity = false;
-                if (userid == "new")
+                if (id == "new")
                 {
                     currentUser = new UserE();
                     newEntity = true;
                 }
                 else
                 {
-                    currentUser = BusinessLayers.Business.getUserByID(userid);
+                    currentUser = BusinessLayers.Business.getUserByID(id);
                     if (currentUser != null)
                     {
                         if (!Page.IsPostBack)

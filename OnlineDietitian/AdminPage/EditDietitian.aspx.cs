@@ -47,39 +47,39 @@ namespace OnlineDietitian.AdminPage
                         error.Visible = true;
                     }
                 }
+
             }
-        }
             else
             {
                 Response.Redirect("~/AdminPage/Default.aspx");
             }
-}
+        }
 
 
 
-protected void saveButton_Click(object sender, EventArgs e)
-{
-    if (currentDietitian != null)
-    {
-        currentDietitian.DietitianLicense = licenseBox.Text;
-        currentDietitian.Address = addressBox.Text;
-        currentDietitian.CV = cvBox.Text;
-        currentDietitian.DietitianName = nameBox.Text;
-        currentDietitian.DietitianSurname = surnameBox.Text;
-        currentDietitian.DietitianPhone = phoneBox.Text;
-        if (Util.isMD5(changePasswordBox.Text))
-            currentDietitian.DietitianPassword = changePasswordBox.Text;
-        else
-            currentDietitian.DietitianPassword = Util.MD5hash(changePasswordBox.Text);
-        currentDietitian.DietitianEmail = emailBox.Text;
+        protected void saveButton_Click(object sender, EventArgs e)
+        {
+            if (currentDietitian != null)
+            {
+                currentDietitian.DietitianLicense = licenseBox.Text;
+                currentDietitian.Address = addressBox.Text;
+                currentDietitian.CV = cvBox.Text;
+                currentDietitian.DietitianName = nameBox.Text;
+                currentDietitian.DietitianSurname = surnameBox.Text;
+                currentDietitian.DietitianPhone = phoneBox.Text;
+                if (Util.isMD5(changePasswordBox.Text))
+                    currentDietitian.DietitianPassword = changePasswordBox.Text;
+                else
+                    currentDietitian.DietitianPassword = Util.MD5hash(changePasswordBox.Text);
+                currentDietitian.DietitianEmail = emailBox.Text;
 
-        /*
-        if (newEntity)
-            BusinessLayers.Business.insertDietitian(currentDietitian);
-        else*/
-        BusinessLayers.Business.updateDietitian(currentDietitian);
-        Response.Redirect(Request.RawUrl);
-    }
-}
+                /*
+                if (newEntity)
+                    BusinessLayers.Business.insertDietitian(currentDietitian);
+                else*/
+                BusinessLayers.Business.updateDietitian(currentDietitian);
+                Response.Redirect(Request.RawUrl);
+            }
+        }
     }
 }

@@ -10,8 +10,18 @@
                         <asp:ListItem> </asp:ListItem>
                         <asp:ListItem>User</asp:ListItem>
                         <asp:ListItem>Dietitian</asp:ListItem>
+                        <asp:ListItem>Appointment</asp:ListItem>
+                        <asp:ListItem>Payment</asp:ListItem>
+                        <asp:ListItem>MedicalReport</asp:ListItem>
+                        <asp:ListItem>DietRequest</asp:ListItem>
+                        <asp:ListItem>Diet</asp:ListItem>
+                        <asp:ListItem>BlogPost</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="newButton" CssClass="btn btn-default" runat="server" Text="New" OnClick="newButton_Click" />
+                </div>
+
             </div>
         </div>
         <div class="row">
@@ -117,7 +127,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>ID</th>
-                                    <th>UserID</th>                                    
+                                    <th>UserID</th>
                                     <th>DietitianID</th>
                                     <th>Status</th>
                                     <th>Date</th>
