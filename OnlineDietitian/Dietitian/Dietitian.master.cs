@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace OnlineDietitian
+namespace OnlineDietitian.Dietitian
 {
-    public partial class DietitianPage1 : System.Web.UI.Page
+    public partial class Dietitian : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
