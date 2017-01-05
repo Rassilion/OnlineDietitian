@@ -74,6 +74,11 @@ namespace BusinessLayers
         {
             return UserC.validateUser(email, password);
         }
+        public static DietitianE validateDietitian(string email, string password)
+        {
+            return DietitianC.ValidateDietitian(email, password);
+        }
+
 
         public static string getUserName(int userID)
         {

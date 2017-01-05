@@ -17,5 +17,10 @@ namespace Entity
         public string DietitianSurname { get; set; }
         public string DietitianEmail { get; set; }
         public string DietitianPassword { get; set; }
+        public string Gender { get; set; }
+        public String getNameSurname()
+        {
+            return DietitianName + " " + DietitianSurname;
+        }
     }
 }

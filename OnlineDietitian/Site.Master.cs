@@ -84,6 +84,10 @@ namespace OnlineDietitian
         {
             Session["user"] = null;
         }
+        protected void LogOut_Dietitian(object sender, EventArgs e)
+        {
+            Session["dietitian"] = null;
+        }
     }
 
 }

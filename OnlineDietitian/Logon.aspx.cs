@@ -19,16 +19,35 @@ namespace OnlineDietitian
 
         protected void Submit1_Click(object sender, EventArgs e)
         {
-            UserE user; // Control database for login
-            if ((user = BusinessLayers.Business.validateUser(UserEmail.Text, Util.MD5hash(UserPass.Text))) !=null)
+            switch (Convert.ToInt32(ddlLoginType.Text))
             {
-                Session["user"] = user;
-                Response.Redirect("~/");
+                case 1:
+                    UserE user; // Control database for login
+                    if ((user = BusinessLayers.Business.validateUser(UserEmail.Text, Util.MD5hash(UserPass.Text))) != null)
+                    {
+                        Session["user"] = user;
+                        Response.Redirect("~/");
+                    }
+                    else // Invalid email or password
+                    {
+                        Msg.Text = "Invalid credentials. Please try again.";
+                    }
+
+                    break;
+                case 2:
+                    DietitianE dietitian; // Control database for login
+                    if ((dietitian = BusinessLayers.Business.validateDietitian(UserEmail.Text, Util.MD5hash(UserPass.Text))) != null)
+                    {
+                        Session["dietitian"] = dietitian;
+                        Response.Redirect("~/");
+                    }
+                    else // Invalid email or password
+                    {
+                        Msg.Text = "Invalid credentials. Please try again.";
+                    }
+                    break;
             }
-            else // Invalid email or password
-            {
-                Msg.Text = "Invalid credentials. Please try again.";
-            }
+
         }
     }
 }
