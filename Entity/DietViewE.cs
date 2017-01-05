@@ -32,5 +32,10 @@ namespace Entity
         public DateTime UserBirth { get; set; }
         public string Gender { get; set; }
 
+        public String getNameSurname()
+        {
+            return UserName + " " + UserSurname;
+        }
+
     }
 }
