@@ -170,9 +170,9 @@ namespace BusinessLayers
         {
             return MedicalReportC.getMedicalReportByID(Convert.ToInt32(id));
         }
-        public static void insertMedicalReport(MedicalReportE obj)
+        public static int insertMedicalReport(MedicalReportE obj)
         {
-            MedicalReportC.InsertMedicalReport(obj);
+            return MedicalReportC.InsertMedicalReport(obj);
         }
         public static void updateMedicalReport(MedicalReportE obj)
         {
@@ -216,9 +216,9 @@ namespace BusinessLayers
         {
             return DietRequestC.getDietRequestByID(Convert.ToInt32(id));
         }
-        public static void insertDietRequest(DietRequestE obj)
+        public static int insertDietRequest(DietRequestE obj)
         {
-            DietRequestC.InsertDietRequest(obj);
+            return DietRequestC.InsertDietRequest(obj);
         }
         public static void updateDietRequest(DietRequestE obj)
         {

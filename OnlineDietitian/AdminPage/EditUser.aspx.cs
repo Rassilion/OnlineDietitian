@@ -12,31 +12,42 @@ namespace OnlineDietitian.AdminPage
     public partial class EditUser : System.Web.UI.Page
     {
         protected Entity.UserE currentUser;
+        protected bool newEntity;
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get "id" from URL
             string userid = Page.RouteData.Values["id"] as string;
             if (userid != null)
             {
-                currentUser = BusinessLayers.Business.getUserByID(userid);
-                if (currentUser != null)
+                newEntity = false;
+                if (userid == "new")
                 {
-                    if (!Page.IsPostBack)
+                    currentUser = new UserE();
+                    newEntity = true;
+                }
+                else
+                {
+                    currentUser = BusinessLayers.Business.getUserByID(userid);
+                    if (currentUser != null)
                     {
-                        addressBox.Text = currentUser.Address;
-                        bodyPhotoBox.Text = currentUser.UserBodyPhoto;
-                        nameBox.Text = currentUser.UserName;
-                        surnameBox.Text = currentUser.UserSurname;
-                        changePasswordBox.Text = currentUser.UserPassword;
-                        phoneBox.Text = currentUser.UserPhone;
-                        birthBox.Text = currentUser.UserBirth.ToString("yyyy-MM-dd");
-                        emailBox.Text = currentUser.UserEmail;
-                        //TODO gender
+                        if (!Page.IsPostBack)
+                        {
+                            addressBox.Text = currentUser.Address;
+                            bodyPhotoBox.Text = currentUser.UserBodyPhoto;
+                            nameBox.Text = currentUser.UserName;
+                            surnameBox.Text = currentUser.UserSurname;
+                            changePasswordBox.Text = currentUser.UserPassword;
+                            phoneBox.Text = currentUser.UserPhone;
+                            birthBox.Text = currentUser.UserBirth.ToString("yyyy-MM-dd");
+                            emailBox.Text = currentUser.UserEmail;
+                            //TODO gender
+                        }
                     }
-                }else
-                {
-                    error.Text = "User not in the database";
-                    error.Visible = true;
+                    else
+                    {
+                        error.Text = "User not in the database";
+                        error.Visible = true;
+                    }
                 }
 
             }
@@ -64,8 +75,10 @@ namespace OnlineDietitian.AdminPage
                     currentUser.UserPassword = Util.MD5hash(changePasswordBox.Text);
                 currentUser.UserEmail = emailBox.Text;
                 //TODO gender
-
-                BusinessLayers.Business.updateUser(currentUser);
+                if (newEntity)
+                    BusinessLayers.Business.insertUser(currentUser);
+                else
+                    BusinessLayers.Business.updateUser(currentUser);
                 Response.Redirect(Request.RawUrl);
             }
         }
