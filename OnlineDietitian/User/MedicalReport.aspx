@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="MedicalReport.aspx.cs" Inherits="OnlineDietitian.User.MedicalReport" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
 
-     <h4>Medical Report</h4>
-   
+    <h4>Medical Report</h4>
+
     <div class="form-group row">
         <label for="example-text-input" class="col-xs-2 col-form-label">Height</label>
         <div class="col-xs-10">
@@ -44,11 +45,14 @@
     <div class="form-group row">
         <label for="example-text-input" class="col-xs-2 col-form-label">Blood Test</label>
         <div class="col-xs-10">
-            <asp:Label ID="error" runat="server" Text="Label" Visible="False"></asp:Label>
+
             <asp:TextBox type="search" CssClass="form-control" ID="bloodTest" placeholder="photo" runat="server"></asp:TextBox>
 
         </div>
     </div>
 
+    <asp:Button ID="saveButton" Text="Save" CssClass="btn btn-primary" runat="server" OnClick="saveMedicalReport_Click" />
+
+    <asp:Label ID="error" runat="server" Text="Label" Visible="False"></asp:Label>
 
 </asp:Content>
