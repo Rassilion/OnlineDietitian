@@ -11,6 +11,7 @@ namespace OnlineDietitian.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            avatar.ImageUrl = "~" + (Session["user"] as Entity.UserE).UserBodyPhoto;
 
         }
     }

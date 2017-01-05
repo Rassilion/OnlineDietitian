@@ -24,5 +24,9 @@ namespace Entity
             return UserName + " " + UserSurname;
         }
 
+        public String getAvatar()
+        {
+            return "~" + UserBodyPhoto;
+        }
     }
 }

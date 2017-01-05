@@ -31,13 +31,22 @@ namespace OnlineDietitian.User {
         protected global::System.Web.UI.WebControls.TextBox addressBox;
         
         /// <summary>
-        /// bodyPhotoBox control.
+        /// avatarUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bodyPhotoBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile avatarUpload;
+        
+        /// <summary>
+        /// Avatar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Avatar;
         
         /// <summary>
         /// nameBox control.
