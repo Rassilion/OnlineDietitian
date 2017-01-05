@@ -54,9 +54,14 @@ namespace BusinessLayers
             return DietitianC.GetDietitianName(dietitianID);
         }
 
-        public static DietitianE getDietitianByDietitianID(int dietitianID)
+        public static DietitianE getDietitianByDietitianID(string dietitianID)
         {
-            return DietitianC.GetDietitianByDietitianID(dietitianID);
+            return DietitianC.GetDietitianByDietitianID(Convert.ToInt32(dietitianID));
+        }
+
+        public static void updateDietitian(DietitianE obj)
+        {
+            DietitianC.UpdateDietitian(obj);
         }
 
         // Login and User Start

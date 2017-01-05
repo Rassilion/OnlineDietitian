@@ -1,6 +1,8 @@
-﻿<%@ Page Title="Edit User" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditUser"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditDietitian.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditDietitian" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+
     <div class="bs-callout bs-callout-danger">
         <h4>Edit Dietitian</h4>
         <h4><asp:Label ID="error" runat="server" Text="0" Visible="False"></asp:Label></h4>
@@ -56,9 +58,15 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="control-label col-sm-2" for="pwd">Birth Date</label>
-            <div class="col-sm-5">
-                <asp:TextBox type="date" CssClass="form-control" ID="birthBox" runat="server"></asp:TextBox>
+            <label for="example-text-input" class="col-xs-2 col-form-label">CV</label>
+            <div class="col-xs-10">
+                <asp:TextBox type="search" CssClass="form-control" ID="cvBox" placeholder="surname" runat="server"></asp:TextBox>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="example-text-input" class="col-xs-2 col-form-label">License</label>
+            <div class="col-xs-10">
+                <asp:TextBox type="search" CssClass="form-control" ID="licenseBox" placeholder="surname" runat="server"></asp:TextBox>
             </div>
         </div>
 
@@ -73,6 +81,5 @@
         <asp:Label ID="successLabel" runat="server" Text="Label" Visible="False"></asp:Label>
 
     </div>
-
 
 </asp:Content>

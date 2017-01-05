@@ -19,19 +19,30 @@ namespace OnlineDietitian.AdminPage
             if (userid != null)
             {
                 currentUser = BusinessLayers.Business.getUserByID(userid);
-                if (!Page.IsPostBack)
+                if (currentUser != null)
                 {
-                    addressBox.Text = currentUser.Address;
-                    bodyPhotoBox.Text = currentUser.UserBodyPhoto;
-                    nameBox.Text = currentUser.UserName;
-                    surnameBox.Text = currentUser.UserSurname;
-                    changePasswordBox.Text = currentUser.UserPassword;
-                    phoneBox.Text = currentUser.UserPhone;
-                    birthBox.Text = currentUser.UserBirth.ToString("yyyy-MM-dd");
-                    emailBox.Text = currentUser.UserEmail;
-                    //TODO gender
+                    if (!Page.IsPostBack)
+                    {
+                        addressBox.Text = currentUser.Address;
+                        bodyPhotoBox.Text = currentUser.UserBodyPhoto;
+                        nameBox.Text = currentUser.UserName;
+                        surnameBox.Text = currentUser.UserSurname;
+                        changePasswordBox.Text = currentUser.UserPassword;
+                        phoneBox.Text = currentUser.UserPhone;
+                        birthBox.Text = currentUser.UserBirth.ToString("yyyy-MM-dd");
+                        emailBox.Text = currentUser.UserEmail;
+                        //TODO gender
+                    }
+                }else
+                {
+                    error.Text = "User not in the database";
+                    error.Visible = true;
                 }
 
+            }
+            else
+            {
+                Response.Redirect("~/AdminPage/Default.aspx");
             }
 
         }
@@ -47,7 +58,10 @@ namespace OnlineDietitian.AdminPage
                 currentUser.UserName = nameBox.Text;
                 currentUser.UserSurname = surnameBox.Text;
                 currentUser.UserPhone = phoneBox.Text;
-                currentUser.UserPassword = changePasswordBox.Text;
+                if (Util.isMD5(changePasswordBox.Text))
+                    currentUser.UserPassword = changePasswordBox.Text;
+                else
+                    currentUser.UserPassword = Util.MD5hash(changePasswordBox.Text);
                 currentUser.UserEmail = emailBox.Text;
                 //TODO gender
 

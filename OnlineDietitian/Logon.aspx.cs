@@ -20,7 +20,7 @@ namespace OnlineDietitian
         protected void Submit1_Click(object sender, EventArgs e)
         {
             UserE user; // Control database for login
-            if ((user = BusinessLayers.Business.validateUser(UserEmail.Text, UserPass.Text)) !=null)
+            if ((user = BusinessLayers.Business.validateUser(UserEmail.Text, Util.MD5hash(UserPass.Text))) !=null)
             {
                 Session["user"] = user;
                 Response.Redirect("~/");
