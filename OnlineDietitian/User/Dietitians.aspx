@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dietitian/Dietitian.master" AutoEventWireup="true" CodeBehind="Dietitians.aspx.cs" Inherits="OnlineDietitian.Dietitian.Dietitians" EnableEventValidation="false" ValidateRequest="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="Dietitians.aspx.cs" Inherits="OnlineDietitian.User.Dietitians" EnableEventValidation="false" ValidateRequest="false" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="DietitianContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
 
     <asp:Repeater ID="dietitianRepeater" runat="server">
         <HeaderTemplate>

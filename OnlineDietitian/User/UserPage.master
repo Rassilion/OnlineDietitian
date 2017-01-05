@@ -14,7 +14,7 @@
                 <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
                     <li class="active">
                         <a href="#mail-inbox.html">
-                            <i class="fa fa-inbox"></i>Inbox  <span class="label pull-right">7</span>
+                            <i class="fa fa-inbox"></i>Inbox
                         </a>
                     </li>
                     <li>
@@ -31,12 +31,17 @@
                 <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
                     <li>
                         <a href="/User/MoreInformation">
-                            <i class="fa fa-folder-open"></i>Information Update  <span class="label label-danger pull-right">3</span>
+                            <i class="fa fa-folder-open"></i>Information Update
                         </a>
                     </li>
                     <li>
                         <a href="/User/DietRequest">
                             <i class="fa fa-folder-open"></i>Diet Request
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/User/MedicalReport">
+                            <i class="fa fa-folder-open"></i>Medical Report
                         </a>
                     </li>
                 </ul>

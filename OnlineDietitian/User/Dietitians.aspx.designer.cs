@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineDietitian.Dietitian {
+namespace OnlineDietitian.User {
     
     
     public partial class Dietitians {

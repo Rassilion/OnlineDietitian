@@ -8,7 +8,7 @@ using BusinessLayers;
 using Entity;
 
 
-namespace OnlineDietitian.Dietitian
+namespace OnlineDietitian.User
 {
     public partial class Dietitians : System.Web.UI.Page
     {
