@@ -20,7 +20,7 @@
                     <asp:Label ID="blogPostContent" runat="server" Text='<%# BusinessLayers.Business.getDietRequestByID(Eval("DietRequestID").ToString()).RequestContent.ToString() %>' />
                 </p>
 
-               <a class="btn btn-primary" href="/User/">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+               <a class="btn btn-primary" href="/User/DietsDetail/<%# Eval("DietID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             <br />
         </ItemTemplate>

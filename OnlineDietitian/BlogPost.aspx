@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BlogPost.aspx.cs" Inherits="OnlineDietitian.BlogPost" %>
+﻿<%@ Page Title="BlogPost" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BlogPost.aspx.cs" Inherits="OnlineDietitian.BlogPost" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
    
