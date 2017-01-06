@@ -83,11 +83,10 @@ namespace OnlineDietitian
         protected void LogOut(object sender, EventArgs e)
         {
             Session["user"] = null;
-        }
-        protected void LogOut_Dietitian(object sender, EventArgs e)
-        {
             Session["dietitian"] = null;
+            Response.Redirect("~/Default.aspx");
         }
+
     }
 
 }
