@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BlogPost.aspx.cs" Inherits="OnlineDietitian.BlogPost" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <% if (Session["user"] == null)
-        { Response.Redirect("~/Logon.aspx"); }%>
-
+   
     <div class="row">
 
         <!-- Blog Post Content Column -->
