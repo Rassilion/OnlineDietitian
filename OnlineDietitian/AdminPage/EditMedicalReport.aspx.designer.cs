@@ -10,105 +10,114 @@
 namespace OnlineDietitian.AdminPage {
     
     
-    public partial class Default {
+    public partial class EditMedicalReport {
         
         /// <summary>
-        /// selectTable control.
+        /// error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList selectTable;
+        protected global::System.Web.UI.WebControls.Label error;
         
         /// <summary>
-        /// newButton control.
+        /// dietitianidBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button newButton;
+        protected global::System.Web.UI.WebControls.TextBox dietitianidBox;
         
         /// <summary>
-        /// UserRepeater control.
+        /// useridBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater UserRepeater;
+        protected global::System.Web.UI.WebControls.TextBox useridBox;
         
         /// <summary>
-        /// DietitianRepeater control.
+        /// drugBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater DietitianRepeater;
+        protected global::System.Web.UI.WebControls.TextBox drugBox;
         
         /// <summary>
-        /// AppointmentRepeater control.
+        /// diseaseBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater AppointmentRepeater;
+        protected global::System.Web.UI.WebControls.TextBox diseaseBox;
         
         /// <summary>
-        /// DietRepeater control.
+        /// heightBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater DietRepeater;
+        protected global::System.Web.UI.WebControls.TextBox heightBox;
         
         /// <summary>
-        /// DietRequestRepeater control.
+        /// weightBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater DietRequestRepeater;
+        protected global::System.Web.UI.WebControls.TextBox weightBox;
         
         /// <summary>
-        /// MedicalReportRepeater control.
+        /// urineBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater MedicalReportRepeater;
+        protected global::System.Web.UI.WebControls.TextBox urineBox;
         
         /// <summary>
-        /// PaymentRepeater control.
+        /// bloodBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater PaymentRepeater;
+        protected global::System.Web.UI.WebControls.TextBox bloodBox;
         
         /// <summary>
-        /// BlogPostRepeater control.
+        /// dateBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater BlogPostRepeater;
+        protected global::System.Web.UI.WebControls.TextBox dateBox;
         
         /// <summary>
-        /// DietViewRepeater control.
+        /// saveButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater DietViewRepeater;
+        protected global::System.Web.UI.WebControls.Button saveButton;
+        
+        /// <summary>
+        /// successLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label successLabel;
     }
 }

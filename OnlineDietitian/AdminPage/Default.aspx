@@ -16,6 +16,7 @@
                         <asp:ListItem>DietRequest</asp:ListItem>
                         <asp:ListItem>Diet</asp:ListItem>
                         <asp:ListItem>BlogPost</asp:ListItem>
+                        <asp:ListItem>DietView</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col-sm-4">
@@ -361,6 +362,73 @@
                             <td><%# Eval("Title") %></td>
                             <td><%# Eval("BlogContent") %></td>
                             <td><%# Eval("PostDate") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
+
+                <asp:Repeater ID="DietViewRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>DietID</th>
+                                    <th>UserID</th>
+                                    <th>DietitianID</th>
+                                    <th>UsedDrugs</th>
+                                    <th>Disease</th>
+                                    <th>Height</th>
+                                    <th>Weight</th>
+                                    <th>UrineTest</th>
+                                    <th>BloodTest</th>
+                                    <th>RequestID</th>
+                                    <th>Content</th>
+                                    <th>Health</th>
+                                    <th>Fitness</th>
+                                    <th>WeighGain</th>
+                                    <th>WeighLoss</th>
+                                    <th>DietContent</th>
+                                    <th>RequestContent</th>                                    
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Email</th>
+                                    <th>Birthdate</th>
+                                    <th>Gender</th>
+                                    <th>BodyPhoto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <th scope="row"><%# Eval("DietID") %></th>
+                            <td><%# Eval("UserID") %></td>
+                            <td><%# Eval("DietianID") %></td>
+                            <td><%# Eval("Date") %></td>
+                            <td><%# Eval("UsedDrugs") %></td>
+                            <td><%# Eval("Disease") %></td>
+                            <td><%# Eval("Height") %></td>
+                            <td><%# Eval("Weight") %></td>
+                            <td><%# Eval("UrineTest") %></td>
+                            <td><%# Eval("BloodTest") %></td>
+                            <td><%# Eval("RequestID") %></td>
+                            <td><%# Eval("RequestContent") %></td>
+                            <td><%# Eval("Health") %></td>
+                            <td><%# Eval("Fitness") %></td>
+                            <td><%# Eval("WeighGain") %></td>
+                            <td><%# Eval("WeighLoss") %></td>                            
+                            <td><%# Eval("DietContent") %></td>
+                            <td><%# Eval("RequestContent") %></td>
+                            <td><%# Eval("UserName") %></td>
+                            <td><%# Eval("UserSurname") %></td>
+                            <td><%# Eval("UserEmail") %></td>
+                            <td><%# Eval("UserBirth") %></td>
+                            <td><%# Eval("Gender") %></td>
+                            <td><%# Eval("UserBodyPhoto") %></td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>

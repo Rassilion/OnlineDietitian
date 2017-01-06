@@ -39,6 +39,12 @@ namespace BusinessLayers
         {
             BlogPostC.UpdateBlogPost(blogID, dietitianID, title, content);
         }
+
+        public static object getDietViews()
+        {
+            throw new NotImplementedException();
+        }
+
         public static void updateBlogPost(BlogPostE obj)
         {
             BlogPostC.UpdateBlogPost(obj.BlogID, obj.DietitanID, obj.Title, obj.BlogContent);
