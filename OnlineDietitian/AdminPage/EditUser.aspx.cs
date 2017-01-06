@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entity;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace OnlineDietitian.AdminPage
 {
@@ -75,11 +76,21 @@ namespace OnlineDietitian.AdminPage
                     currentUser.UserPassword = Util.MD5hash(changePasswordBox.Text);
                 currentUser.UserEmail = emailBox.Text;
                 //TODO gender
-                if (newEntity)
-                    BusinessLayers.Business.insertUser(currentUser);
-                else
-                    BusinessLayers.Business.updateUser(currentUser);
-                Response.Redirect(Request.RawUrl);
+
+                try
+                {
+                    if (newEntity)
+                        BusinessLayers.Business.insertUser(currentUser);
+                    else
+                        BusinessLayers.Business.updateUser(currentUser);
+                }
+                catch (SqlException ex)
+                {
+                    error.Text = ex.Message;
+                    error.Visible = true;
+                }
+
+
             }
         }
     }

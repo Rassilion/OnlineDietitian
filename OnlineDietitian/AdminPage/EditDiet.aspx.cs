@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entity;
+using System.Data.SqlClient;
 
 namespace OnlineDietitian.AdminPage
 {
@@ -61,13 +62,20 @@ namespace OnlineDietitian.AdminPage
                 currentDiet.DietRequestID = Convert.ToInt32(dietrequestidBox.Text);
                 currentDiet.UserID = Convert.ToInt32(useridBox.Text);
                 currentDiet.DietitianID = Convert.ToInt32(dietitianidBox.Text);
-                
 
-                if (newEntity)
-                    BusinessLayers.Business.insertDiet(currentDiet);
-                else
-                    BusinessLayers.Business.updateDiet(currentDiet);
-                Response.Redirect(Request.RawUrl);
+
+                try
+                {
+                    if (newEntity)
+                        BusinessLayers.Business.insertDiet(currentDiet);
+                    else
+                        BusinessLayers.Business.updateDiet(currentDiet);
+                }
+                catch (SqlException ex)
+                {
+                    error.Text = ex.Message;
+                    error.Visible = true;
+                }
             }
         }
     }
