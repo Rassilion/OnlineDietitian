@@ -217,6 +217,10 @@ namespace BusinessLayers
         {
             return DietC.selectDiets();
         }
+        public static List<DietE> getDietsWithoutNull()
+        {
+            return DietC.selectDietsWithoutNull();
+        }
         public static DietE getDietByID(string id)
         {
             return DietC.getDietByID(Convert.ToInt32(id));

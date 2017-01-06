@@ -147,7 +147,40 @@ namespace Control
                 {
                     list.Add(new DietE
                     {
-                        DietID = Convert.ToInt32(rd["RequestID"]),
+                        DietID = Convert.ToInt32(rd["DietID"]),
+                        DietContent = rd["DietContent"].ToString(),
+                        DietitianID = Convert.ToInt32(rd["DietitianID"]),
+                        DietRequestID = Convert.ToInt32(rd["DietRequestID"]),
+                        UserID = Convert.ToInt32(rd["UserID"]),
+                    });
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return list;
+        }
+        public static List<DietE> selectDietsWithoutNull()
+        {
+            List<DietE> list = null;
+
+            SqlCommand com = new SqlCommand("selectDietsWithoutNull", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                list = new List<DietE>();
+                while (rd.Read())
+                {
+                    list.Add(new DietE
+                    {
+                        DietID = Convert.ToInt32(rd["DietID"]),
                         DietContent = rd["DietContent"].ToString(),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         DietRequestID = Convert.ToInt32(rd["DietRequestID"]),
@@ -171,6 +204,7 @@ namespace Control
             com.Parameters.Add(new SqlParameter("@dietitianID", obj.DietitianID));
             com.Parameters.Add(new SqlParameter("@dietRequestID", obj.DietRequestID));
             com.Parameters.Add(new SqlParameter("@userID", obj.UserID));
+            com.Parameters.Add(new SqlParameter("@id", obj.DietID));
 
             if (com.Connection.State == ConnectionState.Closed)
             {

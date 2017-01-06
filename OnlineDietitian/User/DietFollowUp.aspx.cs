@@ -10,10 +10,14 @@ namespace OnlineDietitian.User
 {
     public partial class DietFollowUp : System.Web.UI.Page
     {
-        protected DietViewE currentDietView;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user"] == null)
+                Response.Redirect("~/Logon.aspx");
 
+            dietRepeater.DataSource = BusinessLayers.Business.getDietsWithoutNull();
+            dietRepeater.DataBind();
         }
     }
 }

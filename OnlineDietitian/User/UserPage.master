@@ -21,7 +21,7 @@
                         <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i>Send Mail</a>
                     </li>
                     <li>
-                        <a href="/User/DietFollowUp"><i class="fa fa-certificate"></i>Diet follow-up</a>
+                        <a  href="/User/DietFollowUp"><i class="fa fa-certificate"></i>Diet follow-up</a>
                     </li>
                     <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
                 </ul>
