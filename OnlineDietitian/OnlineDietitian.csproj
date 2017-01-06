@@ -189,6 +189,7 @@
     <Content Include="AdminPage\EditDiet.aspx" />
     <Content Include="AdminPage\EditDietitian.aspx" />
     <Content Include="AdminPage\EditDietRequest.aspx" />
+    <Content Include="AdminPage\EditMedicalReport.aspx" />
     <Content Include="AdminPage\EditPayment.aspx" />
     <Content Include="AdminPage\EditUser.aspx" />
     <Content Include="Blog.aspx" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="AdminPage\EditDietRequest.aspx.designer.cs">
       <DependentUpon>EditDietRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\EditMedicalReport.aspx.cs">
+      <DependentUpon>EditMedicalReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\EditMedicalReport.aspx.designer.cs">
+      <DependentUpon>EditMedicalReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPage\EditPayment.aspx.cs">
       <DependentUpon>EditPayment.aspx</DependentUpon>
