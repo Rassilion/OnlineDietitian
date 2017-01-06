@@ -19,6 +19,7 @@ namespace OnlineDietitian.AdminPage
             MedicalReportRepeater.DataSource = BusinessLayers.Business.getMedicalReports();
             AppointmentRepeater.DataSource = BusinessLayers.Business.getAppointments();
             DietRequestRepeater.DataSource = BusinessLayers.Business.getDietRequests();
+            DietViewRepeater.DataSource = BusinessLayers.Business.getDietViews();
         }
 
         protected void deleteButton(object sender, EventArgs e)
@@ -67,12 +68,14 @@ namespace OnlineDietitian.AdminPage
             MedicalReportRepeater.Visible = false;
             AppointmentRepeater.Visible = false;
             DietRequestRepeater.Visible = false;
+            DietViewRepeater.Visible = false;
             DietRepeater.Dispose();
             BlogPostRepeater.Dispose();
             PaymentRepeater.Dispose();
             MedicalReportRepeater.Dispose();
             AppointmentRepeater.Dispose();
             DietRequestRepeater.Dispose();
+            DietViewRepeater.Dispose();
 
             DropDownList drp = (DropDownList)sender;
             switch (drp.SelectedIndex)
@@ -108,6 +111,10 @@ namespace OnlineDietitian.AdminPage
                 case 8:
                     BlogPostRepeater.DataBind();
                     BlogPostRepeater.Visible = true;
+                    break;
+                case 9:
+                    DietViewRepeater.DataBind();
+                    DietViewRepeater.Visible = true;
                     break;
 
             }
