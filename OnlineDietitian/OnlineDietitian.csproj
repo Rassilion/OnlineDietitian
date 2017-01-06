@@ -197,6 +197,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Dietitian\DietitianPage.aspx" />
     <Content Include="Dietitian\PatientDetail.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="User\DietFollowUp.aspx" />
     <Content Include="User\Dietitians.aspx" />
     <Content Include="User\DietRequest.aspx" />
@@ -208,6 +209,7 @@
     <Content Include="Dietitian\Dietitian.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Logon.aspx" />
+    <Content Include="User\DietsDetail.aspx" />
     <Content Include="User\MedicalReport.aspx" />
     <Content Include="User\MoreInformation.aspx" />
     <Content Include="Register.aspx" />
@@ -368,6 +370,13 @@
     <Compile Include="Dietitian\PatientDetail.aspx.designer.cs">
       <DependentUpon>PatientDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\DietFollowUp.aspx.cs">
       <DependentUpon>DietFollowUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,6 +409,13 @@
       <DependentUpon>Logon.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="User\DietsDetail.aspx.cs">
+      <DependentUpon>DietsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\DietsDetail.aspx.designer.cs">
+      <DependentUpon>DietsDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\MedicalReport.aspx.cs">
       <DependentUpon>MedicalReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

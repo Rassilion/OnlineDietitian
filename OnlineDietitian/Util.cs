@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
-
+using Entity;
 namespace OnlineDietitian
 {
     public static class Util
@@ -41,6 +41,22 @@ namespace OnlineDietitian
         public static bool isMD5(string str)
         {
             return Regex.IsMatch(str, @"[0-9a-f]{32}", RegexOptions.IgnoreCase);
+        }
+
+
+        public static string UserRequest(DietViewE view)
+        {
+            if (view.Health == true)
+                return "Health";
+            else if (view.Fitness == true)
+                return "Fitness";
+            else if (view.WeightGain == true)
+                return "Weight Gain";
+            else if (view.WeightLoss == true)
+                return "Weight Loss";
+
+
+            return "";
         }
     }
 }
