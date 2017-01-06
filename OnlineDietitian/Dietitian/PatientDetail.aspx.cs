@@ -22,14 +22,20 @@ namespace OnlineDietitian.Dietitian
             if (id != null)
             {
                 currentDietView = BusinessLayers.Business.getDietViewByDietID(id);
-                requestContent.Text = currentDietView.RequestContent.ToString();
-                health.Text = currentDietView.Health.ToString();
-                fitness.Text = currentDietView.Fitness.ToString();
-                weightGain.Text = currentDietView.WeightGain.ToString();
-                weightLoss.Text = currentDietView.WeightLoss.ToString();
-
+ 
             }
+        }
+        protected void sendDiet_Click(object sender, EventArgs e)
+        {
+            DietE diet = new DietE();
+            diet.DietitianID = currentDietView.DietitianID;
+            diet.DietID = currentDietView.DietID;
+            diet.DietRequestID = currentDietView.RequestID;
+            diet.UserID = currentDietView.UserID;
+            diet.DietContent = dietContent_textbox.Text;
+            BusinessLayers.Business.updateDiet(diet);
 
         }
+        
     }
 }
