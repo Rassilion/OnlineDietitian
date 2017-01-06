@@ -41,45 +41,53 @@
 
     <h4>Diet Request</h4>
 
+     <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Request Name</th>
+                <th>Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>User's Content</td>
+                <td><%: currentDietView.RequestContent  %></td>
+            </tr>
+            <tr>
+                <td>Health</td>
+                <td><%: currentDietView.Health  %></td>
+            </tr>
+            <tr>
+                <td>Fitness</td>
+                <td><%: currentDietView.Fitness  %></td>
+            </tr>
+             <tr>
+                <td>Weight Gain</td>
+                <td><%: currentDietView.WeightGain  %></td>
+            </tr>
+             <tr>
+                <td>Weight Loss</td>
+                <td><%: currentDietView.WeightLoss  %></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+    <hr />
+     <h4>Diet Prepare</h4>
+        <p>&nbsp;</p>
+        <p>
+            <h4>Meals</h4>
+            <asp:TextBox ID="dietContent_textbox" CssClass="newContent" runat="server">Content</asp:TextBox>
+        </p>
+        <p>&nbsp;</p>
 
-    <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">User's Content</label>
-        <div class="col-xs-10">
-            <asp:TextBox type="search" CssClass="form-control" ID="requestContent" placeholder="photo" runat="server" > </asp:TextBox>
+        <asp:Button ID="sendDiet" Text="Send Diet" CssClass="btn btn-primary" runat="server" OnClick="sendDiet_Click" />
 
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">Health</label>
-        <div class="col-xs-10">
 
-            <asp:TextBox type="search" CssClass="form-control" ID="health" placeholder="photo" runat="server"></asp:TextBox>
-
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">Fitness</label>
-        <div class="col-xs-10">
-
-            <asp:TextBox type="search" CssClass="form-control" ID="fitness" placeholder="photo" runat="server"></asp:TextBox>
-
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">Weight Gain</label>
-        <div class="col-xs-10">
-
-            <asp:TextBox type="search" CssClass="form-control" ID="weightGain" placeholder="photo" runat="server"></asp:TextBox>
-
-        </div>
-    </div>
-     <div class="form-group row">
-        <label for="example-text-input" class="col-xs-2 col-form-label">Weight Loss</label>
-        <div class="col-xs-10">
-
-            <asp:TextBox type="search" CssClass="form-control" ID="weightLoss" placeholder="photo" runat="server"></asp:TextBox>
-
-        </div>
-    </div>
+    
+    <script type="text/javascript" src="/Scripts/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'input.updateContent' });</script>
+    <script>tinymce.init({ selector: 'input.newContent' });</script>
 
 </asp:Content>
