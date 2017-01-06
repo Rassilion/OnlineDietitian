@@ -185,6 +185,10 @@ namespace BusinessLayers
         {
             PaymentC.UpdatePayment(obj);
         }
+        public static List<PaymentE> getPaymentWithNullByUserID(int id)
+        {
+            return PaymentC.getPaymentWithNullByUserID(id);
+        }
 
         public static void deletePayment(string id)
         {

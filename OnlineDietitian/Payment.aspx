@@ -1,116 +1,113 @@
-﻿<%@ Page Title="Payment" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="OnlineDietitian.Payment" EnableEventValidation="false" ValidateRequest="false"%>
+﻿<%@ Page Title="Payment" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="OnlineDietitian.Payment" EnableEventValidation="false" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-   
 
-        <div class="row">
-            <!-- You can make it whatever width you want. I'm making it full width
+
+    <div class="row">
+        <!-- You can make it whatever width you want. I'm making it full width
              on <= small devices and 4/12 page width on >= medium devices -->
-            <div class="col-xs-12 col-md-4">
+        <div class="col-xs-12 col-md-4">
 
-
-                <!-- CREDIT CARD FORM STARTS HERE -->
-                <div class="panel panel-default credit-card-box">
-                    <div class="panel-heading display-table">
-                        <div class="row display-tr">
-                            <h3 class="panel-title display-td">Payment Details</h3>
-                            <div class="display-td">
-                                <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
-                            </div>
+            <!-- CREDIT CARD FORM STARTS HERE -->
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table">
+                    <div class="row display-tr">
+                        <h3 class="panel-title display-td">Payment Details</h3>
+                        <div class="display-td">
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
                         </div>
                     </div>
-                    <div class="panel-body">
-                        <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="cardNumber">CARD NUMBER</label>
-                                        <div class="input-group">
-                                            <input
-                                                type="tel"
-                                                class="form-control"
-                                                name="cardNumber"
-                                                placeholder="Valid Card Number"
-                                                autocomplete="cc-number"
-                                                required autofocus />
-                                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-7 col-md-7">
-                                    <div class="form-group">
-                                        <label for="cardExpiry"><span class="visible-xs-inline">EXP</span> DATE</label>
-                                        <input
-                                            type="tel"
-                                            class="form-control"
-                                            name="cardExpiry"
-                                            placeholder="MM / YY"
-                                            autocomplete="cc-exp"
-                                            required />
-                                    </div>
-                                </div>
-                                <div class="col-xs-5 col-md-5 pull-right">
-                                    <div class="form-group">
-                                        <label for="cardCVC">CV CODE</label>
-                                        <input
-                                            type="tel"
-                                            class="form-control"
-                                            name="cardCVC"
-                                            placeholder="CVC"
-                                            autocomplete="cc-csc"
-                                            required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="couponCode">COUPON CODE</label>
-                                        <input type="text" class="form-control" name="couponCode" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                        <asp:Button ID="payButton" Text="Pay" CssClass="btn btn-primary" runat="server" OnClick="payment_Click" />
-                                        <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
-                                        <asp:Label ID="successPayment" runat="server" Text="Label" Visible="False"></asp:Label>
-                                </div>
-                            </div>
-                            <div class="row" style="display: none;">
-                                <div class="col-xs-12">
-                                    <p class="payment-errors"></p>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                 </div>
-    
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardNumber"
+                                            placeholder="Valid Card Number"
+                                            autocomplete="cc-number"
+                                            required autofocus />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        name="cardExpiry"
+                                        placeholder="MM / YY"
+                                        autocomplete="cc-exp"
+                                        required />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        name="cardCVC"
+                                        placeholder="CVC"
+                                        autocomplete="cc-csc"
+                                        required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="couponCode">COUPON CODE</label>
+                                    <input type="text" class="form-control" name="couponCode" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <asp:Button ID="payButton" Text="Pay" CssClass="btn btn-primary" runat="server" OnClick="payment_Click" />
+                                <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+                                <asp:Label ID="successPayment" runat="server" Text="Label" Visible="False"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row" style="display: none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-          
+
+        </div>
+
         <div class="well col-xs-10 col-sm-10 col-md-6">
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <address>
-                        <strong>Elf Cafe</strong>
+                        <strong><%= (Session["user"] as Entity.UserE).getNameSurname() %></strong>
                         <br>
-                        2135 Sunset Blvd
                         <br>
-                        Los Angeles, CA 90026
+
                         <br>
-                        <abbr title="Phone">P:</abbr> (213) 484-6829
                     </address>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-right">
                     <p>
-                        <em>Date: 1st November, 2013</em>
+                        <em>Date: <%= DateTime.Now.ToString() %></em>
                     </p>
                     <p>
-                        <em>Receipt #: 34522677W</em>
+                        <em>Pay #: 34522677W</em>
                     </p>
                 </div>
             </div>
@@ -129,57 +126,50 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <asp:Repeater ID="paymentRepeater" runat="server">
+                            <HeaderTemplate>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+
+                                        <%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>
+                                   
+                                    </td>
+                                    <td>
+                                        <%# Eval("UserID").ToString() %>
+                                    </td>
+
+                                    <td class="text-center">
+                                        
+                                         <%# Eval("Fee") %>
+                                    </td>
+                                    <td class="text-center"><%# total += Convert.ToInt32(Eval("Fee"))%></td>
+                                </tr>
+
+
+                            </ItemTemplate>
+                            <FooterTemplate>
+                            </FooterTemplate>
+                        </asp:Repeater>
                         <tr>
-                            <td class="col-md-9"><em>Baked Rodopa Sheep Feta</em></h4></td>
-                            <td class="col-md-1" style="text-align: center"> 2 </td>
-                            <td class="col-md-1 text-center">$13</td>
-                            <td class="col-md-1 text-center">$26</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-9"><em>Lebanese Cabbage Salad</em></h4></td>
-                            <td class="col-md-1" style="text-align: center"> 1 </td>
-                            <td class="col-md-1 text-center">$8</td>
-                            <td class="col-md-1 text-center">$8</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-9"><em>Baked Tart with Thyme and Garlic</em></h4></td>
-                            <td class="col-md-1" style="text-align: center"> 3 </td>
-                            <td class="col-md-1 text-center">$16</td>
-                            <td class="col-md-1 text-center">$48</td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td class="text-right">
-                            <p>
-                                <strong>Subtotal: </strong>
-                            </p>
-                            <p>
-                                <strong>Tax: </strong>
-                            </p></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td class="text-center">
-                            <p>
-                                <strong>$6.94</strong>
-                            </p>
-                            <p>
-                                <strong>$6.94</strong>
-                            </p></td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td class="text-right"><h4><strong>Total: </strong></h4></td>
-                            <td class="text-center text-danger"><h4><strong>$31.53</strong></h4></td>
+
+                                <%= total.ToString() %>
+                                   
+                            </td>
+
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-success btn-lg btn-block">
-                    Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
-                </button></td>
+
             </div>
-    
+
         </div>
-</div>
+    </div>
 
 
     <style>
