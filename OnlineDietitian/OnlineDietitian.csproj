@@ -185,6 +185,7 @@
   <ItemGroup>
     <Content Include="AdminPage\Default.aspx" />
     <Content Include="AdminPage\EditAppointment.aspx" />
+    <Content Include="AdminPage\EditBlogPost.aspx" />
     <Content Include="AdminPage\EditDiet.aspx" />
     <Content Include="AdminPage\EditDietitian.aspx" />
     <Content Include="AdminPage\EditPayment.aspx" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="AdminPage\EditAppointment.aspx.designer.cs">
       <DependentUpon>EditAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\EditBlogPost.aspx.cs">
+      <DependentUpon>EditBlogPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\EditBlogPost.aspx.designer.cs">
+      <DependentUpon>EditBlogPost.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPage\EditDiet.aspx.cs">
       <DependentUpon>EditDiet.aspx</DependentUpon>

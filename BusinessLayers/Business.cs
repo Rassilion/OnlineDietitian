@@ -20,19 +20,37 @@ namespace BusinessLayers
         {
             BlogPostC.NewBlogPost(dietitianID, title, content);
         }
+        public static void newBlogPost(BlogPostE obj)
+        {
+            BlogPostC.NewBlogPost(obj.DietitanID, obj.Title, obj.BlogContent);
+        }
 
         public static void deleteBlogPost(int blogID)
         {
             BlogPostC.DeleteBlogPost(blogID);
         }
 
+        public static void deleteBlogPost(string blogID)
+        {
+            BlogPostC.DeleteBlogPost(Convert.ToInt32(blogID));
+        }
+
         public static void updateBlogPost(int blogID, int dietitianID, string title, string content)
         {
             BlogPostC.UpdateBlogPost(blogID, dietitianID, title, content);
         }
+        public static void updateBlogPost(BlogPostE obj)
+        {
+            BlogPostC.UpdateBlogPost(obj.BlogID, obj.DietitanID, obj.Title, obj.BlogContent);
+        }
         public static BlogPostE getBlogPostByBlogID(int blogID)
         {
             return BlogPostC.GetBlogPostByBlogID(blogID);
+        }
+
+        public static BlogPostE getBlogPostByBlogID(string blogID)
+        {
+            return BlogPostC.GetBlogPostByBlogID(Convert.ToInt32(blogID));
         }
 
 
@@ -192,7 +210,7 @@ namespace BusinessLayers
         {
             return MedicalReportC.getMedicalReportByUserID(Convert.ToInt32(id));
         }
-        
+
 
         //Diet
         public static List<DietE> getDiets()
@@ -205,7 +223,7 @@ namespace BusinessLayers
         }
         public static int insertDiet(DietE obj)
         {
-           return DietC.InsertDiet(obj);
+            return DietC.InsertDiet(obj);
         }
         public static void updateDiet(DietE obj)
         {
@@ -220,7 +238,7 @@ namespace BusinessLayers
         {
             DietC.getDietIDByDietitianAndUserID(dietitianID, userID);
         }
-        
+
 
         //DietRequest
         public static List<DietRequestE> getDietRequests()

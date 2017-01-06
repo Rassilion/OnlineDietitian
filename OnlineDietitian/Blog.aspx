@@ -4,25 +4,12 @@
     <% if (Session["dietitian"] != null)
         {%>
     <div class="jumbotron">
-        <h3>DEBUG</h3>
+        <h3>New Blog Post</h3>
         <p>
             <asp:TextBox ID="dietitianID_textbox" runat="server">DietitianID</asp:TextBox>
             <asp:TextBox ID="title_textbox" runat="server">Title</asp:TextBox>
             <asp:TextBox ID="content_textbox" CssClass="newContent" runat="server">Content</asp:TextBox>
             <asp:Button ID="newpost_button" runat="server" OnClick="newpost_button_Click" Text="New Post" />
-        </p>
-        <p>&nbsp;</p>
-        <p>
-            <asp:TextBox ID="blogID_textbox" runat="server">BlogID</asp:TextBox>
-            <asp:Button ID="deletePost_button" runat="server" OnClick="deletePost_button_Click" Text="Delete Post" />
-        </p>
-        <p>&nbsp;</p>
-        <p>
-            <asp:TextBox ID="blogID_update_textbox" runat="server">BlogID</asp:TextBox>
-            <asp:TextBox ID="dietitianID_update_textbox" runat="server">DietitianID</asp:TextBox>
-            <asp:TextBox ID="title_update_textbox" runat="server">Title</asp:TextBox>
-            <asp:TextBox ID="content_update_textbox" CssClass="updateContent" runat="server">Content</asp:TextBox>
-            <asp:Button ID="update_button" runat="server" OnClick="update_button_Click" Text="Update Post" />
         </p>
     </div>
     <hr>
