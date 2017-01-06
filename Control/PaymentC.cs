@@ -30,6 +30,39 @@ namespace Control
 
         }
 
+        public static int InsertPayment(PaymentE pay)
+        {
+            int payment = 0;
+            SqlCommand com = new SqlCommand("InsertPayment", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+
+            com.Parameters.Add(new SqlParameter("@dietitianID", pay.DietitianID));
+            com.Parameters.Add(new SqlParameter("@userID", pay.UserID));
+            if (pay.PayDate == DateTime.MinValue)
+                com.Parameters.Add(new SqlParameter("@payDate", DBNull.Value));
+            else
+                com.Parameters.Add(new SqlParameter("@payDate", pay.PayDate));
+
+            com.Parameters.Add(new SqlParameter("@fee", pay.Fee));
+            com.Parameters.Add(new SqlParameter("@bankCart", pay.BankCard));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+                payment = Convert.ToInt32(rd[0]);
+
+
+            }
+            com.Dispose();
+            com.Connection.Close();
+            return payment;
+        }
+
         public static PaymentE getPaymentByID(int id)
         {
             PaymentE temp = null;
@@ -52,7 +85,7 @@ namespace Control
                         PayID = Convert.ToInt32(rd["PayID"]),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         PayDate = DateTime.Parse(rd["PayDate"].ToString()),
-                        BankCard = rd["BankCard"] == DBNull.Value ? "" : rd["BankCard"].ToString(),
+                        BankCard = Convert.ToBoolean(rd["BankCard"]),
                         Fee = rd["Fee"] == DBNull.Value ? "" : rd["Fee"].ToString()
                     };
 
@@ -87,7 +120,7 @@ namespace Control
                         PayID = Convert.ToInt32(rd["PayID"]),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         PayDate = DateTime.Parse(rd["PayDate"].ToString()),
-                        BankCard = rd["BankCard"] == DBNull.Value ? "" : rd["BankCard"].ToString(),
+                        BankCard = Convert.ToBoolean(rd["BankCard"]),
                         Fee = rd["Fee"] == DBNull.Value ? "" : rd["Fee"].ToString()
                     });
 

@@ -13,6 +13,6 @@ namespace Entity
         public int UserID { get; set; }
         public DateTime PayDate { get; set; }
         public string Fee { get; set; }
-        public string BankCard { get; set; }
+        public bool BankCard { get; set; }
     }
 }

@@ -12,6 +12,15 @@ namespace OnlineDietitian
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["user"] == null)
+            { Response.Redirect("~/Logon.aspx"); }
+
         }
+        protected void payment_Click(object sender, EventArgs e)
+        {
+            successPayment.Text = "Your payment is confirmed";
+            successPayment.Visible = true;
+        }
+        
     }
 }

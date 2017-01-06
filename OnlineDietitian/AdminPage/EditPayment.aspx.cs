@@ -37,7 +37,7 @@ namespace OnlineDietitian.AdminPage
                             useridBox.Text = currentPayment.UserID.ToString();
                             paydateBox.Text = currentPayment.PayDate.ToString("yyyy-MM-dd");
                             feeBox.Text = currentPayment.Fee;
-                            bankcardBox.Text = currentPayment.BankCard;
+                            bankcardBox.Text = currentPayment.BankCard.ToString();
                         }
                     }
                     else
@@ -63,7 +63,7 @@ namespace OnlineDietitian.AdminPage
                 currentPayment.PayDate = DateTime.ParseExact(asd, "yyyy-MM-dd", CultureInfo.CurrentCulture);
                 currentPayment.DietitianID = Convert.ToInt32(dietitianidBox.Text);
                 currentPayment.Fee = feeBox.Text;
-                currentPayment.BankCard = bankcardBox.Text;
+                currentPayment.BankCard = Convert.ToBoolean(bankcardBox.Text);
                 currentPayment.UserID = Convert.ToInt32(useridBox.Text);
 
                 try

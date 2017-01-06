@@ -35,6 +35,13 @@ namespace OnlineDietitian.Dietitian
             diet.DietContent = dietContent_textbox.Text;
             BusinessLayers.Business.updateDiet(diet);
 
+            PaymentE pay = new PaymentE();
+            pay.DietitianID = currentDietView.DietitianID;
+            pay.UserID = currentDietView.UserID;
+            pay.Fee = "30";
+
+            BusinessLayers.Business.insertPayment(pay);
+
         }
         
     }

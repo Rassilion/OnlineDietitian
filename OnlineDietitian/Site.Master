@@ -62,6 +62,7 @@
                     </ul>
                     <% }else if(Session["dietitian"] == null){ %>
                     <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Payment" title="Manage your account">Payment</a></li>
                                 <li><a runat="server" href="~/User/UserPage" title="Manage your account">Hello, <%: (Session["user"] as Entity.UserE).getNameSurname()  %> !</a></li>
 
                         

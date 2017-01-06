@@ -166,13 +166,14 @@ namespace BusinessLayers
         {
             return PaymentC.selectPayments();
         }
+
         public static PaymentE getPaymentByID(string id)
         {
             return PaymentC.getPaymentByID(Convert.ToInt32(id));
         }
         public static void insertPayment(PaymentE obj)
         {
-            //PaymentC.InsertPayment(obj);
+            PaymentC.InsertPayment(obj);
         }
         public static void updatePayment(PaymentE obj)
         {
