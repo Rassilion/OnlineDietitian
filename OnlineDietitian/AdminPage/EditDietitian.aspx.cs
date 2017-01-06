@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -73,12 +74,21 @@ namespace OnlineDietitian.AdminPage
                     currentDietitian.DietitianPassword = Util.MD5hash(changePasswordBox.Text);
                 currentDietitian.DietitianEmail = emailBox.Text;
 
-                /*
-                if (newEntity)
-                    BusinessLayers.Business.insertDietitian(currentDietitian);
-                else*/
-                BusinessLayers.Business.updateDietitian(currentDietitian);
-                Response.Redirect(Request.RawUrl);
+                try
+                {
+                    /*
+                          if (newEntity)
+                              BusinessLayers.Business.insertDietitian(currentDietitian);
+                          else*/
+                    BusinessLayers.Business.updateDietitian(currentDietitian);
+
+                }
+                catch (SqlException ex)
+                {
+                    error.Text = ex.Message;
+                    error.Visible = true;
+                }
+
             }
         }
     }
