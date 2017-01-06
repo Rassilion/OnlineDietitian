@@ -192,6 +192,8 @@
     <Content Include="AdminPage\EditMedicalReport.aspx" />
     <Content Include="AdminPage\EditPayment.aspx" />
     <Content Include="AdminPage\EditUser.aspx" />
+    <Content Include="Dietitian\AppointmentDietitianPage.aspx" />
+    <Content Include="User\AppointmentUserPage.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="BlogPost.aspx" />
     <Content Include="Contact.aspx" />
@@ -340,6 +342,20 @@
     </Compile>
     <Compile Include="AdminPage\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dietitian\AppointmentDietitianPage.aspx.cs">
+      <DependentUpon>AppointmentDietitianPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dietitian\AppointmentDietitianPage.aspx.designer.cs">
+      <DependentUpon>AppointmentDietitianPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AppointmentUserPage.aspx.cs">
+      <DependentUpon>AppointmentUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AppointmentUserPage.aspx.designer.cs">
+      <DependentUpon>AppointmentUserPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Blog.aspx.cs">

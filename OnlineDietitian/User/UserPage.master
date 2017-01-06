@@ -23,7 +23,7 @@
                     <li>
                         <a  href="/User/DietFollowUp"><i class="fa fa-certificate"></i>Diet follow-up</a>
                     </li>
-                    <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
+                    <li><a href="/User/AppointmentUserPage"><i class="fa fa-calendar"></i>Appointment</a></li>
                 </ul>
                 <!-- /.nav -->
 
