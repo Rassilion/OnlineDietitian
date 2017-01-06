@@ -7,54 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnlineDietitian {
+namespace OnlineDietitian.AdminPage {
     
     
-    public partial class About {
+    public partial class EditBlogPost {
         
         /// <summary>
-        /// dietitianID_textbox control.
+        /// error control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dietitianID_textbox;
+        protected global::System.Web.UI.WebControls.Label error;
         
         /// <summary>
-        /// title_textbox control.
+        /// dietitianidBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox title_textbox;
+        protected global::System.Web.UI.WebControls.TextBox dietitianidBox;
         
         /// <summary>
-        /// content_textbox control.
+        /// titleBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox content_textbox;
+        protected global::System.Web.UI.WebControls.TextBox titleBox;
         
         /// <summary>
-        /// newpost_button control.
+        /// dateBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button newpost_button;
+        protected global::System.Web.UI.WebControls.TextBox dateBox;
         
         /// <summary>
-        /// blogPostRepeater control.
+        /// contentBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater blogPostRepeater;
+        protected global::System.Web.UI.WebControls.TextBox contentBox;
+        
+        /// <summary>
+        /// saveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button saveButton;
+        
+        /// <summary>
+        /// successLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label successLabel;
     }
 }

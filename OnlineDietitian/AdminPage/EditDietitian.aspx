@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditDietitian.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditDietitian" %>
+﻿<%@ Page Title="Edit Dietitian" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditDietitian.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditDietitian" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
     <div class="bs-callout bs-callout-danger">
         <h4>Edit Dietitian</h4>
-        <h4><asp:Label ID="error" runat="server" Text="0" Visible="False"></asp:Label></h4>
+        <h4>
+            <asp:Label ID="error" runat="server" Text="0" Visible="False"></asp:Label></h4>
         <div class="form-group row">
             <label class="control-label col-sm-2" for="pwd">Gender</label>
             <asp:DropDownList ID="ddlGender" CssClass="btn btn-primary" runat="server" Width="200px">

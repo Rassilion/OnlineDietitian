@@ -32,6 +32,24 @@ namespace OnlineDietitian.AdminPage
                 case "dietitian":
                     BusinessLayers.Business.deleteDietitian(btn.CommandArgument.ToString());
                     break;
+                case "payment":
+                    BusinessLayers.Business.deletePayment(btn.CommandArgument.ToString());
+                    break;
+                case "appointment":
+                    BusinessLayers.Business.deleteAppointment(btn.CommandArgument.ToString());
+                    break;
+                case "medicalreport":
+                    BusinessLayers.Business.deleteMedicalReport(btn.CommandArgument.ToString());
+                    break;
+                case "diet":
+                    BusinessLayers.Business.deleteDiet(btn.CommandArgument.ToString());
+                    break;
+                case "blogpost":
+                    BusinessLayers.Business.deleteBlogPost(btn.CommandArgument.ToString());
+                    break;
+                case "dietrequest":
+                    BusinessLayers.Business.deleteDietRequest(btn.CommandArgument.ToString());
+                    break;
             }
             Response.Redirect(Request.RawUrl);
 
@@ -105,6 +123,24 @@ namespace OnlineDietitian.AdminPage
                     break;
                 case 2:
                     Response.Redirect("~/AdminPage/EditDietitian/new");
+                    break;
+                case 3:
+                    Response.Redirect("~/AdminPage/EditAppointment/new");
+                    break;
+                case 4:
+                    Response.Redirect("~/AdminPage/EditPayment/new");
+                    break;
+                case 5:
+                    Response.Redirect("~/AdminPage/EditMedicalReport/new");
+                    break;
+                case 6:
+                    Response.Redirect("~/AdminPage/EditDietRequest/new");
+                    break;
+                case 7:
+                    Response.Redirect("~/AdminPage/EditDiet/new");
+                    break;
+                case 8:
+                    Response.Redirect("~/AdminPage/EditBlogPost/new");
                     break;
                 case 0:
                     break;

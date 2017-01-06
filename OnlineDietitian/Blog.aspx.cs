@@ -23,26 +23,7 @@ namespace OnlineDietitian
         // For new blogPost creation
         protected void newpost_button_Click(object sender, EventArgs e)
         {
-            Business.newBlogPosts(Convert.ToInt32(dietitianID_textbox.Text), title_textbox.Text, content_textbox.Text);
-            //Reload Page
-            Response.Redirect(Request.RawUrl);
-        }
-
-        // To remove blogPost
-        protected void deletePost_button_Click(object sender, EventArgs e)
-        {
-            Business.deleteBlogPost(Convert.ToInt32(blogID_textbox.Text));
-            //Reload Page
-            Response.Redirect(Request.RawUrl);
-        }
-
-        // To update blogPost
-        protected void update_button_Click(object sender, EventArgs e) 
-        {
-            Business.updateBlogPost(Convert.ToInt32(blogID_update_textbox.Text),
-                Convert.ToInt32(dietitianID_update_textbox.Text),
-                title_update_textbox.Text,
-                content_update_textbox.Text);
+            Business.newBlogPosts((Session["dietitian"]as DietitianE).DietitianID, title_textbox.Text, content_textbox.Text);
             //Reload Page
             Response.Redirect(Request.RawUrl);
         }
