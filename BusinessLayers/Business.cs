@@ -40,9 +40,9 @@ namespace BusinessLayers
             BlogPostC.UpdateBlogPost(blogID, dietitianID, title, content);
         }
 
-        public static object getDietViews()
+        public static List<DietViewE> getDietViews()
         {
-            throw new NotImplementedException();
+            return DietViewC.selectDietViews();
         }
 
         public static void updateBlogPost(BlogPostE obj)
