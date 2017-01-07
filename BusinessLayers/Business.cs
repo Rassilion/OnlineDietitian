@@ -15,6 +15,10 @@ namespace BusinessLayers
         {
             return LogC.selectLogs();
         }
+        public static List<LogE> getLogs(int page)
+        {
+            return LogC.selectLogs(page);
+        }
 
         // BlogPost start
         public static List<BlogPostE> getBlogPosts()

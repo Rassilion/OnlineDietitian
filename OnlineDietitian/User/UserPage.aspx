@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="OnlineDietitian.User.UserPage" %>
+﻿<%@ Page Title="UserPage" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="UserPage.aspx.cs" Inherits="OnlineDietitian.User.UserPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
    

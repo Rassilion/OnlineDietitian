@@ -28,7 +28,7 @@
         </div>
         <div class="row">
             <h4>
-            <asp:Label ID="error" runat="server" Text="0" Visible="False"></asp:Label></h4>
+                <asp:Label ID="error" runat="server" Text="0" Visible="False"></asp:Label></h4>
         </div>
         <div class="row">
             <div class="dropdown col-sm-12">
@@ -141,7 +141,7 @@
                             <tbody>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <tr>                            
+                        <tr>
                             <th scope="row"><%# Eval("id") %></th>
                             <td><%# Eval("type") %></td>
                             <td><%# Eval("message") %></td>
@@ -151,6 +151,18 @@
                     <FooterTemplate>
                         </tbody>
                 </table>
+                        <ul class="pager">
+                            <li class="previous">
+                                <asp:LinkButton ID="prev" OnClick="prevButton" runat="server">
+                            &larr; Prev
+                                </asp:LinkButton>
+                            </li>
+                            <li class="next">
+                                <asp:LinkButton ID="next" OnClick="nextButton" runat="server">
+                            Next &rarr;
+                                </asp:LinkButton>
+                            </li>
+                        </ul>
                     </FooterTemplate>
                 </asp:Repeater>
 
@@ -426,7 +438,7 @@
                                     <th>WeighGain</th>
                                     <th>WeighLoss</th>
                                     <th>DietContent</th>
-                                    <th>RequestContent</th>                                    
+                                    <th>RequestContent</th>
                                     <th>Name</th>
                                     <th>Surname</th>
                                     <th>Email</th>
@@ -454,7 +466,7 @@
                             <td><%# Eval("Health") %></td>
                             <td><%# Eval("Fitness") %></td>
                             <td><%# Eval("WeighGain") %></td>
-                            <td><%# Eval("WeighLoss") %></td>                            
+                            <td><%# Eval("WeighLoss") %></td>
                             <td><%# Eval("DietContent") %></td>
                             <td><%# Eval("RequestContent") %></td>
                             <td><%# Eval("UserName") %></td>

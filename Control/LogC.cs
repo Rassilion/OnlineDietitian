@@ -38,6 +38,39 @@ namespace Control
             com.Connection.Close();
             return requestID;
         }
+        public static List<LogE> selectLogs(int page)
+        {
+            List<LogE> list = null;
+
+            SqlCommand com = new SqlCommand("getLogsByInput", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@start", page));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                list = new List<LogE>();
+                while (rd.Read())
+                {
+                    list.Add(new LogE
+                    {
+                        id = Convert.ToInt32(rd["id"]),
+                        type = rd["type"].ToString(),
+                        message = rd["message"].ToString(),
+                        date = DateTime.Parse(rd["date"].ToString())
+                    });
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return list;
+        }
 
         public static List<LogE> selectLogs()
         {
