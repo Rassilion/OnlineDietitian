@@ -99,7 +99,7 @@ namespace Control
                 com.Parameters.Add(new SqlParameter("@bodyPhoto", user.UserBodyPhoto));
             else
                 com.Parameters.Add(new SqlParameter("@bodyPhoto", DBNull.Value));
-
+           
 
             if (com.Connection.State == ConnectionState.Closed)
             {

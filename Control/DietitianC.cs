@@ -50,6 +50,48 @@ namespace Control
             return dietitian;
         }
 
+        public static int InsertDietitian(DietitianE dietitian)
+        {
+
+            SqlCommand com = new SqlCommand("InsertDietitian", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            if (dietitian.Address == null)
+                com.Parameters.Add(new SqlParameter("@address", DBNull.Value));
+            else
+                com.Parameters.Add(new SqlParameter("@address", dietitian.Address));
+            com.Parameters.Add(new SqlParameter("@name", dietitian.DietitianName));
+            com.Parameters.Add(new SqlParameter("@surname", dietitian.DietitianSurname));
+            com.Parameters.Add(new SqlParameter("@email", dietitian.DietitianEmail));
+            com.Parameters.Add(new SqlParameter("@password", dietitian.DietitianPassword));
+            if (dietitian.DietitianPhone != null)
+                com.Parameters.Add(new SqlParameter("@phone", dietitian.DietitianPhone));
+            else
+                com.Parameters.Add(new SqlParameter("@phone", DBNull.Value));
+
+            com.Parameters.Add(new SqlParameter("@cv", dietitian.CV));
+            com.Parameters.Add(new SqlParameter("@license", dietitian.DietitianLicense));
+            com.Parameters.Add(new SqlParameter("@gender", dietitian.Gender));
+
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+
+            int insertId = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                insertId = Convert.ToInt32(rd[0]);
+               
+            }
+            com.Dispose();
+            com.Connection.Close();
+            return insertId;
+
+        }
+
         public static List<DietitianE> GetDietitians()
         {
             List<DietitianE> list = null;
@@ -89,7 +131,7 @@ namespace Control
             return list;
         }
         // Name of dietitian get from Dietitian Table 
-        public static string GetDietitianName(int dietitianID) 
+        public static string GetDietitianName(int dietitianID)
         {
             SqlCommand com = new SqlCommand("getDietitianName", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
@@ -111,7 +153,7 @@ namespace Control
             return returnVal;
         }
         // All of dietitian information get from Dietitian Table
-        public static DietitianE GetDietitianByDietitianID(int dietitianID) 
+        public static DietitianE GetDietitianByDietitianID(int dietitianID)
         {
             DietitianE dietitian = null;
             SqlCommand com = new SqlCommand("getDietitianByDietitianID", Connection.Con); // Prodecure
@@ -123,7 +165,7 @@ namespace Control
                 com.Connection.Open();
             }
             SqlDataReader rd = com.ExecuteReader();
-            
+
             if (rd.HasRows)
             {
                 if (rd.Read())
@@ -139,7 +181,7 @@ namespace Control
                         DietitianName = rd["DietitianName"].ToString(),
                         DietitianPassword = rd["DietitianPassword"].ToString(),
                         DietitianSurname = rd["DietitianSurname"].ToString()
-                       
+
                     };
 
                 }
