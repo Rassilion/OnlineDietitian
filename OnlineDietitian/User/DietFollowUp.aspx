@@ -6,15 +6,8 @@
         <ItemTemplate>
             <div class="well">
                 <h2>
-                    <a href="user/<%# BusinessLayers.Business.getDietitianName(Eval("DietitianID")) %>">
-                        <asp:Label ID="userName" runat="server" Text='<%# BusinessLayers.Business.getUserName( Convert.ToInt32(Eval("UserID")) ) %>' /></a>
-                </h2>
-                <p class="lead">
-                    Email Address <a href="index.php">
-                        <asp:Label ID="userEmail" runat="server" Text="df" /></a>
-                    <span class="glyphicon glyphicon-time"></span> Birth Date 
-                <asp:Label ID="userBirth" runat="server" Text="df" />
-                </p>
+                        <asp:Label ID="userName" runat="server" Text='<%# BusinessLayers.Business.getDietitianByDietitianID( Eval("DietitianID").ToString() ).getNameSurname() %>' />
+                </h2>                
                <hr>
                 <p>
                     <asp:Label ID="blogPostContent" runat="server" Text='<%# BusinessLayers.Business.getDietRequestByID(Eval("DietRequestID").ToString()).RequestContent.ToString() %>' />

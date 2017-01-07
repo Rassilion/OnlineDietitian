@@ -24,8 +24,7 @@
                         <asp:Label ID="blogPostTitle" runat="server" Text='<%# Eval("Title") %>' /></a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">
-                        <asp:Label ID="blogPostAuthor" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitanID") ) %>' /></a>
+                        <asp:Label ID="blogPostAuthor" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitanID") ) %>' />
                     <span class="glyphicon glyphicon-time"></span>Posted on
                 <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("PostDate") %>' />
                 </p>
@@ -38,16 +37,7 @@
             </div>
             <br />
         </ItemTemplate>
-        <FooterTemplate>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">&larr; Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer &rarr;</a>
-                </li>
-            </ul>
+        <FooterTemplate>            
         </FooterTemplate>
     </asp:Repeater>
 

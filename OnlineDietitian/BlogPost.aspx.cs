@@ -16,7 +16,7 @@ namespace OnlineDietitian
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user"] == null)
+            if (Session["user"] == null && Session["diettian"] == null)
             { Response.Redirect("~/Logon.aspx"); }
 
             // Get "id" from URL

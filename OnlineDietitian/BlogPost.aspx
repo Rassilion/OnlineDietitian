@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
    
-    <div class="row">
+    <div class="row well">
 
         <!-- Blog Post Content Column -->
         <div class="col-lg-8">
@@ -14,7 +14,7 @@
 
             <!-- Author -->
             <p class="lead">
-                by <a href="#"><%= BusinessLayers.Business.getDietitianName(currentPost.DietitanID) %></a>
+                by <%= BusinessLayers.Business.getDietitianName(currentPost.DietitanID) %>
             </p>
 
             <hr>
