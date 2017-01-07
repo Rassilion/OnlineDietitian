@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="MedicalReport.aspx.cs" Inherits="OnlineDietitian.User.MedicalReport" %>
+﻿<%@ Page Title="MedicalReport" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="MedicalReport.aspx.cs" Inherits="OnlineDietitian.User.MedicalReport" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
 
@@ -14,7 +14,6 @@
         <label for="example-text-input" class="col-xs-2 col-form-label">Weight</label>
         <div class="col-xs-10">
             <label class="custom-file">
-                <!--  <input type="file" id="file" class="custom-file-input"> -->
                 <asp:TextBox type="search" CssClass="form-control" ID="weight" placeholder="kg" runat="server"></asp:TextBox>
                 <span class="custom-file-control"></span>
             </label>

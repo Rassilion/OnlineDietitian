@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="Dietitians.aspx.cs" Inherits="OnlineDietitian.User.Dietitians" EnableEventValidation="false" ValidateRequest="false" %>
+﻿<%@ Page Title="Dietitians" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="Dietitians.aspx.cs" Inherits="OnlineDietitian.User.Dietitians" EnableEventValidation="false" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
 
@@ -7,15 +7,14 @@
         </HeaderTemplate>
         <ItemTemplate>
             <div class="well">
-                <h2>
-                    <a href="dietitian/<%# Eval("DietitianID") %>">
-                        <asp:Label ID="dietitianName" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' /></a>
+                <h2>Dietitian Name: 
+                        <asp:Label ID="dietitianName" runat="server" Text='<%# BusinessLayers.Business.getDietitianName( Eval("DietitianID") ) %>' />
                 </h2>
                 <p class="lead">
-                    Email Address <a href="index.php">
-                        <asp:Label ID="dietitianEmail" runat="server" Text='<%# Eval("DietitianEmail").ToString() %>' /></a>
-                    <span class="glyphicon glyphicon-time"></span>License 
-                <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("DietitianLicense") %>' />
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    <asp:Label ID="dietitianEmail" runat="server" Text='<%# Eval("DietitianEmail").ToString() %>' />
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                    <asp:Label ID="blogPostDate" runat="server" Text='<%# Eval("DietitianLicense") %>' />
                 </p>
                 <hr>
 
@@ -23,25 +22,11 @@
                     <asp:Label ID="CV" runat="server" Text='<%# Eval("CV").ToString()  %>' />
 
                 </p>
-                <a class="btn btn-primary" href="dietitian/<%# Eval("DietitianID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <asp:Button ID="selectButton" Text="Select Dietitian" CssClass="btn btn-primary" runat="server" CommandArgument='<%# Eval("DietitianID") %>' CommandName="DietitianID" OnClick="selectDietitian_Click" />
             </div>
             <br />
         </ItemTemplate>
         <FooterTemplate>
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">&larr; Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer &rarr;</a>
-                </li>
-            </ul>
         </FooterTemplate>
     </asp:Repeater>
-
-    <script type="text/javascript" src="/Scripts/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector: 'input.updateContent' });</script>
-    <script>tinymce.init({ selector: 'input.newContent' });</script>
 </asp:Content>

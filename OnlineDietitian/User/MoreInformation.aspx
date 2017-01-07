@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="MoreInformation.aspx.cs" Inherits="OnlineDietitian.User.MoreInformation" %>
+﻿<%@ Page Title="Information Update" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="MoreInformation.aspx.cs" Inherits="OnlineDietitian.User.MoreInformation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
 
@@ -7,7 +7,6 @@
     <div class="form-group row">
         <label class="control-label col-sm-2" for="pwd">Gender</label>
         <asp:DropDownList ID="ddlGender" CssClass="btn btn-primary" runat="server" Width="200px">
-            <asp:ListItem Text="Select Gender" Value="0"></asp:ListItem>
             <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
             <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
         </asp:DropDownList>
@@ -78,21 +77,4 @@
 
     <asp:Label ID="successLabel" runat="server" Text="Label" Visible="False"></asp:Label>
 
-    <script type="text/javascript">
-        function previewFile() {
-            var preview = document.querySelector('#Avatar');
-            var file = document.querySelector('#avatarUpload').files[0];
-            var reader = new FileReader();
-
-            reader.onloadend = function () {
-                preview.src = reader.result;
-            }
-
-            if (file) {
-                reader.readAsDataURL(file);
-            } else {
-                preview.src = "";
-            }
-        }
-    </script>
 </asp:Content>
