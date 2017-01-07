@@ -255,9 +255,9 @@ namespace BusinessLayers
         {
             return DietC.selectDiets();
         }
-        public static List<DietE> getDietsWithoutNull()
+        public static List<DietE> getDietsWithoutNull(int id)
         {
-            return DietC.selectDietsWithoutNull();
+            return DietC.selectDietsWithoutNull(id);
         }
         public static DietE getDietByID(string id)
         {
