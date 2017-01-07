@@ -80,9 +80,15 @@ namespace OnlineDietitian.AdminPage
                 try
                 {
                     if (newEntity)
-                        BusinessLayers.Business.insertMedicalReport(currentMedicalReport);
+                    {
+                        int id=BusinessLayers.Business.insertMedicalReport(currentMedicalReport);
+                        BusinessLayers.Logging.logInsert("MedicalReport", (Session["user"] as Entity.UserE).UserID.ToString(), id.ToString());
+                    }
                     else
+                    {
                         BusinessLayers.Business.updateMedicalReport(currentMedicalReport);
+                        BusinessLayers.Logging.logUpdate("MedicalReport", (Session["user"] as Entity.UserE).UserID.ToString(), currentMedicalReport.ReportID.ToString());
+                    }
                 }
                 catch (SqlException ex)
                 {

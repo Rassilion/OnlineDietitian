@@ -27,6 +27,10 @@
             </div>
         </div>
         <div class="row">
+            <h4>
+            <asp:Label ID="error" runat="server" Text="0" Visible="False"></asp:Label></h4>
+        </div>
+        <div class="row">
             <div class="dropdown col-sm-12">
                 <asp:Repeater ID="UserRepeater" runat="server">
                     <HeaderTemplate>
