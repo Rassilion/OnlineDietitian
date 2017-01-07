@@ -161,12 +161,13 @@ namespace Control
             com.Connection.Close();
             return list;
         }
-        public static List<DietE> selectDietsWithoutNull()
+        public static List<DietE> selectDietsWithoutNull(int id)
         {
             List<DietE> list = null;
 
             SqlCommand com = new SqlCommand("selectDietsWithoutNull", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
 
             if (com.Connection.State == ConnectionState.Closed)
             {

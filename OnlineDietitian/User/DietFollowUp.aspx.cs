@@ -16,7 +16,7 @@ namespace OnlineDietitian.User
             if (Session["user"] == null)
                 Response.Redirect("~/Logon.aspx");
 
-            dietRepeater.DataSource = BusinessLayers.Business.getDietsWithoutNull();
+            dietRepeater.DataSource = BusinessLayers.Business.getDietsWithoutNull((Session["user"] as Entity.UserE).UserID);
             dietRepeater.DataBind();
         }
     }
