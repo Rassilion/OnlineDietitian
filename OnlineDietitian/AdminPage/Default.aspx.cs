@@ -10,6 +10,7 @@ namespace OnlineDietitian.AdminPage
 {
     public partial class Default : System.Web.UI.Page
     {
+        protected int logPage=0;
         protected void Page_Load(object sender, EventArgs e)
         {
             UserRepeater.DataSource = BusinessLayers.Business.getUsers();
@@ -21,7 +22,7 @@ namespace OnlineDietitian.AdminPage
             AppointmentRepeater.DataSource = BusinessLayers.Business.getAppointments();
             DietRequestRepeater.DataSource = BusinessLayers.Business.getDietRequests();
             DietViewRepeater.DataSource = BusinessLayers.Business.getDietViews();
-            LogRepeater.DataSource = BusinessLayers.Business.getLogs();
+            LogRepeater.DataSource = BusinessLayers.Business.getLogs(logPage);
         }
 
         protected void deleteButton(object sender, EventArgs e)
@@ -143,6 +144,23 @@ namespace OnlineDietitian.AdminPage
 
             }
 
+        }
+        protected void nextButton(object sender, EventArgs e)
+        {
+            logPage++;
+            LogRepeater.DataSource = BusinessLayers.Business.getLogs(logPage);
+            LogRepeater.DataBind();
+            LogRepeater.Visible = true;
+        }
+
+        protected void prevButton(object sender, EventArgs e)
+        {
+            logPage--;
+            if (logPage < 0)
+                logPage = 0;
+            LogRepeater.DataSource = BusinessLayers.Business.getLogs(logPage);
+            LogRepeater.DataBind();
+            LogRepeater.Visible = true;
         }
 
         protected void newButton_Click(object sender, EventArgs e)

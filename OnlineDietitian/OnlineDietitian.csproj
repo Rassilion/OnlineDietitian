@@ -196,7 +196,6 @@
     <Content Include="User\AppointmentUserPage.aspx" />
     <Content Include="Blog.aspx" />
     <Content Include="BlogPost.aspx" />
-    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -374,13 +373,6 @@
     </Compile>
     <Compile Include="BlogPost.aspx.designer.cs">
       <DependentUpon>BlogPost.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
