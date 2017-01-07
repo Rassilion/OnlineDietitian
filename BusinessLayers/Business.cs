@@ -163,9 +163,9 @@ namespace BusinessLayers
         {
             return AppointmentC.getAppointmentsByDietitianID(Convert.ToInt32(id));
         }
-        public static void insertAppointment(AppointmentE obj)
+        public static int insertAppointment(AppointmentE obj)
         {
-            AppointmentC.InsertAppointment(obj);
+            return AppointmentC.InsertAppointment(obj);
         }
         public static void updateAppointment(AppointmentE obj)
         {
