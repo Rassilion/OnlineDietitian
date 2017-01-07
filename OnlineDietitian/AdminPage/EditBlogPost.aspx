@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit BlogPost" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditBlogPost.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditBlogPost" %>
+﻿<%@ Page Title="Edit BlogPost" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditBlogPost.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditBlogPost"  ValidateRequest="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

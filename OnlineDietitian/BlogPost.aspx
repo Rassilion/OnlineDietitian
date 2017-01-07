@@ -5,7 +5,7 @@
     <div class="row well">
 
         <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
 
             <!-- Blog Post -->
 

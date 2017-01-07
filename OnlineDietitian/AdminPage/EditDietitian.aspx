@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit Dietitian" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditDietitian.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditDietitian" %>
+﻿<%@ Page Title="Edit Dietitian" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditDietitian.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditDietitian"  ValidateRequest="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

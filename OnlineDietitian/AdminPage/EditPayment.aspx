@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit Payment" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditPayment.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditPayment" %>
+﻿<%@ Page Title="Edit Payment" Language="C#" MasterPageFile="~/AdminPage/Admin.Master" AutoEventWireup="true" CodeBehind="EditPayment.aspx.cs" Inherits="OnlineDietitian.AdminPage.EditPayment"  ValidateRequest="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="bs-callout bs-callout-danger">
