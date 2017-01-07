@@ -73,6 +73,11 @@ namespace BusinessLayers
         {
             return DietitianC.GetDietitians();
         }
+        public static int insertDietitian(DietitianE dietitian)
+        {
+
+            return DietitianC.InsertDietitian(dietitian);
+        }
 
         public static string getDietitianName(object dietitianID)
         {
