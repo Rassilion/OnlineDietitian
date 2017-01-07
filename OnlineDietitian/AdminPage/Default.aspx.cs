@@ -20,6 +20,7 @@ namespace OnlineDietitian.AdminPage
             AppointmentRepeater.DataSource = BusinessLayers.Business.getAppointments();
             DietRequestRepeater.DataSource = BusinessLayers.Business.getDietRequests();
             DietViewRepeater.DataSource = BusinessLayers.Business.getDietViews();
+            LogRepeater.DataSource = BusinessLayers.Business.getLogs();
         }
 
         protected void deleteButton(object sender, EventArgs e)
@@ -29,27 +30,35 @@ namespace OnlineDietitian.AdminPage
             {
                 case "user":
                     BusinessLayers.Business.deleteUser(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("User",(Session["user"] as Entity.UserE).UserID.ToString(),btn.CommandArgument.ToString());
                     break;
                 case "dietitian":
                     BusinessLayers.Business.deleteDietitian(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("Dietitian", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
                 case "payment":
                     BusinessLayers.Business.deletePayment(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("Payment", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
                 case "appointment":
                     BusinessLayers.Business.deleteAppointment(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("Appointment", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
                 case "medicalreport":
                     BusinessLayers.Business.deleteMedicalReport(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("MedicalReport", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
                 case "diet":
                     BusinessLayers.Business.deleteDiet(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("Diet", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
                 case "blogpost":
                     BusinessLayers.Business.deleteBlogPost(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("BlogPost", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
                 case "dietrequest":
                     BusinessLayers.Business.deleteDietRequest(btn.CommandArgument.ToString());
+                    BusinessLayers.Logging.logDelete("DietRequest", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
                     break;
             }
             Response.Redirect(Request.RawUrl);
@@ -76,6 +85,8 @@ namespace OnlineDietitian.AdminPage
             AppointmentRepeater.Dispose();
             DietRequestRepeater.Dispose();
             DietViewRepeater.Dispose();
+            LogRepeater.Visible = false;
+            LogRepeater.Dispose();
 
             DropDownList drp = (DropDownList)sender;
             switch (drp.SelectedIndex)
@@ -115,6 +126,10 @@ namespace OnlineDietitian.AdminPage
                 case 9:
                     DietViewRepeater.DataBind();
                     DietViewRepeater.Visible = true;
+                    break;
+                case 10:
+                    LogRepeater.DataBind();
+                    LogRepeater.Visible = true;
                     break;
 
             }

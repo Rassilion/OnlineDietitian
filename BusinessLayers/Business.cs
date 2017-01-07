@@ -11,7 +11,10 @@ namespace BusinessLayers
     public class Business
     {
 
-
+        public static List<LogE> getLogs()
+        {
+            return LogC.selectLogs();
+        }
 
         // BlogPost start
         public static List<BlogPostE> getBlogPosts()

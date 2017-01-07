@@ -17,6 +17,7 @@
                         <asp:ListItem>Diet</asp:ListItem>
                         <asp:ListItem>BlogPost</asp:ListItem>
                         <asp:ListItem>DietView</asp:ListItem>
+                        <asp:ListItem>Logs</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col-sm-4">
@@ -120,6 +121,35 @@
                 </table>
                     </FooterTemplate>
                 </asp:Repeater>
+
+
+                <asp:Repeater ID="LogRepeater" runat="server">
+                    <HeaderTemplate>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Type</th>
+                                    <th>Message</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>                            
+                            <th scope="row"><%# Eval("id") %></th>
+                            <td><%# Eval("type") %></td>
+                            <td><%# Eval("message") %></td>
+                            <td><%# Eval("date") %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </tbody>
+                </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+
 
 
                 <asp:Repeater ID="AppointmentRepeater" runat="server">

@@ -8,9 +8,9 @@ namespace Entity
 {
     public class LogE
     {
-        public int id;
-        public string type;
-        public string message;
-        public DateTime date;
+        public int id { get; set; }
+        public string type { get; set; }
+        public string message { get; set; }
+        public DateTime date { get; set; }
     }
 }

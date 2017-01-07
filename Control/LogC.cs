@@ -58,6 +58,7 @@ namespace Control
                 {
                     list.Add(new LogE
                     {
+                        id = Convert.ToInt32(rd["id"]),
                         type = rd["type"].ToString(),
                         message =rd["message"].ToString(),
                         date= DateTime.Parse(rd["date"].ToString())

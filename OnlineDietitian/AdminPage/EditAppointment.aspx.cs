@@ -68,9 +68,17 @@ namespace OnlineDietitian.AdminPage
                 try
                 {
                     if (newEntity)
-                        BusinessLayers.Business.insertAppointment(currentAppointment);
+                    {
+                        int id=BusinessLayers.Business.insertAppointment(currentAppointment);
+                        BusinessLayers.Logging.logInsert("Appointment", (Session["user"] as Entity.UserE).UserID.ToString(), id.ToString());
+
+                    }
                     else
+                    {
                         BusinessLayers.Business.updateAppointment(currentAppointment);
+                        BusinessLayers.Logging.logUpdate("Appointment", (Session["user"] as Entity.UserE).UserID.ToString(), currentAppointment.AppointmentID.ToString());
+
+                    }
                 }
                 catch (SqlException ex)
                 {
