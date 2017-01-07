@@ -10,19 +10,22 @@ namespace BusinessLayers
 {
     public class Business
     {
+
+
+
         // BlogPost start
         public static List<BlogPostE> getBlogPosts()
         {
             return BlogPostC.GetBlogPosts();
         }
 
-        public static void newBlogPosts(int dietitianID, string title, string content)
+        public static int newBlogPosts(int dietitianID, string title, string content)
         {
-            BlogPostC.NewBlogPost(dietitianID, title, content);
+            return BlogPostC.NewBlogPost(dietitianID, title, content);
         }
-        public static void newBlogPost(BlogPostE obj)
+        public static int newBlogPost(BlogPostE obj)
         {
-            BlogPostC.NewBlogPost(obj.DietitanID, obj.Title, obj.BlogContent);
+            return BlogPostC.NewBlogPost(obj.DietitanID, obj.Title, obj.BlogContent);
         }
 
         public static void deleteBlogPost(int blogID)
@@ -111,10 +114,10 @@ namespace BusinessLayers
 
 
         //Register Start
-        public static void insertUser(UserE user)
+        public static int insertUser(UserE user)
         {
 
-            UserC.InsertUser(user);
+            return UserC.InsertUser(user);
         }
 
         public static int checkUserEmail(string email)
@@ -181,9 +184,9 @@ namespace BusinessLayers
         {
             return PaymentC.getPaymentByID(Convert.ToInt32(id));
         }
-        public static void insertPayment(PaymentE obj)
+        public static int insertPayment(PaymentE obj)
         {
-            PaymentC.InsertPayment(obj);
+            return PaymentC.InsertPayment(obj);
         }
         public static void updatePayment(PaymentE obj)
         {

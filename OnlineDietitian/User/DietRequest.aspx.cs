@@ -48,6 +48,7 @@ namespace OnlineDietitian.User
             diet.UserID = (Session["user"] as Entity.UserE).UserID;
 
             int dietID = BusinessLayers.Business.insertDiet(diet);
+            Logging.logDiet(diet.UserID.ToString(),diet.DietID.ToString());
             Session["dietID"] = dietID;
             Response.Redirect("~/User/MedicalReport");
            

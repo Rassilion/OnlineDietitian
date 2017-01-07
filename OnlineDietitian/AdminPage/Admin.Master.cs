@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Web.Security;
+using Entity;
 
 namespace OnlineDietitian.AdminPage
 {
@@ -68,7 +69,10 @@ namespace OnlineDietitian.AdminPage
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null && !(Session["user"] as UserE).isAdmin)
+                Response.Redirect("~/Default.aspx");
+            else if (Session["user"] == null)
+                Response.Redirect("~/Logon.aspx");
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

@@ -46,7 +46,7 @@ namespace Control
             return list;
         }
         // Blog Creation by information of blogpost
-        public static void NewBlogPost(int dietitianID, string title, string content) 
+        public static int NewBlogPost(int dietitianID, string title, string content) 
         {
 
             SqlCommand com = new SqlCommand("NewBlogPost", Connection.Con); // Prodecure
@@ -62,8 +62,17 @@ namespace Control
             SqlDataReader rd = com.ExecuteReader();
 
 
+            int insertId = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                insertId = Convert.ToInt32(rd[0]);
+
+
+            }
             com.Dispose();
             com.Connection.Close();
+            return insertId;
 
         }
         // Remove blog by blogID 

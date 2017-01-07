@@ -45,6 +45,7 @@
     <Compile Include="DietE.cs" />
     <Compile Include="DietitianE.cs" />
     <Compile Include="DietViewE.cs" />
+    <Compile Include="LogE.cs" />
     <Compile Include="MedicalReportE.cs" />
     <Compile Include="PaymentE.cs" />
     <Compile Include="DietRequestE.cs" />

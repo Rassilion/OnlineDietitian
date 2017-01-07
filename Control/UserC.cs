@@ -40,7 +40,8 @@ namespace Control
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
                         UserSurname = rd["UserSurname"].ToString(),
-                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString(),
+                        isAdmin = Convert.ToBoolean(rd["isAdmin"])
                     };
                 }
             }
@@ -75,7 +76,7 @@ namespace Control
 
         // Register Statement
 
-        public static void InsertUser(UserE user)
+        public static int InsertUser(UserE user)
         {
 
             SqlCommand com = new SqlCommand("InsertUser", Connection.Con); // Prodecure
@@ -107,8 +108,21 @@ namespace Control
             SqlDataReader rd = com.ExecuteReader();
 
 
+
+            int insertId = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                insertId = Convert.ToInt32(rd[0]);
+
+
+            }
+
+            
+
             com.Dispose();
             com.Connection.Close();
+            return insertId;
 
         }
 
@@ -151,7 +165,7 @@ namespace Control
             com.Parameters.Add(new SqlParameter("@userAddress", user.Address));
             com.Parameters.Add(new SqlParameter("@gender", user.Gender));
             com.Parameters.Add(new SqlParameter("@bodyPhoto", user.UserBodyPhoto));
-
+            com.Parameters.Add(new SqlParameter("@isAdmin", user.isAdmin));
 
 
 
@@ -214,7 +228,8 @@ namespace Control
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
                         UserSurname = rd["UserSurname"].ToString(),
-                        Gender= rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                        Gender= rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString(),
+                        isAdmin = Convert.ToBoolean(rd["isAdmin"])
                     };
 
                 }
@@ -253,7 +268,8 @@ namespace Control
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
                         UserSurname = rd["UserSurname"].ToString(),
-                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString(),
+                        isAdmin = Convert.ToBoolean(rd["isAdmin"])
                     });
 
                 }
