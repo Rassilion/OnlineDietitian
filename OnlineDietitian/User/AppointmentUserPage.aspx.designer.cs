@@ -31,6 +31,15 @@ namespace OnlineDietitian.User {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
+        /// ddlDietitians control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDietitians;
+        
+        /// <summary>
         /// dietContent_textbox control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,23 @@ namespace OnlineDietitian.User {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dietContent_textbox;
+        
+        /// <summary>
+        /// appointmentButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button appointmentButton;
+        
+        /// <summary>
+        /// successLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label successLabel;
     }
 }
