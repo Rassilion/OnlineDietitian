@@ -42,7 +42,8 @@ namespace OnlineDietitian
                 if(passwordBox.Text == passwordConfirmBox.Text) // Same password control
                 {
                     user.UserPassword = Util.MD5hash(passwordBox.Text);
-                    BusinessLayers.Business.insertUser(user);
+                    int id=BusinessLayers.Business.insertUser(user);
+                    Logging.logRegister(id.ToString());
                     successLabel.Text = "Success Register";
                     successLabel.Visible = true; // Register success message
 

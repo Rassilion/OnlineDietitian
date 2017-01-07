@@ -11,51 +11,7 @@ namespace BusinessLayers
     public class Business
     {
 
-        //log
-        public static void logLoginU(string userid)
-        {
-            addLog("LoginU", userid);
-        }
-        public static void logLoginD(string userid)
-        {
-            addLog("LoginD", userid);
-        }
-        public static void logLoginFailU(string email)
-        {
-            addLog("LoginFailU", email);
-        }
-        public static void logLoginFailD(string email)
-        {
-            addLog("LoginFailD", email);
-        }
-        public static void logUpdate(string table, string userID, string id)
-        {
-            addLog("Update" + table, " userID: " + userID + " update id: " + id);
-        }
 
-        public static void logInsert(string table, string userID, string id)
-        {
-            addLog("Insert" + table, " userID: " + userID + " insert id: " + id);
-        }
-
-        public static void logDelete(string table, string userID, string id)
-        {
-            addLog("Delete" + table, " userID: " + userID + " deleted id: " + id);
-        }
-
-        public static void logDiet(string userid, string id)
-        {
-            addLog("CreateDiet", "userID: " + userid + " DietID: " + id);
-        }
-        public static void logDietFollowUp(string userid, string id)
-        {
-            addLog("CreateDietFollowUp", "diettianID: " + userid + " DietID: " + id);
-        }
-
-        protected static void addLog(string type, string message)
-        {
-            LogC.InsertLog(new LogE { type = type, message = message });
-        }
 
         // BlogPost start
         public static List<BlogPostE> getBlogPosts()
@@ -63,13 +19,13 @@ namespace BusinessLayers
             return BlogPostC.GetBlogPosts();
         }
 
-        public static void newBlogPosts(int dietitianID, string title, string content)
+        public static int newBlogPosts(int dietitianID, string title, string content)
         {
-            BlogPostC.NewBlogPost(dietitianID, title, content);
+            return BlogPostC.NewBlogPost(dietitianID, title, content);
         }
-        public static void newBlogPost(BlogPostE obj)
+        public static int newBlogPost(BlogPostE obj)
         {
-            BlogPostC.NewBlogPost(obj.DietitanID, obj.Title, obj.BlogContent);
+            return BlogPostC.NewBlogPost(obj.DietitanID, obj.Title, obj.BlogContent);
         }
 
         public static void deleteBlogPost(int blogID)
@@ -158,10 +114,10 @@ namespace BusinessLayers
 
 
         //Register Start
-        public static void insertUser(UserE user)
+        public static int insertUser(UserE user)
         {
 
-            UserC.InsertUser(user);
+            return UserC.InsertUser(user);
         }
 
         public static int checkUserEmail(string email)
@@ -200,9 +156,9 @@ namespace BusinessLayers
         {
             return AppointmentC.getAppointmentByID(Convert.ToInt32(id));
         }
-        public static void insertAppointment(AppointmentE obj)
+        public static int insertAppointment(AppointmentE obj)
         {
-            //AppointmentC.InsertAppointment(obj);
+            return AppointmentC.InsertAppointment(obj);
         }
         public static void updateAppointment(AppointmentE obj)
         {
@@ -224,9 +180,9 @@ namespace BusinessLayers
         {
             return PaymentC.getPaymentByID(Convert.ToInt32(id));
         }
-        public static void insertPayment(PaymentE obj)
+        public static int insertPayment(PaymentE obj)
         {
-            PaymentC.InsertPayment(obj);
+            return PaymentC.InsertPayment(obj);
         }
         public static void updatePayment(PaymentE obj)
         {

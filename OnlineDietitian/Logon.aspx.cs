@@ -26,10 +26,12 @@ namespace OnlineDietitian
                     if ((user = BusinessLayers.Business.validateUser(UserEmail.Text, Util.MD5hash(UserPass.Text))) != null)
                     {
                         Session["user"] = user;
+                        Logging.logLoginU(user.UserID.ToString());
                         Response.Redirect("~/");
                     }
                     else // Invalid email or password
                     {
+                        Logging.logLoginFailU(UserEmail.Text);
                         Msg.Text = "Invalid credentials. Please try again.";
                     }
 
@@ -39,10 +41,12 @@ namespace OnlineDietitian
                     if ((dietitian = BusinessLayers.Business.validateDietitian(UserEmail.Text, Util.MD5hash(UserPass.Text))) != null)
                     {
                         Session["dietitian"] = dietitian;
+                        Logging.logLoginD(dietitian.DietitianID.ToString());
                         Response.Redirect("~/");
                     }
                     else // Invalid email or password
                     {
+                        Logging.logLoginFailD(UserEmail.Text);
                         Msg.Text = "Invalid credentials. Please try again.";
                     }
                     break;

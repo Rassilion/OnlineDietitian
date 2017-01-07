@@ -76,7 +76,7 @@ namespace Control
 
         // Register Statement
 
-        public static void InsertUser(UserE user)
+        public static int InsertUser(UserE user)
         {
 
             SqlCommand com = new SqlCommand("InsertUser", Connection.Con); // Prodecure
@@ -108,8 +108,21 @@ namespace Control
             SqlDataReader rd = com.ExecuteReader();
 
 
+
+            int insertId = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                insertId = Convert.ToInt32(rd[0]);
+
+
+            }
+
+            
+
             com.Dispose();
             com.Connection.Close();
+            return insertId;
 
         }
 
