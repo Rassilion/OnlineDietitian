@@ -43,6 +43,13 @@ namespace OnlineDietitian.User
                 error.Text = "Please select dietitian";
                 error.Visible = true;
             }
+
+            PaymentE pay = new PaymentE();
+            pay.DietitianID = Convert.ToInt32(ddlDietitians.Text);
+            pay.UserID = (Session["user"] as Entity.UserE).UserID;
+            pay.Fee = "50";
+            BusinessLayers.Business.insertPayment(pay);
+
         }
     }
 }
