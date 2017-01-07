@@ -68,6 +68,7 @@ namespace OnlineDietitian.AdminPage
                 currentDietitian.DietitianName = nameBox.Text;
                 currentDietitian.DietitianSurname = surnameBox.Text;
                 currentDietitian.DietitianPhone = phoneBox.Text;
+                currentDietitian.Gender = ddlGender.Text;
                 if (Util.isMD5(changePasswordBox.Text))
                     currentDietitian.DietitianPassword = changePasswordBox.Text;
                 else

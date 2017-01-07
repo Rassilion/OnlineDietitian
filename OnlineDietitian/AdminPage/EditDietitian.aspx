@@ -10,7 +10,6 @@
         <div class="form-group row">
             <label class="control-label col-sm-2" for="pwd">Gender</label>
             <asp:DropDownList ID="ddlGender" CssClass="btn btn-primary" runat="server" Width="200px">
-                <asp:ListItem Text="Select Gender" Value="0"></asp:ListItem>
                 <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
                 <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
             </asp:DropDownList>
