@@ -67,9 +67,16 @@ namespace OnlineDietitian.AdminPage
                 try
                 {
                     if (newEntity)
-                        BusinessLayers.Business.newBlogPost(currentBlogPost);
+                    {
+                        int id = BusinessLayers.Business.newBlogPost(currentBlogPost);
+                        BusinessLayers.Logging.logInsert("BlogPost", (Session["user"] as Entity.UserE).UserID.ToString(), id.ToString());
+                    }
                     else
+                    {
                         BusinessLayers.Business.updateBlogPost(currentBlogPost);
+                        BusinessLayers.Logging.logUpdate("BlogPost", (Session["user"] as Entity.UserE).UserID.ToString(), currentBlogPost.BlogID.ToString());
+
+                    }
                 }
                 catch (SqlException ex)
                 {
