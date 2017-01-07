@@ -18,7 +18,7 @@
                 </p>
                 <hr>
 
-               <a class="btn btn-primary" href="PatientDetail/<%# Eval("DietID") %>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+               <a class="btn btn-primary" href="PatientDetail/<%# Eval("DietID") %>">Write Diet <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             <br />
         </ItemTemplate>

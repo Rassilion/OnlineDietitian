@@ -83,6 +83,14 @@ namespace BusinessLayers
         {
             return DietitianC.GetDietitianName((int)dietitianID);
         }
+        public static int getDietitianProfit(object dietitianID)
+        {
+            return DietitianC.GetDietitianProfit((int)dietitianID);
+        }
+        public static int getDietitianPayment(object dietitianID)
+        {
+            return DietitianC.GetDietitianPayment((int)dietitianID);
+        }
 
         public static string getDietitianName(int dietitianID)
         {

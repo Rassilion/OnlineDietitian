@@ -224,6 +224,7 @@ namespace Control
             com.Parameters.Add(new SqlParameter("@dietitianPassword", obj.DietitianPassword));
             com.Parameters.Add(new SqlParameter("@dietitianPhone", obj.DietitianPhone));
             com.Parameters.Add(new SqlParameter("@dietitianSurname", obj.DietitianSurname));
+            com.Parameters.Add(new SqlParameter("@gender", obj.Gender));
 
             if (com.Connection.State == ConnectionState.Closed)
             {
@@ -236,5 +237,52 @@ namespace Control
             com.Connection.Close();
 
         }
+        public static int GetDietitianProfit(int dietitianID)
+        {
+            SqlCommand com = new SqlCommand("getDietitianProfit", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", dietitianID));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            int returnVal = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                returnVal = Convert.ToInt32(rd[0]);
+            }
+            com.Dispose();
+            com.Connection.Close();
+            return returnVal;
+        }
+
+        public static int GetDietitianPayment(int dietitianID)
+        {
+            SqlCommand com = new SqlCommand("getDietitianPayment", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", dietitianID));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            int returnVal = 0;
+            if (rd.HasRows)
+            {
+                rd.Read();
+                if(rd[0] != DBNull.Value)
+                    returnVal = Convert.ToInt32(rd[0]);
+               
+            }
+            com.Dispose();
+            com.Connection.Close();
+            return returnVal;
+        }
+
+
     }
 }
