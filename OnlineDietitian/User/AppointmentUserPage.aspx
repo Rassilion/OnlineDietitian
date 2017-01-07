@@ -1,4 +1,4 @@
-﻿<%@ Page Title="AppointmentUser" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="AppointmentUserPage.aspx.cs" Inherits="OnlineDietitian.User.AppointmentUserPage" %>
+﻿<%@ Page Title="AppointmentUser" Language="C#" MasterPageFile="~/User/UserPage.master" AutoEventWireup="true" CodeBehind="AppointmentUserPage.aspx.cs" Inherits="OnlineDietitian.User.AppointmentUserPage" EnableEventValidation="false" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="UserContent" runat="server">
     <br />
@@ -16,20 +16,20 @@
                     runat="server" />
             </div>
             <br />
-            <div class="form-group row">
-                <label class="control-label col-sm-2" for="pwd">Dietititans:</label>
-                <asp:DropDownList ID="ddlDietitians" CssClass="btn btn-primary" runat="server" Width="200px" Margin="100px">
-                    <asp:ListItem Text="Health" Value="1"></asp:ListItem>
-                </asp:DropDownList>
-            </div>
+
+            <label class="control-label col-sm-4" for="pwd">Dietititans:</label>
+            <asp:DropDownList ID="ddlDietitians" CssClass="form-control" runat="server">
+                <asp:ListItem Text="Select" Value="0"></asp:ListItem>
+            </asp:DropDownList>
             <br />
             <br />
-            <asp:TextBox ID="dietContent_textbox" CssClass="newContent" runat="server">Content</asp:TextBox>
+            <br />
+            <asp:TextBox ID="appointment_textbox" CssClass="newContent" runat="server">Content</asp:TextBox>
         </div>
     </div>
 
     <asp:Button ID="appointmentButton" Text="Save Appointment" CssClass="btn btn-primary" runat="server" OnClick="saveAppointment_Click" />
-    <asp:Label ID="successLabel" runat="server" Text="Label" Visible="False"></asp:Label>
+    <asp:Label ID="error" runat="server" Text="Label" Visible="False"></asp:Label>
 
     <script type="text/javascript" src="/Scripts/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({ selector: 'input.updateContent' });</script>

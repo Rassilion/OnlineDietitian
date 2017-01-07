@@ -33,7 +33,7 @@ namespace Control
         public static int InsertAppointment(AppointmentE appointment)
         {
             int appointmentID = 0;
-            SqlCommand com = new SqlCommand("InsertPayment", Connection.Con); // Prodecure
+            SqlCommand com = new SqlCommand("InsertAppointment", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
 
             com.Parameters.Add(new SqlParameter("@dietitianID", appointment.DietitianID));
@@ -81,7 +81,7 @@ namespace Control
                     temp = new AppointmentE
                     {
                         AppointmentID = Convert.ToInt32(rd["AppointmentID"]),
-                        AppointmentContent = rd["AppointmentStatus"].ToString(),
+                        AppointmentContent = rd["AppointmentContent"].ToString(),
                         UserID = Convert.ToInt32(rd["UserID"]),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         AppointmentDate = rd["AppointmentDate"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(rd["AppointmentDate"].ToString()),
@@ -93,6 +93,42 @@ namespace Control
             com.Dispose();
             com.Connection.Close();
             return temp;
+        }
+
+
+        
+            public static List<AppointmentE> getAppointmentsByDietitianID(int id)
+        {
+            List<AppointmentE> list = null;
+            SqlCommand com = new SqlCommand("getAppointmentByDietitianID", Connection.Con); // Prodecure
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.Add(new SqlParameter("@id", id));
+
+            if (com.Connection.State == ConnectionState.Closed)
+            {
+                com.Connection.Open();
+            }
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                list = new List<AppointmentE>();
+                while (rd.Read())
+                {
+                    list.Add(new AppointmentE
+                    {
+                        AppointmentID = Convert.ToInt32(rd["AppointmentID"]),
+                        AppointmentContent = rd["AppointmentContent"].ToString(),
+                        UserID = Convert.ToInt32(rd["UserID"]),
+                        DietitianID = Convert.ToInt32(rd["DietitianID"]),
+                        AppointmentDate = rd["AppointmentDate"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(rd["AppointmentDate"].ToString()),
+                    });
+
+                }
+            }
+
+            com.Dispose();
+            com.Connection.Close();
+            return list;
         }
 
         public static List<AppointmentE> selectAppointments()
@@ -115,7 +151,7 @@ namespace Control
                     list.Add(new AppointmentE
                     {
                         AppointmentID = Convert.ToInt32(rd["AppointmentID"]),
-                        AppointmentContent = rd["AppointmentStatus"].ToString(),
+                        AppointmentContent = rd["AppointmentContent"].ToString(),
                         UserID = Convert.ToInt32(rd["UserID"]),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
                         AppointmentDate = DateTime.Parse(rd["AppointmentDate"].ToString())
@@ -136,7 +172,7 @@ namespace Control
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.Add(new SqlParameter("@appointmentDate", obj.AppointmentDate));
             com.Parameters.Add(new SqlParameter("@dietitianID", obj.DietitianID));
-            com.Parameters.Add(new SqlParameter("@appointmentStatus", obj.AppointmentContent));
+            com.Parameters.Add(new SqlParameter("@appointmentContent", obj.AppointmentContent));
             com.Parameters.Add(new SqlParameter("@userID", obj.UserID));
             com.Parameters.Add(new SqlParameter("@id", obj.AppointmentID));
 

@@ -20,14 +20,14 @@
                         <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i>Send Mail</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-certificate"></i>Diets</a>
+                        <a href="/Dietitian/Diet"><i class="fa fa-certificate"></i>Diets</a>
                     </li>
                     <li>
-                        <a href="/DietitianPage">
+                        <a href="/Dietitian/DietitianPage">
                             <i class="fa fa-file-text-o"></i>Patients 
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
+                    <li><a href="/Dietitian/AppointmentDietitianPage"><i class="fa fa-calendar"></i>Appointment</a></li>
                 </ul>
                 <!-- /.nav -->
 
