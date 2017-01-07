@@ -71,7 +71,7 @@ namespace OnlineDietitian.AdminPage
         {
             if (Session["user"] != null && !(Session["user"] as UserE).isAdmin)
                 Response.Redirect("~/Default.aspx");
-            else
+            else if (Session["user"] == null)
                 Response.Redirect("~/Logon.aspx");
         }
 
