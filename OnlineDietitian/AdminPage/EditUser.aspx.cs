@@ -75,7 +75,7 @@ namespace OnlineDietitian.AdminPage
                 else
                     currentUser.UserPassword = Util.MD5hash(changePasswordBox.Text);
                 currentUser.UserEmail = emailBox.Text;
-                //TODO gender
+                currentUser.Gender = ddlGender.Text;
 
                 try
                 {
