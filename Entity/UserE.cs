@@ -18,6 +18,7 @@ namespace Entity
         public string UserBodyPhoto { get; set; }
         public DateTime UserBirth { get; set; }
         public string Gender { get; set; }
+        public bool isAdmin { get; set; }
 
         public String getNameSurname()
         {

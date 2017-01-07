@@ -14,7 +14,7 @@ namespace BusinessLayers
         //log
         public static void logLoginU(string userid)
         {
-            addLog("LoginU",userid);
+            addLog("LoginU", userid);
         }
         public static void logLoginD(string userid)
         {
@@ -28,33 +28,33 @@ namespace BusinessLayers
         {
             addLog("LoginFailD", email);
         }
-        public static void logUpdate(string table,string userID, string id)
+        public static void logUpdate(string table, string userID, string id)
         {
-            addLog("Update"+table," userID: "+userID + " update id: " + id);
+            addLog("Update" + table, " userID: " + userID + " update id: " + id);
         }
 
         public static void logInsert(string table, string userID, string id)
         {
-            addLog("Insert" + table," userID: " + userID + " insert id: " + id);
+            addLog("Insert" + table, " userID: " + userID + " insert id: " + id);
         }
 
         public static void logDelete(string table, string userID, string id)
         {
-            addLog("Delete" + table," userID: " + userID +" deleted id: "+id);
+            addLog("Delete" + table, " userID: " + userID + " deleted id: " + id);
         }
 
         public static void logDiet(string userid, string id)
         {
-            addLog("CreateDiet", "userID: "+userid+" DietID: "+id);
+            addLog("CreateDiet", "userID: " + userid + " DietID: " + id);
         }
         public static void logDietFollowUp(string userid, string id)
         {
             addLog("CreateDietFollowUp", "diettianID: " + userid + " DietID: " + id);
         }
 
-        protected static void addLog(string type,string message)
+        protected static void addLog(string type, string message)
         {
-
+            LogC.InsertLog(new LogE { type = type, message = message });
         }
 
         // BlogPost start

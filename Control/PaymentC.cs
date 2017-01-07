@@ -32,7 +32,7 @@ namespace Control
 
         public static int InsertPayment(PaymentE pay)
         {
-            int payment = 0;
+            
             SqlCommand com = new SqlCommand("InsertPayment", Connection.Con); // Prodecure
             com.CommandType = CommandType.StoredProcedure;
 
@@ -51,16 +51,17 @@ namespace Control
                 com.Connection.Open();
             }
             SqlDataReader rd = com.ExecuteReader();
+            int insertId = 0;
             if (rd.HasRows)
             {
                 rd.Read();
-                payment = Convert.ToInt32(rd[0]);
+                insertId = Convert.ToInt32(rd[0]);
 
 
             }
             com.Dispose();
             com.Connection.Close();
-            return payment;
+            return insertId;
         }
 
         public static PaymentE getPaymentByID(int id)

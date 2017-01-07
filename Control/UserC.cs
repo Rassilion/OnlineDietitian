@@ -40,7 +40,8 @@ namespace Control
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
                         UserSurname = rd["UserSurname"].ToString(),
-                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString(),
+                        isAdmin = Convert.ToBoolean(rd["isAdmin"])
                     };
                 }
             }
@@ -151,7 +152,7 @@ namespace Control
             com.Parameters.Add(new SqlParameter("@userAddress", user.Address));
             com.Parameters.Add(new SqlParameter("@gender", user.Gender));
             com.Parameters.Add(new SqlParameter("@bodyPhoto", user.UserBodyPhoto));
-
+            com.Parameters.Add(new SqlParameter("@isAdmin", user.isAdmin));
 
 
 
@@ -214,7 +215,8 @@ namespace Control
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
                         UserSurname = rd["UserSurname"].ToString(),
-                        Gender= rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                        Gender= rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString(),
+                        isAdmin = Convert.ToBoolean(rd["isAdmin"])
                     };
 
                 }
@@ -253,7 +255,8 @@ namespace Control
                         UserName = rd["UserName"].ToString(),
                         UserPassword = rd["UserPassword"].ToString(),
                         UserSurname = rd["UserSurname"].ToString(),
-                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString()
+                        Gender = rd["Gender"] == DBNull.Value ? "" : rd["Gender"].ToString(),
+                        isAdmin = Convert.ToBoolean(rd["isAdmin"])
                     });
 
                 }
