@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,42 +27,50 @@ namespace OnlineDietitian.AdminPage
         protected void deleteButton(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            switch (btn.CommandName)
+            try
             {
-                case "user":
-                    BusinessLayers.Business.deleteUser(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("User",(Session["user"] as Entity.UserE).UserID.ToString(),btn.CommandArgument.ToString());
-                    break;
-                case "dietitian":
-                    BusinessLayers.Business.deleteDietitian(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("Dietitian", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
-                case "payment":
-                    BusinessLayers.Business.deletePayment(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("Payment", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
-                case "appointment":
-                    BusinessLayers.Business.deleteAppointment(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("Appointment", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
-                case "medicalreport":
-                    BusinessLayers.Business.deleteMedicalReport(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("MedicalReport", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
-                case "diet":
-                    BusinessLayers.Business.deleteDiet(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("Diet", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
-                case "blogpost":
-                    BusinessLayers.Business.deleteBlogPost(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("BlogPost", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
-                case "dietrequest":
-                    BusinessLayers.Business.deleteDietRequest(btn.CommandArgument.ToString());
-                    BusinessLayers.Logging.logDelete("DietRequest", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
-                    break;
+                switch (btn.CommandName)
+                {
+                    case "user":
+                        BusinessLayers.Business.deleteUser(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("User", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "dietitian":
+                        BusinessLayers.Business.deleteDietitian(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("Dietitian", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "payment":
+                        BusinessLayers.Business.deletePayment(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("Payment", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "appointment":
+                        BusinessLayers.Business.deleteAppointment(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("Appointment", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "medicalreport":
+                        BusinessLayers.Business.deleteMedicalReport(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("MedicalReport", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "diet":
+                        BusinessLayers.Business.deleteDiet(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("Diet", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "blogpost":
+                        BusinessLayers.Business.deleteBlogPost(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("BlogPost", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                    case "dietrequest":
+                        BusinessLayers.Business.deleteDietRequest(btn.CommandArgument.ToString());
+                        BusinessLayers.Logging.logDelete("DietRequest", (Session["user"] as Entity.UserE).UserID.ToString(), btn.CommandArgument.ToString());
+                        break;
+                }
+                Response.Redirect(Request.RawUrl);
             }
-            Response.Redirect(Request.RawUrl);
+            catch (SqlException ex)
+            {
+                error.Text = ex.Message;
+                error.Visible = true;
+            }
 
         }
 
