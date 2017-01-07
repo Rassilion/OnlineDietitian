@@ -12,8 +12,8 @@ namespace OnlineDietitian.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-             if (Session["user"] == null)
-                Response.Redirect("~/Logon.aspx");  
+            if (Session["user"] == null)
+                Response.Redirect("~/Logon.aspx");
         }
 
         protected void saveRequest_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace OnlineDietitian.User
                 case "4":
                     dietRequest.WeightLoss = true;
                     break;
-              
+
             }
             int requestID = BusinessLayers.Business.insertDietRequest(dietRequest);
 
@@ -48,10 +48,10 @@ namespace OnlineDietitian.User
             diet.UserID = (Session["user"] as Entity.UserE).UserID;
 
             int dietID = BusinessLayers.Business.insertDiet(diet);
-            Logging.logDiet(diet.UserID.ToString(),diet.DietID.ToString());
+            Logging.logDiet(diet.UserID.ToString(), dietID.ToString());
             Session["dietID"] = dietID;
             Response.Redirect("~/User/MedicalReport");
-           
+
         }
 
     }

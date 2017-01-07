@@ -85,7 +85,7 @@ namespace Control
                         UserID = Convert.ToInt32(rd["UserID"]),
                         PayID = Convert.ToInt32(rd["PayID"]),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
-                        PayDate = DateTime.Parse(rd["PayDate"].ToString()),
+                        PayDate = rd["PayDate"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(rd["PayDate"].ToString()),
                         BankCard = Convert.ToBoolean(rd["BankCard"]),
                         Fee = rd["Fee"] == DBNull.Value ? "" : rd["Fee"].ToString()
                     };
@@ -154,7 +154,7 @@ namespace Control
                         UserID = Convert.ToInt32(rd["UserID"]),
                         PayID = Convert.ToInt32(rd["PayID"]),
                         DietitianID = Convert.ToInt32(rd["DietitianID"]),
-                        PayDate = DateTime.Parse(rd["PayDate"].ToString()),
+                        PayDate = rd["PayDate"] == DBNull.Value ? DateTime.MinValue : DateTime.Parse(rd["PayDate"].ToString()),
                         BankCard = Convert.ToBoolean(rd["BankCard"]),
                         Fee = rd["Fee"] == DBNull.Value ? "" : rd["Fee"].ToString()
                     });

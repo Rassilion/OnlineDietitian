@@ -196,7 +196,7 @@
                             <th scope="row"><%# Eval("AppointmentID") %></th>
                             <td><%# Eval("UserID") %></td>
                             <td><%# Eval("DietitianID") %></td>
-                            <td><%# Eval("AppointmentStatus") %></td>
+                            <td><%# Eval("AppointmentContent") %></td>
                             <td><%# Eval("AppointmentDate") %></td>
                         </tr>
                     </ItemTemplate>
@@ -276,8 +276,8 @@
                             <td><%# Eval("RequestContent") %></td>
                             <td><%# Eval("Health") %></td>
                             <td><%# Eval("Fitness") %></td>
-                            <td><%# Eval("WeighGain") %></td>
-                            <td><%# Eval("WeighLoss") %></td>
+                            <td><%# Eval("WeightGain") %></td>
+                            <td><%# Eval("WeightLoss") %></td>
                         </tr>
                     </ItemTemplate>
                     <FooterTemplate>
@@ -365,8 +365,8 @@
                             </td>
                             <th scope="row"><%# Eval("PayID") %></th>
                             <td><%# Eval("UserID") %></td>
-                            <td><%# Eval("DietianID") %></td>
-                            <td><%# Eval("Date") %></td>
+                            <td><%# Eval("DietitianID") %></td>
+                            <td><%# Eval("PayDate") %></td>
                             <td><%# Eval("Fee") %></td>
                             <td><%# Eval("BankCard") %></td>
                         </tr>
@@ -399,12 +399,12 @@
                                 <a href="EditBlogPost/<%# Eval("BlogID") %>">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </a>
-                                <asp:LinkButton ID="deleteDietrequest" OnClick="deleteButton" CommandName="blogpost" CommandArgument='<%#Eval("BlogPost")%>' runat="server">
+                                <asp:LinkButton ID="deleteDietrequest" OnClick="deleteButton" CommandName="blogpost" CommandArgument='<%#Eval("BlogID")%>' runat="server">
                             <span class="glyphicon glyphicon-trash"></span>
                                 </asp:LinkButton>
                             </td>
-                            <th scope="row"><%# Eval("BlogPost") %></th>
-                            <td><%# Eval("DietianID") %></td>
+                            <th scope="row"><%# Eval("BlogID") %></th>
+                            <td><%# Eval("DietitanID") %></td>
                             <td><%# Eval("Title") %></td>
                             <td><%# Eval("BlogContent") %></td>
                             <td><%# Eval("PostDate") %></td>
@@ -453,8 +453,7 @@
                         <tr>
                             <th scope="row"><%# Eval("DietID") %></th>
                             <td><%# Eval("UserID") %></td>
-                            <td><%# Eval("DietianID") %></td>
-                            <td><%# Eval("Date") %></td>
+                            <td><%# Eval("DietitianID") %></td>
                             <td><%# Eval("UsedDrugs") %></td>
                             <td><%# Eval("Disease") %></td>
                             <td><%# Eval("Height") %></td>
@@ -465,8 +464,8 @@
                             <td><%# Eval("RequestContent") %></td>
                             <td><%# Eval("Health") %></td>
                             <td><%# Eval("Fitness") %></td>
-                            <td><%# Eval("WeighGain") %></td>
-                            <td><%# Eval("WeighLoss") %></td>
+                            <td><%# Eval("WeightGain") %></td>
+                            <td><%# Eval("WeightLoss") %></td>
                             <td><%# Eval("DietContent") %></td>
                             <td><%# Eval("RequestContent") %></td>
                             <td><%# Eval("UserName") %></td>
