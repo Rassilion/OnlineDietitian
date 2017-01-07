@@ -37,7 +37,7 @@ namespace OnlineDietitian.AdminPage
                             dietitianidBox.Text = currentAppointment.DietitianID.ToString();
                             useridBox.Text = currentAppointment.UserID.ToString();
                             dateBox.Text = currentAppointment.AppointmentDate.ToString("yyyy-MM-dd");
-                            statusBox.Text = currentAppointment.AppointmentStatus;
+                            statusBox.Text = currentAppointment.AppointmentContent;
                         }
                     }
                     else
@@ -62,7 +62,7 @@ namespace OnlineDietitian.AdminPage
                 string asd = dateBox.Text;
                 currentAppointment.AppointmentDate = DateTime.ParseExact(asd, "yyyy-MM-dd", CultureInfo.CurrentCulture);
                 currentAppointment.DietitianID = Convert.ToInt32(dietitianidBox.Text);
-                currentAppointment.AppointmentStatus = statusBox.Text;
+                currentAppointment.AppointmentContent = statusBox.Text;
                 currentAppointment.UserID = Convert.ToInt32(useridBox.Text);
 
                 try

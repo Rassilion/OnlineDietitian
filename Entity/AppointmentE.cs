@@ -11,7 +11,7 @@ namespace Entity
         public int AppointmentID { get; set; }
         public int UserID { get; set; }
 
-        public string AppointmentStatus { get; set; }
+        public string AppointmentContent { get; set; }
 
         public int DietitianID { get; set; }
 
