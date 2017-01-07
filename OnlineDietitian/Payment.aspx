@@ -137,12 +137,12 @@
                                    
                                     </td>
                                     <td>
-                                        <%# Eval("UserID").ToString() %>
+                                       1
                                     </td>
 
                                     <td class="text-center">
                                         
-                                         <%# Eval("Fee") %>
+                                         <%# "£" + Eval("Fee") %>
                                     </td>
                                     <td class="text-center"><%# total += Convert.ToInt32(Eval("Fee"))%></td>
                                 </tr>
