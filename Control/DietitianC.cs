@@ -252,7 +252,8 @@ namespace Control
             if (rd.HasRows)
             {
                 rd.Read();
-                returnVal = Convert.ToInt32(rd[0]);
+                if (rd[0] != DBNull.Value)
+                    returnVal = Convert.ToInt32(rd[0]);
             }
             com.Dispose();
             com.Connection.Close();
